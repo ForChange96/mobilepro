@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bootstrap</title>
+<!--
+<meta name="viewport" device="device-width" />
+-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+</head>
+<!--
+    -Muốn sd bootstrap cần load file css của bootstrap
+    -Muốn sd hiệu ứng của bootstrap, cần load file .js của bootstrap
+    -bootstrap đặt trong thẻ có class="container" (Muốn full màn hình thì container-fluid)
+    -bootstrap chia màn hình ra thành 12 cột
+    -1 class trong bootstrap:
+    	+row:chia thành các hàng
+        +col-md-1: 1 cột
+        +col-md-n: n cột
+        	các kiểu màn hình ứng vs: md, sm,lg, xs
+            	+lg: màn hình cỡ lớn
+                +md: màn hình cỡ vừa
+                +sm: nhỏ
+                +xs: rất nhỏ
+-->
+<body>
+<style type="text/css">
+	.header{background-color:red; height:100px;}
+	.left{background-color:green; height:500px;}
+	.main{background-color:purple; height:500px;}
+	.right{background-color:green; height:500px;}
+	.footer{background-color:grey; height:80px}
+</style>
+<div class="container">
+	<div class="row">
+    	<div class="header"></div>
+    </div>
+    <div class="row">
+    	<div class="col-md-2 left"></div>
+        <div class="col-md-8 main"></div>
+        <div class="col-md-2 right"></div>
+    </div>
+    <div class="row">
+    	<div class="footer"></div>
+    </div>
+</div>
+</body>
+</html>
