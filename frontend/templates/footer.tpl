@@ -110,6 +110,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {literal}
                                             <script>
                                                 $(function () {
                                                     window.prettyPrint && prettyPrint()
@@ -118,6 +119,7 @@
                                                     })
                                                 })
                                             </script>
+                                            {/literal}
                                         </div>
                                     </div>
                                     <div class="col-sm-2 col-md-2 col-lg-2 col-xs-12">
@@ -151,6 +153,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {literal}
                                             <script>
                                                 $(function () {
                                                     window.prettyPrint && prettyPrint()
@@ -159,10 +162,12 @@
                                                     })
                                                 })
                                             </script>
+                                            {/literal}
                                         </div>
                                     </div>
                                     <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
                                         <div class="dv-item-module ">
+                                            {literal}
                                             <script>
                                                 function subscribe() {
                                                     var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -197,6 +202,8 @@
                                                     }
                                                 }
                                             </script>
+                                            {/literal}
+                                            {literal}
                                             <style type="text/css">
                                                 .warning-new {
                                                     display: none;
@@ -212,6 +219,7 @@
                                                     padding: 20px 30px;
                                                 }
                                             </style>
+                                            {/literal}
                                             <!--<h2>Đăng ký nhận tin</h2> -->
                                             <div class="row">
                                                 <div class="col-sm-12">

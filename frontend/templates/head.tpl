@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<!--[if IE]><![endif]-->
-<!--[if IE 8 ]>
-<html dir="ltr" lang="vi" class="ie8"><![endif]-->
-<!--[if IE 9 ]>
-<html dir="ltr" lang="vi" class="ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html dir="ltr" lang="vi">
-<!--<![endif]-->
+
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phụ kiện điện thoại</title>
+    <title>MobilePro - shop smartphone uy tín</title>
     <meta name="description" content="Phụ kiện điện thoại"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="catalog/view/images/icon-phone.png" rel="icon"/>
+    <link href="catalog/view/images/icon-page-title.png" rel="icon"/>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -52,11 +44,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="catalog/view/web-fonts-with-css/css/fontawesome-all.min.css"> -->
     <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.tools.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
     <link href="catalog/plugin_css_settings.css" type="text/css" rel="stylesheet" media="screen" />
     <link href="catalog/static-captions.css" type="text/css" rel="stylesheet" media="screen" />
     <link href="catalog/dynamic-captions.css" type="text/css" rel="stylesheet" media="screen" />
     <link href="catalog/captions.css" type="text/css" rel="stylesheet" media="screen" />
+
 </head>

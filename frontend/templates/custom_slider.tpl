@@ -27,7 +27,7 @@
                         </ul>
                         <div class="tp-bannertimer"></div>
                     </div>
-
+                    {literal}
                     <script type="text/javascript">
 
                         /******************************************
@@ -172,6 +172,7 @@
                         });
                         /*ready*/
                     </script>
+                    {/literal}
                 </div><!-- END REVOLUTION SLIDER -->
             </div>
         </column>

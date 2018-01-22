@@ -191,6 +191,7 @@
                                                             </div>
                                                             <!-- MOBILE MENU END -->
                                                         </div>
+                                                        {literal}
                                                         <script>
                                                             $(function () {
                                                                 window.prettyPrint && prettyPrint()
@@ -199,6 +200,7 @@
                                                                 })
                                                             })
                                                         </script>
+                                                        {/literal}
                                                     </div>
                                                 </div>
                                             </div>
@@ -217,12 +219,53 @@
                                             class="price">0 VNĐ</span></span>
                             </button>
                             <ul class="dropdown-menu pull-right cart_dropdown">
+                                <li class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <a href="">
+                                                    <img src="" alt="Kính cường lực Iphone 5" title="Kính cường lực Iphone 5">
+                                                </a>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="">Kính cường lực Iphone 5</a>
+                                            </td>
+                                            <td class="text-right">x 1</td>
+                                            <td class="text-right">38.000 VNĐ</td>
+                                            <td class="text-center">
+                                                <button type="button" onclick="cart.remove('YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjE2O30=');" title="Loại bỏ" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
                                 <li>
-                                    <p class="text-center">Giỏ Hàng đang trống!</p>
+                                    <div>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>Thành tiền</strong></td>
+                                                <td class="text-right">103.000 VNĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Sản phẩm tính thuế</strong></td>
+                                                <td class="text-right">2.000 VNĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Tổng cộng </strong></td>
+                                                <td class="text-right">105.000 VNĐ</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="text-right">
+                                            <a href=""><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
+                                            <a href=""><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
+                                        </p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>

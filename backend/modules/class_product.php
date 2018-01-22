@@ -199,10 +199,10 @@ class Product{
                 if (in_array($extension, $allowedExts)){
                     if($_FILES["img{$i}"]["name"]!=""){
                         $img=time().$_FILES["img{$i}"]["name"];
-                        $img_link_500="style/images/product/500/$img";//link lưu ảnh 500x500
-                        $img_link_350="style/images/product/350/$img";//link lưu ảnh 350x350
-                        $img_link_300="style/images/product/300/$img";//link lưu ảnh 300x300
-                        $img_link_original="style/images/product/original/$img";//link lưu ảnh nguyên bản
+                        $img_link_500="../product/500/$img";//link lưu ảnh 500x500
+                        $img_link_350="../product/350/$img";//link lưu ảnh 350x350
+                        $img_link_300="../product/300/$img";//link lưu ảnh 300x300
+                        $img_link_original="../product/original/$img";//link lưu ảnh nguyên bản
                         move_uploaded_file($_FILES["img{$i}"]["tmp_name"],"$img_link_original");//Lưu ảnh nguyên bản
                         $this->resize_image_force($img_link_original,$img_link_300,300,300);//resize và lưu vào mục ảnh 300
                         $this->resize_image_force($img_link_original,$img_link_350,350,350);//resize và lưu vào mục ảnh 350
@@ -328,10 +328,10 @@ class Product{
         if (in_array($extension, $allowedExts)){
             if($_FILES["file"]["name"]!=""){
                 $img=time().$_FILES["file"]["name"];
-                $new_img_link_300="style/images/product/300/$img";
-                $new_img_link_350="style/images/product/350/$img";
-                $new_img_link_500="style/images/product/500/$img";
-                $new_img_link_original="style/images/product/original/$img";//link lưu ảnh nguyên bản
+                $new_img_link_300="../product/300/$img";
+                $new_img_link_350="../product/350/$img";
+                $new_img_link_500="../product/500/$img";
+                $new_img_link_original="../product/original/$img";//link lưu ảnh nguyên bản
                 move_uploaded_file($_FILES["file"]["tmp_name"],"$new_img_link_original");//Lưu ảnh nguyên bản
                 $this->resize_image_force($new_img_link_original,$new_img_link_300,300,300);//resize và lưu vào mục 300
                 $this->resize_image_force($new_img_link_original,$new_img_link_350,350,350);//resize và lưu vào mục 350

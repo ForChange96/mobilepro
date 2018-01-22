@@ -6,7 +6,5 @@ class Config{
         'pass' => '',
         'dbname'=>'mobilepro'
     );
-    //Tiêu đề website
-    static $page_title='Trang quản trị';
 }
 ?>

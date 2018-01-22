@@ -33,7 +33,6 @@ include "modules/class_{$mod}.php";
 $class=ucfirst($mod);
 $objMod=new $class();
 $vars['tmp_module'] = $objMod->$act();
-$vars['page_title'] = Config::$page_title;
 $vars['mod']=$mod;
 
 // 4. View ra template (website)
