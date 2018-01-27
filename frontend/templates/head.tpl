@@ -46,6 +46,8 @@
     <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.tools.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/jquery-cookie-master/src/jquery.cookie.js" type="text/javascript"></script>
+    <script src="catalog/script.js" type="text/javascript"></script>
     <link href="catalog/plugin_css_settings.css" type="text/css" rel="stylesheet" media="screen" />
     <link href="catalog/static-captions.css" type="text/css" rel="stylesheet" media="screen" />
     <link href="catalog/dynamic-captions.css" type="text/css" rel="stylesheet" media="screen" />

@@ -1,6 +1,6 @@
 <header>
     <!-- header top area start -->
-    <div class="header-top">
+    <div class="header-top" id="header-top">
         <div class="header-top-top">
             <div class="container">
                 <div class="row">
@@ -8,7 +8,8 @@
                         <column class="position-display">
                             <div>
                                 <div>
-                                    <p><i class="fa fa-phone"></i> hotline: +84 123 456 789</p></div>
+                                    <p><i class="fa fa-phone"></i> hotline: {$contact.hotline}</p>
+                                </div>
                             </div>
                         </column>
                     </div>
@@ -24,14 +25,19 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right account_header">
                                             <li>
-                                                <a href="#">Đăng Nhập</a>
+                                                {if isset($smarty.session.customer)}
+                                                    <a href="?mod=home&act=logout" id="btn-logout">Đăng Xuất</a>
+                                                {else}
+                                                    <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
+                                                    <a href="?mod=dangky&act=view">Đăng ký</a>
+                                                {/if}
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#" id="wishlist-total" title="Yêu thích">
                                             <i class="fa fa-heart"></i>
-                                            <span class="hidden-xs hidden-sm hidden-md">Yêu thích (0)</span>
+                                            <span class="hidden-xs hidden-sm hidden-md">Yêu thích (<span id="num_favorite">{$num_favorite}</span>)</span>
                                         </a>
                                     </li>
                                     <li>
@@ -41,7 +47,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" class="search_click">
+                                        <a href="javascript:void(0)" onclick="search_toggle()">
                                             <i class="fa fa-search"></i>
                                         </a>
                                         <div id="search" class="search-area">
@@ -103,11 +109,11 @@
                                                                  class="navbar-collapse collapse">
                                                                 <ul class="nav navbar-nav">
                                                                     <li>
-                                                                        <a href="">Trang chủ</a>
+                                                                        <a href="?mod=home&act=view">Trang chủ</a>
                                                                     </li>
 
                                                                     <li>
-                                                                        <a href="#">Giới thiệu</a>
+                                                                        <a href="?mod=gioithieu&act=view">Giới thiệu</a>
                                                                     </li>
                                                                     <li class="dropdown">
                                                                         <a href="#" data-toggle="dropdown"
@@ -117,25 +123,18 @@
                                                                         <ul role="menu"
                                                                             class="dropdown-menu multi-level"
                                                                             role="menu" aria-labelledby="dropdownMenu" style="margin-top: -15px !important;">
-                                                                            <li>
-                                                                                <a href="#">Bao da - ốp lưng</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">Gậy selfie</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">Kính cường lực</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">Pin sạc dự phòng</a>
-                                                                            </li>
+                                                                            {foreach from=$listCategory item=category}
+                                                                                <li>
+                                                                                    <a href="#">{$category.category_name}</a>
+                                                                                </li>
+                                                                            {/foreach}
                                                                         </ul>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="#">Hướng Dẫn</a>
+                                                                        <a href="?mod=huongdan&act=view">Hướng Dẫn</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="#">Liên Hệ</a>
+                                                                        <a href="?mod=lienhe&act=view">Liên Hệ</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -157,26 +156,11 @@
                                                                             <li class="dropdown open">
                                                                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">Sản Phẩm <b class="caret"></b></a>
                                                                                 <ul role="menu" class="dropdown-menu multi-level" aria-labelledby="dropdownMenu">
-                                                                                    <li>
-                                                                                        <a href="#">
-                                                                                            Bao da - ốp lưng
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a href="#">
-                                                                                            Gậy selfie
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a href="#">
-                                                                                            Kính cường lực
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a href="#">
-                                                                                            Pin sạc dự phòng
-                                                                                        </a>
-                                                                                    </li>
+                                                                                    {foreach from=$listCategory item=category}
+                                                                                        <li>
+                                                                                            <a href="#">{$category.category_name}</a>
+                                                                                        </li>
+                                                                                    {/foreach}
                                                                                 </ul>
                                                                             </li>
                                                                             <li>
@@ -213,30 +197,33 @@
                     <div class="col-sm-3">
                         <div id="cart" class="main-cart-area cart_panel">
                             <button type="button" data-toggle="dropdown" data-loading-text="Đang Xử lý..."
-                                    class="cart-icon dropdown-toggle">
+                                    class="cart-icon dropdown-toggle" id="btn_cart">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span id="cart-total"><span class="num_product">0</span> <span class="text-cart">sản phẩm -</span> <span
-                                            class="price">0 VNĐ</span></span>
+                                <span id="cart-total"><span class="num_product"> {$num_cart}</span> <span class="text-cart">sản phẩm -</span> <span
+                                            class="price">{$total|number_format} VNĐ</span></span>
                             </button>
                             <ul class="dropdown-menu pull-right cart_dropdown">
+                                {if isset($smarty.session.cart)}
                                 <li class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" style="width: 400px">
                                         <tbody>
-                                        <tr>
-                                            <td class="text-center">
-                                                <a href="">
-                                                    <img src="" alt="Kính cường lực Iphone 5" title="Kính cường lực Iphone 5">
-                                                </a>
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="">Kính cường lực Iphone 5</a>
-                                            </td>
-                                            <td class="text-right">x 1</td>
-                                            <td class="text-right">38.000 VNĐ</td>
-                                            <td class="text-center">
-                                                <button type="button" onclick="cart.remove('YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjE2O30=');" title="Loại bỏ" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
-                                            </td>
-                                        </tr>
+                                        {foreach from=$smarty.session.cart key=product_id item=product}
+                                            <tr>
+                                                <td class="text-center">
+                                                    <a href="#">
+                                                        <img src="{$product.img_link_300}" alt="{$product.p_name}" title="{$product.p_name}" width="100">
+                                                    </a>
+                                                </td>
+                                                <td class="text-left" style="padding-top: 30px;">
+                                                    <a href="">{$product.p_name}</a>
+                                                </td>
+                                                <td class="text-right" style="padding-top: 30px;">x {$product.number}</td>
+                                                <td class="text-right" style="padding-top: 30px;">{$product.p_price|number_format}</td>
+                                                <td class="text-center" style="padding-top: 30px;">
+                                                    <button type="button" onclick="remove_from_cart({$product_id})" title="Loại bỏ" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
+                                                </td>
+                                            </tr>
+                                        {/foreach}
                                         </tbody>
                                     </table>
                                 </li>
@@ -246,15 +233,15 @@
                                             <tbody>
                                             <tr>
                                                 <td class="text-right"><strong>Thành tiền</strong></td>
-                                                <td class="text-right">103.000 VNĐ</td>
+                                                <td class="text-right">{$total|number_format} VNĐ</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>Sản phẩm tính thuế</strong></td>
-                                                <td class="text-right">2.000 VNĐ</td>
+                                                <td class="text-right">{$total/10|number_format} VNĐ</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>Tổng cộng </strong></td>
-                                                <td class="text-right">105.000 VNĐ</td>
+                                                <td class="text-right">{$total+$total/10|number_format} VNĐ</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -264,6 +251,9 @@
                                         </p>
                                     </div>
                                 </li>
+                                {else}
+                                <li class="text-center">Giỏ hàng trống</li>
+                                {/if}
                             </ul>
                         </div>
                     </div>
@@ -273,3 +263,45 @@
         <!-- header main area end -->
     </div>
 </header>
+
+
+{* Modal login Bootstrap *}
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Đăng nhập</h1><br>
+            <div id="alert">
+                <i id="check_login"></i>
+            </div>
+            <form id="form_login" action="" method="post">
+                <input type="text" name="username" placeholder="Tên đăng nhập hoặc email" onblur="check_empty_username()" id="username_login" onclick="clear_err('#username_login')">
+                <input type="password" name="password" placeholder="Mật khẩu" onblur="check_empty_password()" id="password_login" onclick="clear_err('#password_login')">
+                <input type="button" class="login loginmodal-submit" onclick="login()" value="Đăng nhập">
+            </form>
+            <div class="login-help">
+                Chưa có tài khoản?&nbsp;&nbsp;&nbsp;<a href="?mod=dangky&act=view">Đăng ký</a>
+            </div>
+        </div>
+    </div>
+</div>
+{* End Modal login Bootstrap *}
+
+{*Modal alert signup success*}
+<div id="login_success" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 300px;">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="text-align: center; line-height: 60px;">
+                    <span class="glyphicon glyphicon-ok-sign" style="color: green"></span>&nbsp;
+                    Đăng nhập thành công
+                </h4>
+                <div style="text-align: center">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload()">ok</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

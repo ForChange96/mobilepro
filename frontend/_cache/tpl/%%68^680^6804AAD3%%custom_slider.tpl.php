@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-22 08:33:31
+<?php /* Smarty version 2.6.13, created on 2018-01-25 09:52:19
          compiled from custom_slider.tpl */ ?>
 <div class="custom-top" id="custom_slider">
     <div class="container">
@@ -31,7 +31,8 @@
                     </div>
                     <?php echo '
                     <script type="text/javascript">
-
+                        document.getElementById("header-top").style.background = "transparent";
+                        document.getElementById("header-top").style.position = "absolute";
                         /******************************************
                          - PREPARE PLACEHOLDER FOR SLIDER  -
                          ******************************************/

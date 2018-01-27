@@ -19,7 +19,6 @@
     {include file="header.tpl"}
 {********** End Header ***********}
 
-
 {****** Custom header background *******}
     {if $mod=="home"}
         {include file="custom_slider.tpl"}     {**** Nếu là trang chủ thì show slide ****}

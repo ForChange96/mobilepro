@@ -9,7 +9,7 @@ Class Database{
         if(@!mysql_select_db(Config::$db['dbname'])){
             exit("Không tồn tại CSDL: ".Config::$db['dbname']);
         }
-        mysql_set_charset($connect, 'UTF8');
+        mysql_set_charset('UTF8');
         mysql_query("SET NAMES utf8");
     }
 

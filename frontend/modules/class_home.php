@@ -6,38 +6,35 @@ class Home{
         $limit=8;
         $tableProduct=mysql_query("SELECT product_id, p_name,p_old_price,p_price,num_star FROM product {$where} LIMIT $limit");
         $listProduct=array();
-        if (mysql_num_rows($tableProduct)!=0){
-            while($row=mysql_fetch_assoc($tableProduct)){
-                $row['img_link_350']=$this->getImg($row['product_id']);
-                $listProduct[]=$row;
-            }
-        }
-
-        $list_favorite=array();
-        $num_favorite=0;
-        if(isset($_SESSION['customer_id'])){
-            $customer_id = $_SESSION['customer_id'];
-            $sql="select * from favorite WHERE customer_id=$customer_id";
-            $tableFavorite=mysql_query($sql);
-            $num_favorite=mysql_num_rows($tableFavorite);
-            if ($num_favorite!=0){
-                while ($row=mysql_fetch_assoc($tableFavorite)){
-                    $list_favorite[]=$row;
+        if (isset($_SESSION['customer'])){
+            $customer=$_SESSION['customer'];
+            if (mysql_num_rows($tableProduct)!=0){
+                while($row=mysql_fetch_assoc($tableProduct)){
+                    $row['img_link_350']=$this->getImg($row['product_id']);
+                    $row['isFavorite']=$this->checkFavorite($customer,$row['product_id']);
+                    $listProduct[]=$row;
                 }
             }
         }
-
-        $num_cart=0;
-        if (isset($_SESSION['cart'])){
-            $num_cart=count($num_cart);
+        else{
+            if (mysql_num_rows($tableProduct)!=0){
+                while($row=mysql_fetch_assoc($tableProduct)){
+                    $row['img_link_350']=$this->getImg($row['product_id']);
+                    $listProduct[]=$row;
+                }
+            }
         }
-
+        
         $smarty->assign('listProduct',$listProduct);
-        $smarty->assign('num_favorite',$num_favorite);
-        $smarty->assign('listFavorite',$list_favorite);
-        $smarty->assign('num_cart',$num_cart);
         $temp=$smarty->fetch('home.tpl');
         return $temp;
+    }
+
+    function checkFavorite($customer_id,$product_id){
+        $sql="select * from favorite where customer_id=$customer_id AND product_id=$product_id";
+        if (mysql_num_rows(mysql_query($sql))!=0)
+            return 1;
+        return 0;
     }
 
     function getImg($product_id){
@@ -45,6 +42,29 @@ class Home{
         $tableImages=mysql_query($sql);
         $img_link_350=mysql_fetch_assoc($tableImages);
         return $img_link_350['img_link_350'];
+    }
+
+    public function login(){
+        $username=mysql_escape_string($_POST['username']);
+        $password=md5(mysql_escape_string($_POST['password']));
+
+        $isOk=0;
+        $sql="SELECT * FROM customer WHERE (username='$username' AND password='$password' AND status=1) OR (email='$username' AND password='$password' AND status=1)";
+        if (mysql_num_rows(mysql_query($sql))>0){
+            //Lấy customer_id để add vào SESSION
+            $sql_get_customer="select customer_id from customer WHERE username='$username' OR email='$username'";
+            $customer=mysql_fetch_assoc(mysql_query($sql_get_customer));
+            $_SESSION['customer']=$customer['customer_id'];
+            //************************************
+            $isOk=1;
+        }
+        $result=array("ok"=>$isOk);
+        echo json_encode($result);
+        exit();
+    }
+    public function logout(){
+        unset($_SESSION['customer']);
+        header("location:?mod=home&act=view");
     }
 }
 ?>

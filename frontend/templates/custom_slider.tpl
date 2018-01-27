@@ -29,7 +29,8 @@
                     </div>
                     {literal}
                     <script type="text/javascript">
-
+                        document.getElementById("header-top").style.background = "transparent";
+                        document.getElementById("header-top").style.position = "absolute";
                         /******************************************
                          - PREPARE PLACEHOLDER FOR SLIDER  -
                          ******************************************/

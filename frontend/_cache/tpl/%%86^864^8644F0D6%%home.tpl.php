@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-22 11:42:37
+<?php /* Smarty version 2.6.13, created on 2018-01-27 03:55:31
          compiled from home.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'home.tpl', 27, false),)), $this); ?>
@@ -8,7 +8,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
             <div class="content_top page_panel">
                 <div class="position-display">
                     <div class="h2-arviel-title">
-                        <h3>Mới nhất</h3>
+                        <h3>SẢN PHẨM NỔI BẬT</h3>
                     </div>
                     <div class="row">
                                                 <?php $_from = $this->_tpl_vars['listProduct']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
@@ -38,23 +38,44 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             </div>
                                             <div class="star">
                                                 <span class="fa fa-stack">
-                                                    <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php if ($this->_tpl_vars['product']['num_star'] >= 1): ?>
+                                                        <i class="fa fa-star fa-stack-2x"></i>
+                                                    <?php else: ?>
+                                                        <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php endif; ?>
                                                 </span>
                                                 <span class="fa fa-stack">
-                                                    <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php if ($this->_tpl_vars['product']['num_star'] >= 2): ?>
+                                                        <i class="fa fa-star fa-stack-2x"></i>
+                                                    <?php else: ?>
+                                                        <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php endif; ?>
                                                 </span>
                                                 <span class="fa fa-stack">
-                                                    <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php if ($this->_tpl_vars['product']['num_star'] >= 3): ?>
+                                                        <i class="fa fa-star fa-stack-2x"></i>
+                                                    <?php else: ?>
+                                                        <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php endif; ?>
                                                 </span>
                                                 <span class="fa fa-stack">
-                                                    <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php if ($this->_tpl_vars['product']['num_star'] >= 4): ?>
+                                                        <i class="fa fa-star fa-stack-2x"></i>
+                                                    <?php else: ?>
+                                                        <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php endif; ?>
                                                 </span>
                                                 <span class="fa fa-stack">
-                                                    <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php if ($this->_tpl_vars['product']['num_star'] >= 5): ?>
+                                                        <i class="fa fa-star fa-stack-2x"></i>
+                                                    <?php else: ?>
+                                                        <i class="fa fa-star-o fa-stack-2x"></i>
+                                                    <?php endif; ?>
                                                 </span>
                                             </div>
                                             <div class="al-btns">
-                                                <button type="button" onclick="cart.add('19');" class="button btn-cart">
+                                                <button type="button" onclick="add_cart(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+)" class="button btn-cart">
                                                     <span><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</span>
                                                 </button>
                                                 <ul class="add-to-links">
@@ -66,15 +87,28 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                     <li>
                                                         <button class="link-wishlist" type="button"
                                                                 data-toggle="tooltip" title="Thêm so sánh"
-                                                                onclick="compare.add('19');">
+                                                                onclick="">
                                                             <i class="fa fa-retweet"></i>
                                                         </button>
                                                     </li>
-                                                    <li>
-                                                        <button type="button" data-toggle="tooltip" title="Thêm Yêu thích" onclick="wishlist.add('19');">
-                                                            <i class="fa fa-heart"></i>
-                                                        </button>
-                                                    </li>
+                                                    <?php if (isset ( $this->_tpl_vars['product']['isFavorite'] ) && $this->_tpl_vars['product']['isFavorite'] == 1): ?>
+                                                        <li style="background: #ffcba8" id="favorite_li">
+                                                            <button type="button" data-toggle="tooltip" title="Xoá Yêu thích"
+                                                                    onclick="delete_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+)">
+                                                                <i class="fa fa-heart" style="color: red" id="favorite_icon"></i>
+                                                            </button>
+                                                        </li>
+                                                    <?php else: ?>
+                                                        <li>
+                                                            <button type="button" data-toggle="tooltip" title="Thêm Yêu thích"
+                                                                    onclick="<?php if (isset ( $_SESSION['customer'] )): ?> add_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+) <?php else: ?> login_and_add_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+) <?php endif; ?>">
+                                                                <i class="fa fa-heart"></i>
+                                                            </button>
+                                                        </li>
+                                                    <?php endif; ?>
                                                 </ul>
                                             </div>
                                         </div>
@@ -88,7 +122,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                         <ul>
                             <li class="item b-stripe oll">
                                 <a href="#">
-                                    <img src="catalog\view\images\qc2-758x399.jpg"
+                                    <img src="catalog\view\images\qc2-2-758x399.jpg"
                                          alt="quảng cáo 1" class="img-responsive"/>
                                 </a>
                                 <!--<div class="name_banner"><a href="#">quảng cáo 1</a></div>-->
@@ -104,23 +138,6 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                         <div class="clear"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="loginmodal-container">
-            <h1>Đăng nhập</h1><br>
-            <form>
-                <input type="text" name="username" placeholder="Tên đăng nhập">
-                <input type="password" name="password" placeholder="Mật khẩu">
-                <input type="button" name="login" class="login loginmodal-submit" value="Đăng nhập">
-            </form>
-
-            <div class="login-help">
-                Chưa có tài khoản?&nbsp;<a href="#">Đăng ký</a>
             </div>
         </div>
     </div>

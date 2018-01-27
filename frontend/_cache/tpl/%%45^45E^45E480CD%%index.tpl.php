@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-22 08:27:09
+<?php /* Smarty version 2.6.13, created on 2018-01-25 09:01:26
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
@@ -24,7 +24,6 @@ $this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-
 
     <?php if ($this->_tpl_vars['mod'] == 'home'): ?>
         <?php $_smarty_tpl_vars = $this->_tpl_vars;

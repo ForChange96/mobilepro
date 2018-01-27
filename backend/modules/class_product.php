@@ -344,6 +344,7 @@ class Product{
                     unlink($img_link_300);
                     unlink($img_link_350);
                     unlink($img_link_500);
+                    unlink($img_link_original);
                     $isOk=1;
                 }
             }

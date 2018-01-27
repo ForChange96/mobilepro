@@ -37,8 +37,10 @@ class contact{
     }
     public function doAdd(){
         $hotline=trim($_POST['hotline']);
+        $hotline2=trim($_POST['hotline2']);
         $address=trim($_POST['address']);
-        $sql="INSERT INTO contact(hotline,address) VALUES('$hotline','$address')";
+        $email=trim($_POST['email']);
+        $sql="INSERT INTO contact(hotline,hotline2,address,email) VALUES('$hotline','$hotline2','$address','$email')";
         $isOk=0;
         $err="";
         if (!($result=mysql_query($sql))){
@@ -64,8 +66,10 @@ class contact{
     public function doEdit(){
         $id=$_POST['id'];
         $hotline=trim($_POST['hotline']);
+        $hotline2=trim($_POST['hotline2']);
         $address=trim($_POST['address']);
-        $sql="UPDATE contact SET hotline='$hotline',address='$address' WHERE contact_id=$id";
+        $email=trim($_POST['email']);
+        $sql="UPDATE contact SET hotline='$hotline',hotline2='$hotline2',address='$address',email='$email' WHERE contact_id=$id";
         $isOk=0;
         $err="";
         if (!($result=mysql_query($sql))){

@@ -58,17 +58,28 @@
                                         <div class="dv-item-module ">
                                             <div>
                                                 <div class="single-footer-widget sfw-1">
-                                                    <div class="image_footer"><a href=""><img
-                                                                    src="/image/catalog/0510/logo-phukienfooter.png"
-                                                                    class="img-responsive"></a></div>
+                                                    <div class="image_footer">
+                                                        <img src="catalog\view\images\logo-mobilepro1.png" class="img-responsive">
+                                                    </div>
                                                     <div class="footer-address">
-                                                        <p><i class="fa  fa-map-marker"></i> &nbsp; Số 123, Đường ABC,
-                                                            Quận ABC, Thành ABC.</p>
-                                                        <p><i class="fa fa-phone"></i> &nbsp; +84 123 456 789</p>
-                                                        <p><i class="fa fa-fax"></i> &nbsp; +84 123 456 789</p>
-                                                        <p><a href="mailto:taikhoan@tenmiencuaban.com"><i
-                                                                        class="fa fa-envelope-o"></i> &nbsp;
-                                                                taikhoan@tenmiencuaban.com</a></p>
+                                                        <p>
+                                                            <i class="fa  fa-map-marker"></i>
+                                                            {$contact.address}
+                                                        </p>
+                                                        <p>
+                                                            <i class="fa fa-phone"></i>
+                                                            {$contact.hotline}
+                                                        </p>
+                                                        <p>
+                                                            <i class="fa fa-fax"></i>
+                                                            {$contact.hotline2}
+                                                        </p>
+                                                        <p>
+                                                            <a href="">
+                                                                <i class="fa fa-envelope-o"></i>
+                                                                {$contact.email}
+                                                            </a>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +111,7 @@
                                                                                 <a href="#">Điều khoản &amp; Điều kiện</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?route=information/sitemap">Sơ đồ trang</a>
+                                                                                <a href="#">Sơ đồ trang</a>
                                                                             </li>
                                                                         </ul>
                                                                     </li>
@@ -131,20 +142,16 @@
                                                         <nav>
                                                             <div class="left-cart-menu">
                                                                 <ul>
-                                                                    <li><i class="fa "></i> <a
-                                                                                href="javascript:void(0)"> Khách Hàng </a>
+                                                                    <li>
+                                                                        <i class="fa "></i>
+                                                                        <a href="javascript:void(0)"> Khách Hàng </a>
                                                                         <span><i class="fa fa-caret-right"></i></span>
                                                                         <ul class="cat-sb">
-                                                                            <li><a href="?route=product/manufacturer">Thương
-                                                                                    Hiệu</a></li>
-                                                                            <li><a href="?route=account/voucher">Phiếu
-                                                                                    quà tặng</a></li>
-                                                                            <li><a href="?route=affiliate/login">Bán
-                                                                                    hàng</a></li>
-                                                                            <li><a href="?route=product/special">Khuyến
-                                                                                    Mãi</a></li>
-                                                                            <li><a href="?route=account/return/add">Đổi
-                                                                                    trả hàng</a></li>
+                                                                            <li><a href="#">Thương Hiệu</a></li>
+                                                                            <li><a href="#">Phiếu quà tặng</a></li>
+                                                                            <li><a href="#">Bán hàng</a></li>
+                                                                            <li><a href="#">Khuyến Mãi</a></li>
+                                                                            <li><a href="#">Đổi trả hàng</a></li>
                                                                         </ul>
                                                                     </li>
                                                                 </ul>
@@ -250,7 +257,7 @@
                                             <div>
                                                 <div class="all-social-icons">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="https://goo.gl/poCzxE"><i class="fa fa-facebook"></i></a></li>
                                                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                                         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
