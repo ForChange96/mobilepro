@@ -10,10 +10,22 @@
                 <li><a href="?mod={$mod}&act=view">GIỚI THIỆU</a></li>
             {elseif $mod=="dangky"}
                 <li><a href="?mod={$mod}&act=view">ĐĂNG KÝ</a></li>
-            {elseif $mod==""}
-                <li><a href="?mod={$mod}&act=view"></a></li>
-            {elseif $mod==""}
-                <li><a href="?mod={$mod}&act=view"></a></li>
+            {elseif $mod=="product"}
+                <li><a href="?mod={$mod}&act=show_by_category&id=2">SẢN PHẨM</a></li>
+                {if $smarty.get.act=="search_product"}
+                    <li><a href="?mod={$mod}&act=search_product">TÌM KIẾM</a></li>
+                {elseif isset($smarty.get.id) && $smarty.get.id==1 && $smarty.get.act=="show_by_category"}
+                    <li><a href="?mod={$mod}&act=show_by_category&id=1">PHỤ KIỆN</a></li>
+                {elseif isset($smarty.get.id) && $smarty.get.id==2 && $smarty.get.act=="show_by_category"}
+                    <li><a href="?mod={$mod}&act=show_by_category&id=2">ĐIỆN THOẠI</a></li>
+                {elseif $smarty.get.act=="detail" && isset($smarty.get.id)}
+                    <li><a href="?mod={$mod}&act=detail&id={$smarty.get.id}">{$product_name}</a></li>
+                {/if}
+            {elseif $mod=="cart"}
+                <li><a href="?mod={$mod}&act=view">GIỎ HÀNG</a></li>
+                {if $smarty.get.act=="pay"}
+                    <li><a href="?mod={$mod}&act=pay">THANH TOÁN</a></li>
+                {/if}
             {elseif $mod==""}
                 <li><a href="?mod={$mod}&act=view"></a></li>
             {/if}

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-13 05:04:47
+<?php /* Smarty version 2.6.13, created on 2018-01-29 05:23:27
          compiled from product_add.tpl */ ?>
 <div id="form">
 
@@ -124,7 +124,7 @@
                                                             </td>
                         </tr>
                     </table>
-                    <div><i style="color: grey">Mẹo: Nên sử dụng ảnh vuông (dung lượng < 1mb)</i></div>
+                    <div><i style="color: grey">Mẹo: Nên sử dụng ảnh vuông (Kích thước > 700x700 & dung lượng < 1mb)</i></div>
                 </td>
             </tr>
             <tr>

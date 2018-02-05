@@ -34,17 +34,21 @@
         public function signup(){
             $username=trim($_POST['username']);
             $email=trim($_POST['email']);
-            $password=trim(md5($_POST['password']));
+            $password=trim($_POST['password']);
             $fullname=trim($_POST['fullname']);
             $address=trim($_POST['address']);
             $phone_number=trim($_POST['telephone']);
             $confirm=trim($_POST['confirm']);
 
-            if ($password!=$confirm){
+            if ($username==""||$email==""||$password==""||$fullname==""||$phone_number==""){
+                $isOk=3;
+            }
+            elseif ($password!=$confirm){
                 $isOk=2;//Thông báo mật khẩu xác nhận ko khớp
             }
             else{
                 $isOk=0;
+                $password=md5($password);
                 //INSERT TO DATABASE
                 $sql_insert="INSERT INTO customer(username,password,email,fullname,address,phone_number) VALUES ('$username','$password','$email','$fullname','$address','$phone_number')";
                 if(mysql_query($sql_insert)){

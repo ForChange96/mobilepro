@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-25 09:01:26
+<?php /* Smarty version 2.6.13, created on 2018-02-05 06:01:24
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
@@ -16,9 +16,14 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 
-
-
 <body class="common-home h-8">
+
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "notificaion.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+
     <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

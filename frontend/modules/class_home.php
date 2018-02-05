@@ -1,17 +1,19 @@
 <?php
-class Home{
+class Home extends class_get_info {
     public function view(){
         global $smarty;
         $where="where status=1 and is_hot_product=1";
         $limit=8;
-        $tableProduct=mysql_query("SELECT product_id, p_name,p_old_price,p_price,num_star FROM product {$where} LIMIT $limit");
+        $order_by="ORDER BY p_price DESC";
+        $sql="SELECT product_id, p_name,p_old_price,p_price,num_star FROM product {$where} {$order_by} LIMIT $limit";
+        $tableProduct=mysql_query($sql);
         $listProduct=array();
         if (isset($_SESSION['customer'])){
             $customer=$_SESSION['customer'];
             if (mysql_num_rows($tableProduct)!=0){
                 while($row=mysql_fetch_assoc($tableProduct)){
                     $row['img_link_350']=$this->getImg($row['product_id']);
-                    $row['isFavorite']=$this->checkFavorite($customer,$row['product_id']);
+                    $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
                     $listProduct[]=$row;
                 }
             }
@@ -30,12 +32,6 @@ class Home{
         return $temp;
     }
 
-    function checkFavorite($customer_id,$product_id){
-        $sql="select * from favorite where customer_id=$customer_id AND product_id=$product_id";
-        if (mysql_num_rows(mysql_query($sql))!=0)
-            return 1;
-        return 0;
-    }
 
     function getImg($product_id){
         $sql="select img_link_350 from images WHERE product_id=$product_id";

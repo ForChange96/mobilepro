@@ -103,7 +103,7 @@
                             </td>
                         </tr>
                     </table>
-                    <div><i style="color: grey">Mẹo: Nên sử dụng ảnh vuông (dung lượng < 1mb)</i></div>
+                    <div><i style="color: grey">Mẹo: Nên sử dụng ảnh vuông (Kích thước > 700x700 & dung lượng < 1mb)</i></div>
                 </td>
             </tr>
             <tr>

@@ -98,6 +98,7 @@
 /*--------------------------------------
  1.  Theme default CSS
 ----------------------------------------*/
+
 html, body {height: 100%;color: #646464;}
 .floatleft {float:left}
 .floatright {float:right}
@@ -184,6 +185,27 @@ body {
 /*--------------------------------------
  2.1 Main Menu AREA
 ----------------------------------------*/
+.notification{
+  width: 350px;
+  height: 180px;
+  background: rgba(10,10,10,0.8);
+  position:fixed;
+  top: 35%;
+  left: 40%;
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+}
+.img-notification{
+  width: 100%;
+  text-align: center;
+  margin-top: 25px;
+}
+.text-notification{
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
 .menu-area {
   margin-top: 17px;
   text-align: center;
@@ -552,7 +574,7 @@ a.create-account-link-wishlist {
 /*.right-menus ul li:hover .search-area {
   transform: scaleY(1);
 }*/
-.search-area > input {
+.search-area > form > input {
     border: 1px solid #ddd;
     float: left;
     height: 42px;
@@ -8730,7 +8752,7 @@ h2.thankstext {
   position: relative;
 }
 
-.loginmodal-container input[type=text], input[type=password] {
+#username_login,#password_login{
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -8810,3 +8832,66 @@ h2.thankstext {
   color: red;
   font-size: 14px;
 }
+#tool_search_bar{
+  margin-bottom: 20px;
+}
+.line-height34{
+  line-height: 34px;
+  font-size: 16px;
+  color: #555555;
+}
+.favorite_li{position: relative;}
+.favorite_ul{
+  display: none;
+  font-weight: bold;
+}
+.favorite_li:hover ul{
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  background: rgba(241, 241, 241, 0.8);
+  border-radius: 10px;
+}
+.welcome{
+  width: 300px;
+  float: right;
+  text-align: right;
+  color: white;
+  padding-top: 20px;
+  color: #89f389;
+}
+.padding-top20{
+  padding-top: 30px;
+}
+
+
+
+/*** Trang thanh toán ***/
+.aqc-column-2{
+  width:50%;
+  float: left;
+  padding: 10px 10px 0 10px;
+}
+.aqc-column-3{
+  width:50%;
+  float: left;
+  padding: 10px 0 0 10px;
+}
+.aqc-column-4{
+  width:100%;
+  padding: 10px 0 10px 10px;
+}
+#qc_left{
+  width:40%;
+  float:left;
+  padding: 10px 10px 10px 0;
+}
+#quickcheckout .block-title {
+  font-size: 27px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+/****************** End Trang thanh toán *********************/

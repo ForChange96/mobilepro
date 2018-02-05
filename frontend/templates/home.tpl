@@ -15,7 +15,7 @@
                                     <div class="t-all-product-info">
                                         <div class="p-sign">Mới</div>
                                         <div class="t-product-img">
-                                            <a href="product_detail.html">
+                                            <a href="?mod=product&act=detail&id={$product.product_id}">
                                                 <img src="{$product.img_link_350}"
                                                      alt="{$product.p_name}"
                                                      title="{$product.p_name}" class="img-responsive"/>
@@ -69,14 +69,14 @@
                                                 </button>
                                                 <ul class="add-to-links">
                                                     <li>
-                                                        <a href=""
+                                                        <a href="?mod=product&act=detail&id={$product.product_id}"
                                                            class="link-wishlist" data-toggle="tooltip"
                                                            title=" Xem chi tiết"><i class="fa fa-eye"></i></a>
                                                     </li>
                                                     <li>
                                                         <button class="link-wishlist" type="button"
                                                                 data-toggle="tooltip" title="Thêm so sánh"
-                                                                onclick="">
+                                                                onclick="javascript: void (0)">
                                                             <i class="fa fa-retweet"></i>
                                                         </button>
                                                     </li>
@@ -107,14 +107,14 @@
                     <div id="banner_page_0" class="banner_page">
                         <ul>
                             <li class="item b-stripe oll">
-                                <a href="#">
+                                <a href="?mod=product&act=show_by_category&id=2">
                                     <img src="catalog\view\images\qc2-2-758x399.jpg"
                                          alt="quảng cáo 1" class="img-responsive"/>
                                 </a>
                                 <!--<div class="name_banner"><a href="#">quảng cáo 1</a></div>-->
                             </li>
                             <li class="item b-stripe event">
-                                <a href="#">
+                                <a href="?mod=product&act=show_by_category&id=1">
                                     <img src="catalog\view\images\qc2-1-758x399.jpg"
                                          alt="quảng cáo 2" class="img-responsive"/>
                                 </a>

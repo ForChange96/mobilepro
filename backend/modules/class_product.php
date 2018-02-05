@@ -29,7 +29,7 @@ class Product{
         }
         $totalResult=$count;
         $totalRowsDisplay=mysql_num_rows($tableProduct);
-        $pagels=PagingUtils::showpage($_GET['page'],"?mod=product?act=view",$pages,3);
+        $pagels=PagingUtils::showpage($_GET['page'],"?mod=product&act=view",$pages,3);
 
         $smarty->assign('totalResult',$totalResult);
         $smarty->assign('numRowsDisplay',$totalRowsDisplay);
@@ -66,7 +66,7 @@ class Product{
         }
         $totalResult=$count;
         $totalRowsDisplay=mysql_num_rows($tableProduct);
-        $pagels=PagingUtils::showpage($_GET['page'],"?mod=product?act=view",$pages,3);
+        $pagels=PagingUtils::showpage($_GET['page'],"?mod=product&act=view2",$pages,3);
 
         $smarty->assign('totalResult',$totalResult);
         $smarty->assign('numRowsDisplay',$totalRowsDisplay);
@@ -199,6 +199,7 @@ class Product{
                 if (in_array($extension, $allowedExts)){
                     if($_FILES["img{$i}"]["name"]!=""){
                         $img=time().$_FILES["img{$i}"]["name"];
+                        $img_link_700="../product/700/$img";//link lưu ảnh 700x700
                         $img_link_500="../product/500/$img";//link lưu ảnh 500x500
                         $img_link_350="../product/350/$img";//link lưu ảnh 350x350
                         $img_link_300="../product/300/$img";//link lưu ảnh 300x300
@@ -207,7 +208,8 @@ class Product{
                         $this->resize_image_force($img_link_original,$img_link_300,300,300);//resize và lưu vào mục ảnh 300
                         $this->resize_image_force($img_link_original,$img_link_350,350,350);//resize và lưu vào mục ảnh 350
                         $this->resize_image_force($img_link_original,$img_link_500,500,500);//resize và lưu vào mục ảnh 500
-                        $sql_insert_images="INSERT INTO images(product_id,img_link_300,img_link_350,img_link_500,img_link_original) VALUES ($last_insert_id,'$img_link_300','$img_link_350','$img_link_500','$img_link_original')";
+                        $this->resize_image_force($img_link_original,$img_link_700,700,700);//resize và lưu vào mục ảnh 700
+                        $sql_insert_images="INSERT INTO images(product_id,img_link_300,img_link_350,img_link_500,img_link_700,img_link_original) VALUES ($last_insert_id,'$img_link_300','$img_link_350','$img_link_500','$img_link_700','$img_link_original')";
                         if (!($result=mysql_query($sql_insert_images))){
                             $err="Lỗi insert link hình ảnh";
                         }
@@ -319,6 +321,7 @@ class Product{
         $img_link_300=$img['img_link_300'];
         $img_link_350=$img['img_link_350'];
         $img_link_500=$img['img_link_500'];
+        $img_link_700=$img['img_link_700'];
         $img_link_original=$img['img_link_original'];
     //***************************************************************
         $allowedExts = array("jpeg", "jpg", "png", "gif","bmp");
@@ -331,12 +334,14 @@ class Product{
                 $new_img_link_300="../product/300/$img";
                 $new_img_link_350="../product/350/$img";
                 $new_img_link_500="../product/500/$img";
+                $new_img_link_700="../product/700/$img";
                 $new_img_link_original="../product/original/$img";//link lưu ảnh nguyên bản
                 move_uploaded_file($_FILES["file"]["tmp_name"],"$new_img_link_original");//Lưu ảnh nguyên bản
                 $this->resize_image_force($new_img_link_original,$new_img_link_300,300,300);//resize và lưu vào mục 300
                 $this->resize_image_force($new_img_link_original,$new_img_link_350,350,350);//resize và lưu vào mục 350
                 $this->resize_image_force($new_img_link_original,$new_img_link_500,500,500);//resize và lưu vào mục 500
-                $sql_update_images="UPDATE images SET img_link_300='$new_img_link_300',img_link_350='$new_img_link_350',img_link_500='$new_img_link_500',img_link_original='$new_img_link_original' WHERE link_id=$link_id";
+                $this->resize_image_force($new_img_link_original,$new_img_link_700,700,700);//resize và lưu vào mục 700
+                $sql_update_images="UPDATE images SET img_link_300='$new_img_link_300',img_link_350='$new_img_link_350',img_link_500='$new_img_link_500',img_link_700='$new_img_link_700',img_link_original='$new_img_link_original' WHERE link_id=$link_id";
                 if (!($result=mysql_query($sql_update_images))){
                     $err="Lỗi update link hình ảnh";
                 }
@@ -344,6 +349,7 @@ class Product{
                     unlink($img_link_300);
                     unlink($img_link_350);
                     unlink($img_link_500);
+                    unlink($img_link_700);
                     unlink($img_link_original);
                     $isOk=1;
                 }

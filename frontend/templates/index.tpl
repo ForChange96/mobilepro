@@ -12,9 +12,12 @@
     {include file="head.tpl"}
 {********** End Head ***********}
 
-
-
 <body class="common-home h-8">
+
+{************ Notification *************}
+{include file="notificaion.tpl"}
+{********** End Notification ***********}
+
 {************ Header *************}
     {include file="header.tpl"}
 {********** End Header ***********}

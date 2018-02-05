@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-25 09:01:26
+<?php /* Smarty version 2.6.13, created on 2018-02-02 10:31:10
          compiled from footer.tpl */ ?>
 <footer class="footer_content page_panel">
     <div class="footer-top" id="footer_top">
@@ -64,27 +64,25 @@
                                                         <img src="catalog\view\images\logo-mobilepro1.png" class="img-responsive">
                                                     </div>
                                                     <div class="footer-address">
-                                                        <p>
+                                                        <p style="color: #555555">
                                                             <i class="fa  fa-map-marker"></i>
                                                             <?php echo $this->_tpl_vars['contact']['address']; ?>
 
                                                         </p>
-                                                        <p>
+                                                        <p style="color: #555555">
                                                             <i class="fa fa-phone"></i>
                                                             <?php echo $this->_tpl_vars['contact']['hotline']; ?>
 
                                                         </p>
-                                                        <p>
+                                                        <p style="color: #555555">
                                                             <i class="fa fa-fax"></i>
                                                             <?php echo $this->_tpl_vars['contact']['hotline2']; ?>
 
-                                                        </p>
-                                                        <p>
-                                                            <a href="">
-                                                                <i class="fa fa-envelope-o"></i>
-                                                                <?php echo $this->_tpl_vars['contact']['email']; ?>
+                                                        </p style="color: #555555">
+                                                        <p style="color: #555555">
+                                                            <i class="fa fa-envelope-o"></i>
+                                                            <?php echo $this->_tpl_vars['contact']['email']; ?>
 
-                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -285,3 +283,42 @@
         </div>
     </div>
 </footer>
+<div id="sign_up_success" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 300px;">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="text-align: center; line-height: 60px;">
+                    <span class="glyphicon glyphicon-ok-sign" style="color: green"></span>&nbsp;
+                    Đăng ký thành công
+                </h4>
+                <h5 style="text-align: center"><i style="color: #333333;">Đăng nhập ngay?</i></h5>
+                <div style="text-align: center">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="show_login">Ok</button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Để sau</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="sign_up_error" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 300px;">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="text-align: center; line-height: 60px;">
+                    <span class="glyphicon glyphicon-remove-sign" style="color: red"></span>&nbsp;
+                    Xảy ra lỗi!
+                </h4>
+                <div style="text-align: center">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-27 05:32:34
+<?php /* Smarty version 2.6.13, created on 2018-02-01 09:37:24
          compiled from header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 203, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 63, false),)), $this); ?>
 <header>
     <!-- header top area start -->
     <div class="header-top" id="header-top">
@@ -11,10 +11,17 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                     <div class=" hidden-xs col-xs-12 col-sm-7 col-md-7 col-lg-7 header_top_left">
                         <column class="position-display">
                             <div>
-                                <div>
+                                <div style="width: 200px; float: left">
                                     <p><i class="fa fa-phone"></i> hotline: <?php echo $this->_tpl_vars['contact']['hotline']; ?>
 </p>
                                 </div>
+                                <?php if (isset ( $_SESSION['customer'] )): ?>
+                                <div class="welcome">
+                                    &#9679;&nbsp;
+                                    <b>Chào mừng: <?php echo $this->_tpl_vars['user_online']; ?>
+</b>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         </column>
                     </div>
@@ -39,12 +46,50 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#" id="wishlist-total" title="Yêu thích">
+                                    <li class="favorite_li">
+                                        <a href="javascript: void (0)" id="wishlist-total" id="btn_favorite">
                                             <i class="fa fa-heart"></i>
                                             <span class="hidden-xs hidden-sm hidden-md">Yêu thích (<span id="num_favorite"><?php echo $this->_tpl_vars['num_favorite']; ?>
 </span>)</span>
                                         </a>
+                                        <ul class="favorite_ul">
+                                            <?php if (! empty ( $this->_tpl_vars['listFavorite'] )): ?>
+                                                <li class="table-responsive">
+                                                    <table style="width: 400px;">
+                                                        <tbody>
+                                                        <?php $_from = $this->_tpl_vars['listFavorite']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['product']):
+?>
+                                                            <tr>
+                                                                <td class="text-center" style="border-bottom: 0">
+                                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+">
+                                                                        <img src="<?php echo $this->_tpl_vars['product']['img_link_300']; ?>
+" alt="<?php echo $this->_tpl_vars['product']['p_name']; ?>
+" title="<?php echo $this->_tpl_vars['product']['p_name']; ?>
+" width="100" style="border-radius: 10px">
+                                                                    </a>
+                                                                </td>
+                                                                <td class="text-left" style="padding-top: 25px;">
+                                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+"><?php echo $this->_tpl_vars['product']['p_name']; ?>
+</a>
+                                                                </td>
+                                                                <td class="text-right" style="padding-top: 25px;"><?php echo ((is_array($_tmp=$this->_tpl_vars['product']['p_price'])) ? $this->_run_mod_handler('number_format', true, $_tmp) : number_format($_tmp)); ?>
+</td>
+                                                                <td class="text-center" style="padding-top: 25px; border: 0">
+                                                                    <button type="button" onclick="delete_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+)" title="Loại bỏ" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; endif; unset($_from); ?>
+                                                        </tbody>
+                                                    </table>
+                                                </li>
+                                            <?php else: ?>
+                                                <li class="text-center" style="width: 125px;line-height: 30px;padding: 0 5px;">Danh sách trống</li>
+                                            <?php endif; ?>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="#" title="Thanh toán">
@@ -57,12 +102,14 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             <i class="fa fa-search"></i>
                                         </a>
                                         <div id="search" class="search-area">
-                                            <input type="text" name="search" value="" placeholder="Tìm kiếm sản phẩm"/>
-                                            <span class="button">
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span><i class="fa fa-search"></i></span>
-                                                </button>
-                                            </span>
+                                            <form action="?mod=product&act=search_product" method="post">
+                                                <input type="text" name="txt_search" placeholder="Tìm kiếm sản phẩm"/>
+                                                <span class="button">
+                                                    <button type="submit" class="btn btn-default btn-lg">
+                                                        <span><i class="fa fa-search"></i></span>
+                                                    </button>
+                                                </span>
+                                            </form>
                                         </div>
                                     </li>
                                 </ul>
@@ -86,10 +133,9 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xs-12">
                                                     <div class="dv-item-module ">
                                                         <div id="logo" class="logo-area">
-                                                            <a href="#">
+                                                            <a>
                                                                 <img src="catalog/view/images/logo-mobilepro.png"
-                                                                     title="Phụ kiện điện thoại"
-                                                                     alt="Phụ kiện điện thoại"
+                                                                     alt="Mobilepro - smartphone giá rẻ"
                                                                      class="img-responsive pull-left"/>
                                                                 <div class="logo-des"></div>
                                                                 <div class="clearfix"></div>
@@ -133,10 +179,14 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
     foreach ($_from as $this->_tpl_vars['category']):
 ?>
                                                                                 <li>
-                                                                                    <a href="#"><?php echo $this->_tpl_vars['category']['category_name']; ?>
+                                                                                    <a href="?mod=product&act=show_by_category&id=<?php echo $this->_tpl_vars['category']['category_id']; ?>
+"><?php echo $this->_tpl_vars['category']['category_name']; ?>
 </a>
                                                                                 </li>
                                                                             <?php endforeach; endif; unset($_from); ?>
+                                                                            <li>
+                                                                                <a href="?mod=product&act=search_product">Tìm kiếm</a>
+                                                                            </li>
                                                                         </ul>
                                                                     </li>
                                                                     <li>
@@ -157,10 +207,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                                     <nav>
                                                                         <ul>
                                                                             <li>
-                                                                                <a href="">Trang chủ</a>
+                                                                                <a href="?mod=home&act=view">Trang chủ</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="#">Giớithiệu</a>
+                                                                                <a href="?mod=gioithieu&act=view">Giới thiệu</a>
                                                                             </li>
                                                                             <li class="dropdown open">
                                                                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">Sản Phẩm <b class="caret"></b></a>
@@ -169,17 +219,21 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
     foreach ($_from as $this->_tpl_vars['category']):
 ?>
                                                                                         <li>
-                                                                                            <a href="#"><?php echo $this->_tpl_vars['category']['category_name']; ?>
+                                                                                            <a href="?mod=product&act=show_by_category&id=<?php echo $this->_tpl_vars['category']['category_id']; ?>
+"><?php echo $this->_tpl_vars['category']['category_name']; ?>
 </a>
                                                                                         </li>
                                                                                     <?php endforeach; endif; unset($_from); ?>
+                                                                                    <li>
+                                                                                        <a href="?mod=product&act=search_product">Tìm kiếm</a>
+                                                                                    </li>
                                                                                 </ul>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="#">Hướng Dẫn</a>
+                                                                                <a href="?mod=huongdan&act=view">Hướng Dẫn</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="#">Liên Hệ</a>
+                                                                                <a href="?mod=lienhe&act=view">Liên Hệ</a>
                                                                             </li>
                                                                         </ul>
                                                                     </nav>
@@ -187,18 +241,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                             </div>
                                                             <!-- MOBILE MENU END -->
                                                         </div>
-                                                        <?php echo '
-                                                        <script>
-                                                            $(function () {
-                                                                window.prettyPrint && prettyPrint()
-                                                                $(document).on(\'click\', \'.navbar .dropdown-menu\', function (e) {
-                                                                    e.stopPropagation()
-                                                                })
-                                                            })
-                                                        </script>
-                                                        '; ?>
-
-                                                    </div>
+                                                                                                            </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -212,13 +255,13 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                             <button type="button" data-toggle="dropdown" data-loading-text="Đang Xử lý..."
                                     class="cart-icon dropdown-toggle" id="btn_cart">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span id="cart-total"><span class="num_product"> <?php echo $this->_tpl_vars['num_cart']; ?>
+                                <span id="cart-total"><span class="num_product" id="num_cart"> <?php echo $this->_tpl_vars['num_cart']; ?>
 </span> <span class="text-cart">sản phẩm -</span> <span
-                                            class="price"><?php echo ((is_array($_tmp=$this->_tpl_vars['total'])) ? $this->_run_mod_handler('number_format', true, $_tmp) : number_format($_tmp)); ?>
+                                            class="price" id="total"><?php echo ((is_array($_tmp=$this->_tpl_vars['total']*11/10)) ? $this->_run_mod_handler('number_format', true, $_tmp) : number_format($_tmp)); ?>
  VNĐ</span></span>
                             </button>
-                            <ul class="dropdown-menu pull-right cart_dropdown">
-                                <?php if (isset ( $_SESSION['cart'] )): ?>
+                            <ul class="dropdown-menu pull-right cart_dropdown" id="cart_content">
+                                <?php if (isset ( $_SESSION['cart'] ) && ! empty ( $_SESSION['cart'] )): ?>
                                 <li class="table-responsive">
                                     <table class="table" style="width: 400px">
                                         <tbody>
@@ -227,7 +270,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 ?>
                                             <tr>
                                                 <td class="text-center">
-                                                    <a href="#">
+                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+">
                                                         <img src="<?php echo $this->_tpl_vars['product']['img_link_300']; ?>
 " alt="<?php echo $this->_tpl_vars['product']['p_name']; ?>
 " title="<?php echo $this->_tpl_vars['product']['p_name']; ?>
@@ -235,7 +279,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                     </a>
                                                 </td>
                                                 <td class="text-left" style="padding-top: 30px;">
-                                                    <a href=""><?php echo $this->_tpl_vars['product']['p_name']; ?>
+                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+"><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a>
                                                 </td>
                                                 <td class="text-right" style="padding-top: 30px;">x <?php echo $this->_tpl_vars['product']['number']; ?>
@@ -273,8 +318,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             </tbody>
                                         </table>
                                         <p class="text-right">
-                                            <a href=""><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
-                                            <a href=""><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
+                                            <a href="?mod=cart&act=view"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="?mod=cart&act=pay"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
                                         </p>
                                     </div>
                                 </li>
