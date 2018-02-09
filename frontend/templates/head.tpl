@@ -29,7 +29,7 @@
     <!-- normalize CSS -->
     <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/normalize.css">
     <!-- main CSS -->
-    <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/main.css">
+    {*<link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/main.css">*}
     <!-- style CSS -->
     <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/style.css">
     <!-- responsive CSS -->

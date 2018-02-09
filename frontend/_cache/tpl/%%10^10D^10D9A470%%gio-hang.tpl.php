@@ -1,17 +1,12 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-01 17:06:01
+<?php /* Smarty version 2.6.13, created on 2018-02-05 08:09:46
          compiled from gio-hang.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'gio-hang.tpl', 42, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'gio-hang.tpl', 37, false),)), $this); ?>
 <div class="container" style="margin-bottom: 30px">
     <div class="row">
         <div id="content" class="col-sm-12 other_page">
             <div class="position-display"></div>
             <h3 style="text-align: center; color: #777777; font-weight: bold">Giỏ hàng</h3>
-            <div class="alert alert-success" id="alert_change_cart">
-                <div id="alert_change_cart2">
-                    <strong>Thành công!</strong> Cập nhật giỏ hàng thành công.
-                </div>
-            </div>
             <div class="table-responsive" style="margin-bottom: 20px;" id="list_product_from_cart">
                 <table class="table table-bordered">
                     <tr>

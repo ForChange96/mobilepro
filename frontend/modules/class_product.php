@@ -150,8 +150,36 @@
         public function show_by_category_ajax(){
             global $smarty;
             $category_id=isset($_GET['id'])?$_GET['id']:1;
-            $order_by=isset($_GET['order_by'])?trim($_GET['order_by']):"";
-            $limit=isset($_GET['limit'])?trim($_GET['limit']):"LIMIT 15";
+
+            $orderBy=isset($_GET['order_by'])?trim($_GET['order_by']):"";
+            $order_by="";
+            switch ($orderBy){
+                case "default":
+                    $order_by="ORDER BY is_hot_product DESC, p_price DESC";
+                    break;
+                case "p_name1":
+                    $order_by="ORDER BY p_name ASC";
+                    break;
+                case "p_name2":
+                    $order_by="ORDER BY p_name DESC";
+                    break;
+                case "p_price1":
+                    $order_by="ORDER BY p_price ASC";
+                    break;
+                case "p_price2":
+                    $order_by="ORDER BY p_price DESC";
+                    break;
+                case "num_star1":
+                    $order_by="ORDER BY num_star DESC";
+                    break;
+                case "num_star2":
+                    $order_by="ORDER BY num_star ASC";
+                    break;
+            }
+
+            $limit=isset($_GET['limit'])?trim($_GET['limit']):"15";
+            $limit="LIMIT ".$limit;
+
             $where="where status=1 and category_id=$category_id";
 
             $sql_select="SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} {$order_by} {$limit}";
@@ -194,15 +222,16 @@
 
         public function search_product(){
             global $smarty;
+            //Search tên SP
             $search=isset($_POST['txt_search'])?trim($_POST['txt_search']):"";
             $where_search=" AND p_name like N'%".mysql_escape_string($search)."%'";
+            $where="where status=1{$where_search}";
 
             //Kiểu hiển thị
             $display_type="product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12";
             //Sắp xếp theo
             $order_by="ORDER BY is_hot_product DESC, p_price DESC";
 
-            $where="where status=1{$where_search}";
             $limit=isset($_POST['limit'])?trim($_POST['limit']):15;
             $tableProduct=mysql_query("SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} {$order_by} LIMIT $limit");
             $listProduct=array();
@@ -238,13 +267,15 @@
             global $smarty;
             $search=isset($_POST['txt_search'])?trim($_POST['txt_search']):"";
             $where_search=" AND p_name like N'%".mysql_escape_string($search)."%'";
+            //Search by category
             $where_category="";
             if (isset($_POST['category']) && $_POST['category']!=0)
                 $where_category=" AND (category_id=".$_POST['category'].")";
+            //Search by price from a to b
             $where_price="";
             if (isset($_POST['price_from']) && isset($_POST['price_to'])){
-                $price_from=$_POST['price_from']*1000000;
-                $price_to=$_POST['price_to']*1000000;
+                $price_from=$_POST['price_from']*1000000;// Nhân 1 tr vì bên giao diện để đơn vị là triệu đồng
+                $price_to=$_POST['price_to']*1000000;// Nhân 1 tr vì bên giao diện để đơn vị là triệu đồng
                 $where_price=" AND (p_price BETWEEN $price_from AND $price_to)";
             }
 
@@ -255,6 +286,7 @@
             else{
                 $display_type="product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12";
             }
+
             //Sắp xếp theo
             $order_by=trim($_POST['order_by']);
 

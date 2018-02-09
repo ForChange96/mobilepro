@@ -72,7 +72,8 @@
         <tr class="list_title">
             <td class="key">STT</td>
             <td class="fullname">Tên Khách hàng</td>
-            <td class="order_date">Địa chỉ giao hàng</td>
+            <td class="order_date">Ngày giao hàng</td>
+            <td class="fullname">Người giao</td>
             <td class="price">Thành tiền</td>
             <td class="list_cn">Chức năng</td>
         </tr>
@@ -85,8 +86,19 @@
                 <tr class="list_data">
                     <td class="key">{$k+1}</td>
                     <td class="fullname"><a href="?mod=customer&act=view&customer_id={$order.customer_id}">{$order.fullname|escape:'html'}</a></td>
-                    <td class="shipping_address">
-                        {$order.shipping_address|escape:'html'}
+                    <td class="order_date">
+                        {if $smarty.get.act==view2}
+                            {$order.o_date}
+                        {else}
+                            <i style="color: #999999">Chưa giao hàng</i>
+                        {/if}
+                    </td>
+                    <td class="order_date">
+                        {if $smarty.get.act==view2}
+                            {$order.o_shipper}
+                        {else}
+                            <i style="color: #999999">Chưa giao hàng</i>
+                        {/if}
                     </td>
                     <td class="price">{$order.o_total|number_format}</td>
                     <td class="list_cn">
@@ -96,47 +108,21 @@
                                     <img src="style/images/icon-16-detail.png" title="Xem chi tiết"/>
                                 </a>
                             </li>
-                            <li>
-                                <a onclick="javascript:confirmOrder({$order.order_id})" href="javascript: void (0);">
-                                    <img src="style/images/icon_confirm.png" title="Xác nhận đã giao"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#view_shipping_info{$order.order_id}">
-                                    <img src="style/images/icon-note.png" title="Thông tin giao hàng"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a onclick="javascript:deleteOrder({$order.order_id})" href="javascript: void (0);">
-                                    <img src="style/images/icon-16-logout.png" title="Huỷ đơn hàng"/>
-                                </a>
-                            </li>
+                            {if $smarty.get.act==view}
+                                <li>
+                                    <a onclick="javascript:confirmOrder({$order.order_id})" href="javascript: void (0);">
+                                        <img src="style/images/icon_confirm.png" title="Xác nhận đã giao"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a onclick="javascript:deleteOrder({$order.order_id})" href="javascript: void (0);">
+                                        <img src="style/images/icon-16-logout.png" title="Huỷ đơn hàng"/>
+                                    </a>
+                                </li>
+                            {/if}
                         </ul>
                     </td>
                 </tr>
-                <!-- Modal -->
-                <div id="view_shipping_info{$order.order_id}" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Thông tin giao hàng</h4>
-                      </div>
-                      <div class="modal-body" style="margin-left: 10px;">
-                        <p><b>Tên người nhận:</b> {$order.recipients}</p>
-                        <p><b>Địa chỉ nhận:</b> {$order.shipping_address}</p>
-                        <p><b>Số điện thoại:</b> {$order.phone_number}</p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <!-- End Modal -->
             {/foreach}
         {/if}
         <tr>
@@ -165,4 +151,3 @@
 </div>
 <div class="clear"></div>
 <span id="show_tool_search" style="display: none">{$show_tool_search}</span>
-

@@ -3,11 +3,6 @@
         <div id="content" class="col-sm-12 other_page">
             <div class="position-display"></div>
             <h3 style="text-align: center; color: #777777; font-weight: bold">Giỏ hàng</h3>
-            <div class="alert alert-success" id="alert_change_cart">
-                <div id="alert_change_cart2">
-                    <strong>Thành công!</strong> Cập nhật giỏ hàng thành công.
-                </div>
-            </div>
             <div class="table-responsive" style="margin-bottom: 20px;" id="list_product_from_cart">
                 <table class="table table-bordered">
                     <tr>

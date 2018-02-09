@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-05 04:21:09
+<?php /* Smarty version 2.6.13, created on 2018-02-06 09:30:20
          compiled from thanhToan.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'thanhToan.tpl', 363, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'thanhToan.tpl', 366, false),)), $this); ?>
 <div class="container">
     <div class="row">
         <div id="content" class="col-sm-12">
@@ -42,12 +42,13 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                     <!-- #option_register_popup-->
                                     <div class="btn-group">
                                         <button class="btn btn-primary" onclick="sign_up()">&nbsp;Đăng ký&nbsp;</button>
-                                        <button class="btn btn-default">Đăng nhập</button>
+                                        <button class="btn btn-default" data-toggle="modal" data-target="#login-modal">Đăng nhập</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="qc_left" class="aqc-column aqc-column-1">
+                            <?php if (! isset ( $_SESSION['customer'] )): ?>
                             <div id="step_2" class="blocks">
                                 <!-- Quick Checkout v4.0 by Dreamvention.com quickcheckout/register.tpl -->
                                 <div id="payment_address_wrap">
@@ -56,7 +57,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             <span class="wrap">
                                                 <span class="glyphicon glyphicon-user"></span>&nbsp;
                                             </span>
-                                            <span class="text">Thông tin tài khoản&nbsp;&nbsp;&nbsp;<i id="err_signup"></i></span>
+                                            <span class="text">Đăng ký tài khoản&nbsp;&nbsp;&nbsp;<i id="err_signup"></i></span>
                                         </div>
                                         <div class="panel-body">
                                             <div id="payment_address" class="form-horizontal ">
@@ -83,14 +84,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                         </label>
                                                     </div>
                                                     <div class="col-xs-7">
-                                                        <input type="text"
-                                                               name="address"
-                                                               id="pay_address"
-                                                               data-refresh="0"
-                                                               value=""
-                                                               class="form-control"
-                                                               autocomplite="on"
-                                                               placeholder=" Địa chỉ"/>
+                                                        <textarea placeholder=" Địa chỉ"
+                                                                  name="address"
+                                                                  id="pay_address"
+                                                                class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="text-input form-group  sort-item" data-sort="4">
@@ -190,6 +187,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                 </div>
                                 <!-- #payment_address_wrap -->
                             </div>
+                            <?php endif; ?>
                             <div id="step_3" class="blocks">
                                 <!-- Ajax Quick Checkout v4.2 by Dreamvention.com quickcheckout/register.tpl -->
                                 <div id="shipping_address_wrap" class="qc-hide">
@@ -202,6 +200,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                         </div>
                                         <div class="panel-body">
                                             <div id="shipping_address" class="form-horizontal ">
+                                                <div style="margin-bottom: 10px;">
+                                                    <input type="checkbox" onchange="use_my_information(<?php if (isset ( $_SESSION['customer'] )): ?>1<?php else: ?>0<?php endif; ?>)" id="use_my_information"> Sử dụng thông tin của tôi
+                                                </div>
+                                                <form id="frm_shipping_address">
                                                 <div id="firstname_input"
                                                      class="text-input form-group  sort-item"
                                                      data-sort="1">
@@ -213,25 +215,25 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                     <div class="col-xs-7">
                                                         <input type="text"
                                                                name="ship_fullname"
-                                                               id="shipping_fullname"
+                                                               id="ship_fullname"
                                                                value=""
                                                                class="form-control"
                                                                autocomplite="on"
-                                                               placeholder=" Họ và tên người nhận hàng"/>
+                                                               placeholder="Họ và tên người nhận hàng"/>
                                                     </div>
                                                 </div>
                                                 <div class="text-input form-group  sort-item"
                                                      data-sort="4">
                                                     <div class="col-xs-5">
                                                         <label class="control-label" for="shipping_address">
-                                                            <span class="text">Địa chỉ:</span>
+                                                            <span class="text">Địa chỉ nhận:</span>
                                                         </label>
                                                     </div>
                                                     <div class="col-xs-7">
                                                         <textarea class="form-control"
                                                                   name="ship_address"
-                                                                  id="shipping_address"
-                                                                  placeholder=" Địa chỉ nhận"></textarea>
+                                                                  id="ship_address"
+                                                                  placeholder="Ghi rõ số nhà, phường, xã,..."></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="text-input form-group  sort-item"
@@ -248,9 +250,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                                value=""
                                                                class="form-control"
                                                                autocomplite="on"
-                                                               placeholder=" Số điện thoại người nhận"/>
+                                                               placeholder="Số điện thoại người nhận"/>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <div class="clear"></div>
                                             </div>
                                         </div>
@@ -366,7 +369,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                                     </span>
                                                                     <input type="text" value="<?php echo $this->_tpl_vars['product']['number']; ?>
 " id="cart_number_product<?php echo $this->_tpl_vars['product_id']; ?>
-" class="form-control text-center"/>
+" onchange="number_in_pay(<?php echo $this->_tpl_vars['product_id']; ?>
+)" class="form-control text-center"/>
                                                                     <span class="input-group-btn">
                                                                         <button class="btn btn-defaut" onclick="number_up(<?php echo $this->_tpl_vars['product_id']; ?>
 )">
@@ -462,7 +466,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                 <div>
                                                     <div class="buttons">
                                                         <div class="right">
-                                                            <input type="button" id="qc_confirm_order" class="button btn btn-primary" value="Xác nhận đơn hàng" />
+                                                            <input type="button" id="qc_confirm_order" class="button btn btn-primary" onclick="<?php if (isset ( $_SESSION['customer'] )): ?>confirm_order(1)<?php else: ?>confirm_order(0)<?php endif; ?>"value="Xác nhận đơn hàng" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -480,3 +484,11 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
         </div>
     </div>
 </div>
+<div class="modal fade" id="modal_order_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="position: relative;width: 700px;">
+        <div class="icon-close-modal">
+            <img src="catalog\view\images\icon-close.png">
+        </div>
+        <img src="catalog\view\images\thanks.jpg">
+    </div>
+</div>

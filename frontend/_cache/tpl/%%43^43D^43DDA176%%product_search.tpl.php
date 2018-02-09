@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-31 09:57:49
+<?php /* Smarty version 2.6.13, created on 2018-02-08 10:09:18
          compiled from product_search.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'product_search.tpl', 97, false),)), $this); ?>
@@ -51,7 +51,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                     <div class="entry hidden-md hidden-sm hidden-xs">
                         <div class="inline-text">Sắp xếp theo:</div>
                         <div class="simple-drop-down">
-                            <select id="input-sort">
+                            <select id="input-sort-search">
                                 <option value="ORDER BY is_hot_product DESC, p_price DESC" selected="selected">Mặc định</option>
                                 <option value="ORDER BY p_name ASC">Tên (A - Z)</option>
                                 <option value="ORDER BY p_name DESC">Tên (Z - A)</option>
@@ -69,7 +69,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                     <div class="entry">
                         <div class="inline-text">Hiển thị:</div>
                         <div class="simple-drop-down" style="width: 75px;">
-                            <select id="input-limit">
+                            <select id="input-limit-search">
                                 <option value="15" selected="selected">15</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>

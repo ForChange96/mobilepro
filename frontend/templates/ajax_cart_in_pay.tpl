@@ -17,11 +17,10 @@
                         <i class="fa fa-minus"></i>
                     </button>
                 </span>
-                <input type="text" value="{$product.number}" id="cart_number_product{$product_id}" class="form-control text-center"/>
+                <input type="text" value="{$product.number}" id="cart_number_product{$product_id}" onchange="number_in_pay({$product_id})" class="form-control text-center"/>
                 <span class="input-group-btn">
                     <button class="btn btn-defaut" onclick="number_up({$product_id})">
                         <i class="fa fa-plus"></i>
-                    </button>
                 </span>
             </div>
         </td>

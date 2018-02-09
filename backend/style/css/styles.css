@@ -74,6 +74,7 @@ a,a:visited,a:hover,a:active{text-decoration:none;color:#146295;}
 .price{width: 200px;}
 .hotProduct{width: 100px;}
 .report_content{width: 500px;}
+.shipping_address{width: 400px;}
 .list_cn{width:150px;}
 .list_cn li{display:inline;margin:0 5px;}
 .pagging{text-align:center;padding:5px 0 0 0;height: 40px;}

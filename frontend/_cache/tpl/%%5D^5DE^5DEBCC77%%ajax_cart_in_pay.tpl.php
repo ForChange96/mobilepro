@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-05 04:16:24
+<?php /* Smarty version 2.6.13, created on 2018-02-06 08:02:56
          compiled from ajax_cart_in_pay.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_cart_in_pay.tpl', 28, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_cart_in_pay.tpl', 27, false),)), $this); ?>
 <?php $_from = $_SESSION['cart']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['product_id'] => $this->_tpl_vars['product']):
 ?>
@@ -30,12 +30,12 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                 </span>
                 <input type="text" value="<?php echo $this->_tpl_vars['product']['number']; ?>
 " id="cart_number_product<?php echo $this->_tpl_vars['product_id']; ?>
-" class="form-control text-center"/>
+" onchange="number_in_pay(<?php echo $this->_tpl_vars['product_id']; ?>
+)" class="form-control text-center"/>
                 <span class="input-group-btn">
                     <button class="btn btn-defaut" onclick="number_up(<?php echo $this->_tpl_vars['product_id']; ?>
 )">
                         <i class="fa fa-plus"></i>
-                    </button>
                 </span>
             </div>
         </td>

@@ -23,7 +23,7 @@ class Order{
         $start=$p->findStart($limit);
         $count=mysql_num_rows(mysql_query("SELECT * FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where}"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("SELECT customer.fullname,customer.customer_id, tbl_order.order_id,tbl_order.o_date,tbl_order.o_total,tbl_order.o_shipper FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} ORDER BY tbl_order.customer_id DESC limit $start,$limit");
+        $result=mysql_query("SELECT customer.fullname,customer.customer_id, tbl_order.shipping_address, tbl_order.order_id,tbl_order.o_total,tbl_order.recipients,tbl_order.phone_number FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} ORDER BY tbl_order.customer_id DESC limit $start,$limit");
         $countpage=mysql_num_rows($result); //Số bản ghi trên trang hiện tại
         $countrows=$count; //Tổng số bản ghi lấy đc
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=order&act=view",$pages,3); //Phân trang
@@ -79,7 +79,7 @@ class Order{
         $smarty->assign('countpage',$countpage);
         $smarty->assign('pagels',$pagels);
         $smarty->assign('show_tool_search',$show_tool_search);
-        $temp=$smarty->fetch('order_list.tpl');
+        $temp=$smarty->fetch('order_list2.tpl');
         return $temp;
     }
 
@@ -118,7 +118,7 @@ class Order{
     function getProduct_name($product_id){
         $sql_get="select p_name from product WHERE product_id=$product_id";
         $product=mysql_fetch_assoc(mysql_query($sql_get));
-        return$product['p_name'];
+        return $product['p_name'];
     }
 
     public function confirm(){

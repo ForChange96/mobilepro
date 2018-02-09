@@ -90,5 +90,15 @@
             $customer=mysql_fetch_assoc(mysql_query($sql));
             return $customer['fullname'];
         }
+
+        function get_customer_online(){
+            if (isset($_SESSION['customer'])){
+                $customer_id=$_SESSION['customer'];
+                $sql="select fullname,email,address,phone_number from customer where customer_id=$customer_id";
+                $customer=mysql_fetch_assoc(mysql_query($sql));
+                return $customer;
+            }
+            return false;
+        }
     }
 ?>

@@ -41,8 +41,8 @@
                     </tbody>
                 </table>
                 <p class="text-right">
-                    <a href=""><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
-                    <a href=""><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
+                    <a href="?mod=cart&act=view"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
+                    <a href="?mod=cart&act=pay"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
                 </p>
             </div>
         </li>

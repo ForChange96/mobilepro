@@ -8,8 +8,10 @@
                 <li><a href="?mod={$mod}&act=view">LIÊN HỆ</a></li>
             {elseif $mod=="gioithieu"}
                 <li><a href="?mod={$mod}&act=view">GIỚI THIỆU</a></li>
-            {elseif $mod=="dangky"}
+            {elseif $mod=="dangky" && $smarty.get.act=="view"}
                 <li><a href="?mod={$mod}&act=view">ĐĂNG KÝ</a></li>
+            {elseif $mod=="dangky" && $smarty.get.act=="edit_customer"}
+                <li><a href="?mod={$mod}&act=view">TÀI KHOẢN CỦA TÔI</a></li>
             {elseif $mod=="product"}
                 <li><a href="?mod={$mod}&act=show_by_category&id=2">SẢN PHẨM</a></li>
                 {if $smarty.get.act=="search_product"}

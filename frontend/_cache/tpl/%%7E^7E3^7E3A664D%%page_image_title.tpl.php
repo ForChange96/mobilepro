@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-02 03:56:01
+<?php /* Smarty version 2.6.13, created on 2018-02-06 10:13:27
          compiled from page_image_title.tpl */ ?>
 <div class="page_image_title">
     <h3>
@@ -8,8 +8,10 @@
             LIÊN HỆ VỚI CHÚNG TÔI
         <?php elseif ($this->_tpl_vars['mod'] == 'gioithieu'): ?>
             GIỚI THIỆU
-        <?php elseif ($this->_tpl_vars['mod'] == 'dangky'): ?>
+        <?php elseif ($this->_tpl_vars['mod'] == 'dangky' && $_GET['act'] == 'view'): ?>
             ĐĂNG KÝ
+        <?php elseif ($this->_tpl_vars['mod'] == 'dangky' && $_GET['act'] == 'edit_customer'): ?>
+            SỬA THÔNG TIN TÀI KHOẢN
         <?php elseif ($this->_tpl_vars['mod'] == 'product'): ?>
             <?php if ($_GET['act'] == 'search_product'): ?>
                 TÌM KIẾM

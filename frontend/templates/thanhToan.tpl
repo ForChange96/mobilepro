@@ -37,12 +37,13 @@
                                     <!-- #option_register_popup-->
                                     <div class="btn-group">
                                         <button class="btn btn-primary" onclick="sign_up()">&nbsp;Đăng ký&nbsp;</button>
-                                        <button class="btn btn-default">Đăng nhập</button>
+                                        <button class="btn btn-default" data-toggle="modal" data-target="#login-modal">Đăng nhập</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="qc_left" class="aqc-column aqc-column-1">
+                            {if !isset($smarty.session.customer)}
                             <div id="step_2" class="blocks">
                                 <!-- Quick Checkout v4.0 by Dreamvention.com quickcheckout/register.tpl -->
                                 <div id="payment_address_wrap">
@@ -51,7 +52,7 @@
                                             <span class="wrap">
                                                 <span class="glyphicon glyphicon-user"></span>&nbsp;
                                             </span>
-                                            <span class="text">Thông tin tài khoản&nbsp;&nbsp;&nbsp;<i id="err_signup"></i></span>
+                                            <span class="text">Đăng ký tài khoản&nbsp;&nbsp;&nbsp;<i id="err_signup"></i></span>
                                         </div>
                                         <div class="panel-body">
                                             <div id="payment_address" class="form-horizontal ">
@@ -78,14 +79,10 @@
                                                         </label>
                                                     </div>
                                                     <div class="col-xs-7">
-                                                        <input type="text"
-                                                               name="address"
-                                                               id="pay_address"
-                                                               data-refresh="0"
-                                                               value=""
-                                                               class="form-control"
-                                                               autocomplite="on"
-                                                               placeholder=" Địa chỉ"/>
+                                                        <textarea placeholder=" Địa chỉ"
+                                                                  name="address"
+                                                                  id="pay_address"
+                                                                class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="text-input form-group  sort-item" data-sort="4">
@@ -185,6 +182,7 @@
                                 </div>
                                 <!-- #payment_address_wrap -->
                             </div>
+                            {/if}
                             <div id="step_3" class="blocks">
                                 <!-- Ajax Quick Checkout v4.2 by Dreamvention.com quickcheckout/register.tpl -->
                                 <div id="shipping_address_wrap" class="qc-hide">
@@ -197,6 +195,10 @@
                                         </div>
                                         <div class="panel-body">
                                             <div id="shipping_address" class="form-horizontal ">
+                                                <div style="margin-bottom: 10px;">
+                                                    <input type="checkbox" onchange="use_my_information({if isset($smarty.session.customer)}1{else}0{/if})" id="use_my_information"> Sử dụng thông tin của tôi
+                                                </div>
+                                                <form id="frm_shipping_address">
                                                 <div id="firstname_input"
                                                      class="text-input form-group  sort-item"
                                                      data-sort="1">
@@ -208,25 +210,25 @@
                                                     <div class="col-xs-7">
                                                         <input type="text"
                                                                name="ship_fullname"
-                                                               id="shipping_fullname"
+                                                               id="ship_fullname"
                                                                value=""
                                                                class="form-control"
                                                                autocomplite="on"
-                                                               placeholder=" Họ và tên người nhận hàng"/>
+                                                               placeholder="Họ và tên người nhận hàng"/>
                                                     </div>
                                                 </div>
                                                 <div class="text-input form-group  sort-item"
                                                      data-sort="4">
                                                     <div class="col-xs-5">
                                                         <label class="control-label" for="shipping_address">
-                                                            <span class="text">Địa chỉ:</span>
+                                                            <span class="text">Địa chỉ nhận:</span>
                                                         </label>
                                                     </div>
                                                     <div class="col-xs-7">
                                                         <textarea class="form-control"
                                                                   name="ship_address"
-                                                                  id="shipping_address"
-                                                                  placeholder=" Địa chỉ nhận"></textarea>
+                                                                  id="ship_address"
+                                                                  placeholder="Ghi rõ số nhà, phường, xã,..."></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="text-input form-group  sort-item"
@@ -243,9 +245,10 @@
                                                                value=""
                                                                class="form-control"
                                                                autocomplite="on"
-                                                               placeholder=" Số điện thoại người nhận"/>
+                                                               placeholder="Số điện thoại người nhận"/>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <div class="clear"></div>
                                             </div>
                                         </div>
@@ -352,7 +355,7 @@
                                                                             <i class="fa fa-minus"></i>
                                                                         </button>
                                                                     </span>
-                                                                    <input type="text" value="{$product.number}" id="cart_number_product{$product_id}" class="form-control text-center"/>
+                                                                    <input type="text" value="{$product.number}" id="cart_number_product{$product_id}" onchange="number_in_pay({$product_id})" class="form-control text-center"/>
                                                                     <span class="input-group-btn">
                                                                         <button class="btn btn-defaut" onclick="number_up({$product_id})">
                                                                             <i class="fa fa-plus"></i>
@@ -442,7 +445,7 @@
                                                 <div>
                                                     <div class="buttons">
                                                         <div class="right">
-                                                            <input type="button" id="qc_confirm_order" class="button btn btn-primary" value="Xác nhận đơn hàng" />
+                                                            <input type="button" id="qc_confirm_order" class="button btn btn-primary" onclick="{if isset($smarty.session.customer)}confirm_order(1){else}confirm_order(0){/if}"value="Xác nhận đơn hàng" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -460,3 +463,13 @@
         </div>
     </div>
 </div>
+{* Modal order_success Bootstrap *}
+<div class="modal fade" id="modal_order_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="position: relative;width: 700px;">
+        <div class="icon-close-modal">
+            <img src="catalog\view\images\icon-close.png">
+        </div>
+        <img src="catalog\view\images\thanks.jpg">
+    </div>
+</div>
+{* End Modal order_success Bootstrap *}

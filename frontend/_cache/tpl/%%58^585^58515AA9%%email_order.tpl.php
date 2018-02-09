@@ -1,3 +1,5 @@
+<?php /* Smarty version 2.6.13, created on 2018-02-09 11:06:50
+         compiled from email_order.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,9 +88,11 @@
                                                 <div lang="space40"></div>
                                             </td>
                                             <td valign="top">
-                                                <p style="margin:0;padding:0;font-size:18px;color:#202020;font-family:Helvetica,Arial,sans-serif;font-weight:normal"><i>{$customer.fullname}</i> &nbsp;thân mến,</p>
+                                                <p style="margin:0;padding:0;font-size:18px;color:#202020;font-family:Helvetica,Arial,sans-serif;font-weight:normal"><i><?php echo $this->_tpl_vars['customer']['fullname']; ?>
+</i> &nbsp;thân mến,</p>
                                                 <div style="font-size:10px;line-height:10px;height:10px">&nbsp;</div>
-                                                <p style="margin:0;padding:0;font-size:16px;color:#202020;font-family:Helvetica,Arial,sans-serif;font-weight:normal;line-height:24px">Đơn hàng đang được chuyển đến địa chỉ: <i>{$customer.address}</i></p>
+                                                <p style="margin:0;padding:0;font-size:16px;color:#202020;font-family:Helvetica,Arial,sans-serif;font-weight:normal;line-height:24px">Đơn hàng đang được chuyển đến địa chỉ: <i><?php echo $this->_tpl_vars['customer']['address']; ?>
+</i></p>
                                                 <p style="margin:0;padding:0;font-size:16px;color:#202020;font-family:Helvetica,Arial,sans-serif;font-weight:normal;line-height:24px">Đơn vị vận chuyển: VIETTEL</p>
                                             </td>
                                             <td width="20" style="width:20px">
@@ -238,15 +242,18 @@
                                             <td valign="top" style="font-size:0">
                                                 <div lang="two_col" style="display:inline-block;max-width:330px;vertical-align:top;width:100%">
                                                     <div lang="pad45">
-                                                        <p style="margin:0;padding:0 10px 0 0;font-size:16px;color:#202020;font-family:Helvetica,Arial,sans-serif;line-height:24px;font-weight:normal">{$customer.fullname}
+                                                        <p style="margin:0;padding:0 10px 0 0;font-size:16px;color:#202020;font-family:Helvetica,Arial,sans-serif;line-height:24px;font-weight:normal"><?php echo $this->_tpl_vars['customer']['fullname']; ?>
+
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div lang="two_col" style="display:inline-block;max-width:330px;vertical-align:top;width:100%">
                                                     <div lang="pad30">
                                                         <p style="margin:0;padding:0;font-size:16px;color:#202020;font-family:Helvetica,Arial,sans-serif;line-height:24px;font-weight:normal">
-                                                            <span>Điện thoại: {$customer.phone_number}</span><br>
-                                                            Email: <a style="color:#33a2b2;text-decoration:none" href="mailto:+transon996@gmail.com" target="_blank">{$customer.email}</a>
+                                                            <span>Điện thoại: <?php echo $this->_tpl_vars['customer']['phone_number']; ?>
+</span><br>
+                                                            Email: <a style="color:#33a2b2;text-decoration:none" href="mailto:+transon996@gmail.com" target="_blank"><?php echo $this->_tpl_vars['customer']['email']; ?>
+</a>
                                                         </p>
                                                     </div>
                                                 </div>

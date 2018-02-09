@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-31 14:07:38
+<?php /* Smarty version 2.6.13, created on 2018-02-08 09:20:19
          compiled from home.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'home.tpl', 27, false),)), $this); ?>
@@ -31,7 +31,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             </a>
                                         </div>
                                         <div class="tab-p-info">
-                                            <a href="product_detail"><?php echo $this->_tpl_vars['product']['p_name']; ?>
+                                            <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+"><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a>
                                             <div class="price_product">
                                                 <span class="price-new"><?php echo ((is_array($_tmp=$this->_tpl_vars['product']['p_price'])) ? $this->_run_mod_handler('number_format', true, $_tmp) : number_format($_tmp)); ?>

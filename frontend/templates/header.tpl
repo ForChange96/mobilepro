@@ -33,6 +33,7 @@
                                             <li>
                                                 {if isset($smarty.session.customer)}
                                                     <a href="?mod=home&act=logout" id="btn-logout">Đăng Xuất</a>
+                                                    <a href="?mod=dangky&act=edit_customer">Tài khoản của tôi</a>
                                                 {else}
                                                     <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
                                                     <a href="?mod=dangky&act=view">Đăng ký</a>
@@ -75,7 +76,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#" title="Thanh toán">
+                                        <a href="javascript: pay_click()" title="Thanh toán">
                                             <i class="fa fa-share"></i>
                                             <span class="hidden-xs hidden-sm hidden-md">Thanh toán</span>
                                         </a>

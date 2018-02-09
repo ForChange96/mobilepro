@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-05 06:02:14
+<?php /* Smarty version 2.6.13, created on 2018-02-08 03:17:11
          compiled from script_bottom.tpl */ ?>
 
 <!-- owl.carousel.min js -->
@@ -16,8 +16,7 @@
 <!-- jquery bx-slider js -->
 <script src="catalog/view/theme/Mb_Themes/js/bx-slider.min.js"></script>
 <!-- plugins js -->
-<script src="catalog/view/theme/Mb_Themes/js/plugins.js"></script>
 
-<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <!-- main js -->
 <script src="catalog/view/theme/Mb_Themes/js/main.js"></script>
+<script src="https://uhchat.net/code.php?f=b2174e"></script>

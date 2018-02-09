@@ -6,8 +6,10 @@
             LIÊN HỆ VỚI CHÚNG TÔI
         {elseif $mod=="gioithieu"}
             GIỚI THIỆU
-        {elseif $mod=="dangky"}
+        {elseif $mod=="dangky" && $smarty.get.act=="view"}
             ĐĂNG KÝ
+        {elseif $mod=="dangky" && $smarty.get.act=="edit_customer"}
+            SỬA THÔNG TIN TÀI KHOẢN
         {elseif $mod=="product"}
             {if $smarty.get.act=="search_product"}
                 TÌM KIẾM

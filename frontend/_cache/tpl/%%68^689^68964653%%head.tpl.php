@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-26 09:24:18
+<?php /* Smarty version 2.6.13, created on 2018-02-08 04:06:14
          compiled from head.tpl */ ?>
 
 <head>
@@ -31,8 +31,7 @@
     <!-- normalize CSS -->
     <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/normalize.css">
     <!-- main CSS -->
-    <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/main.css">
-    <!-- style CSS -->
+        <!-- style CSS -->
     <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/style.css">
     <!-- responsive CSS -->
     <link rel="stylesheet" href="catalog/view/theme/Mb_Themes/stylesheet/responsive.css">

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-01 16:36:01
+<?php /* Smarty version 2.6.13, created on 2018-02-06 10:12:15
          compiled from breadcum_main.tpl */ ?>
 <div class="breadcum_main">
     <div class="container">
@@ -13,9 +13,12 @@
             <?php elseif ($this->_tpl_vars['mod'] == 'gioithieu'): ?>
                 <li><a href="?mod=<?php echo $this->_tpl_vars['mod']; ?>
 &act=view">GIỚI THIỆU</a></li>
-            <?php elseif ($this->_tpl_vars['mod'] == 'dangky'): ?>
+            <?php elseif ($this->_tpl_vars['mod'] == 'dangky' && $_GET['act'] == 'view'): ?>
                 <li><a href="?mod=<?php echo $this->_tpl_vars['mod']; ?>
 &act=view">ĐĂNG KÝ</a></li>
+            <?php elseif ($this->_tpl_vars['mod'] == 'dangky' && $_GET['act'] == 'edit_customer'): ?>
+                <li><a href="?mod=<?php echo $this->_tpl_vars['mod']; ?>
+&act=view">TÀI KHOẢN CỦA TÔI</a></li>
             <?php elseif ($this->_tpl_vars['mod'] == 'product'): ?>
                 <li><a href="?mod=<?php echo $this->_tpl_vars['mod']; ?>
 &act=show_by_category&id=2">SẢN PHẨM</a></li>

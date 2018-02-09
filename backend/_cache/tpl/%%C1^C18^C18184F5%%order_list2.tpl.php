@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-06 05:51:06
-         compiled from order_list.tpl */ ?>
+<?php /* Smarty version 2.6.13, created on 2018-02-06 05:22:45
+         compiled from order_list2.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'order_list.tpl', 87, false),array('modifier', 'number_format', 'order_list.tpl', 91, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'order_list2.tpl', 88, false),array('modifier', 'number_format', 'order_list2.tpl', 103, false),)), $this); ?>
 <div id="tool_search">
     <div class="btn_select_menu_order">
         <a class="btn btn btn-default btn_view" style="color: #444444; <?php if ($_GET['act'] == view): ?>background: #d6e3e2<?php endif; ?>" href="?mod=order&act=view">
@@ -73,7 +73,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
         <tr class="list_title">
             <td class="key">STT</td>
             <td class="fullname">Tên Khách hàng</td>
-            <td class="order_date">Địa chỉ giao hàng</td>
+            <td class="order_date">Ngày giao hàng</td>
+            <td class="fullname">Người giao</td>
             <td class="price">Thành tiền</td>
             <td class="list_cn">Chức năng</td>
         </tr>
@@ -91,9 +92,21 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
                     <td class="fullname"><a href="?mod=customer&act=view&customer_id=<?php echo $this->_tpl_vars['order']['customer_id']; ?>
 "><?php echo ((is_array($_tmp=$this->_tpl_vars['order']['fullname'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')); ?>
 </a></td>
-                    <td class="shipping_address">
-                        <?php echo ((is_array($_tmp=$this->_tpl_vars['order']['shipping_address'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')); ?>
+                    <td class="order_date">
+                        <?php if ($_GET['act'] == view2): ?>
+                            <?php echo $this->_tpl_vars['order']['o_date']; ?>
 
+                        <?php else: ?>
+                            <i style="color: #999999">Chưa giao hàng</i>
+                        <?php endif; ?>
+                    </td>
+                    <td class="order_date">
+                        <?php if ($_GET['act'] == view2): ?>
+                            <?php echo $this->_tpl_vars['order']['o_shipper']; ?>
+
+                        <?php else: ?>
+                            <i style="color: #999999">Chưa giao hàng</i>
+                        <?php endif; ?>
                     </td>
                     <td class="price"><?php echo ((is_array($_tmp=$this->_tpl_vars['order']['o_total'])) ? $this->_run_mod_handler('number_format', true, $_tmp) : number_format($_tmp)); ?>
 </td>
@@ -105,54 +118,23 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
                                     <img src="style/images/icon-16-detail.png" title="Xem chi tiết"/>
                                 </a>
                             </li>
-                            <li>
-                                <a onclick="javascript:confirmOrder(<?php echo $this->_tpl_vars['order']['order_id']; ?>
+                            <?php if ($_GET['act'] == view): ?>
+                                <li>
+                                    <a onclick="javascript:confirmOrder(<?php echo $this->_tpl_vars['order']['order_id']; ?>
 )" href="javascript: void (0);">
-                                    <img src="style/images/icon_confirm.png" title="Xác nhận đã giao"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#view_shipping_info<?php echo $this->_tpl_vars['order']['order_id']; ?>
-">
-                                    <img src="style/images/icon-note.png" title="Thông tin giao hàng"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a onclick="javascript:deleteOrder(<?php echo $this->_tpl_vars['order']['order_id']; ?>
+                                        <img src="style/images/icon_confirm.png" title="Xác nhận đã giao"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a onclick="javascript:deleteOrder(<?php echo $this->_tpl_vars['order']['order_id']; ?>
 )" href="javascript: void (0);">
-                                    <img src="style/images/icon-16-logout.png" title="Huỷ đơn hàng"/>
-                                </a>
-                            </li>
+                                        <img src="style/images/icon-16-logout.png" title="Huỷ đơn hàng"/>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </td>
                 </tr>
-                <!-- Modal -->
-                <div id="view_shipping_info<?php echo $this->_tpl_vars['order']['order_id']; ?>
-" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Thông tin giao hàng</h4>
-                      </div>
-                      <div class="modal-body" style="margin-left: 10px;">
-                        <p><b>Tên người nhận:</b> <?php echo $this->_tpl_vars['order']['recipients']; ?>
-</p>
-                        <p><b>Địa chỉ nhận:</b> <?php echo $this->_tpl_vars['order']['shipping_address']; ?>
-</p>
-                        <p><b>Số điện thoại:</b> <?php echo $this->_tpl_vars['order']['phone_number']; ?>
-</p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <!-- End Modal -->
             <?php endforeach; endif; unset($_from); ?>
         <?php endif; ?>
         <tr>
@@ -182,5 +164,4 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
 </div>
 <div class="clear"></div>
 <span id="show_tool_search" style="display: none"><?php echo $this->_tpl_vars['show_tool_search']; ?>
-</span>
-
+</span>

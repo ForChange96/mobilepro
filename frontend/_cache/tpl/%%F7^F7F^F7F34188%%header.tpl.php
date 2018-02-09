@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-01 09:37:24
+<?php /* Smarty version 2.6.13, created on 2018-02-06 10:09:38
          compiled from header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 63, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 64, false),)), $this); ?>
 <header>
     <!-- header top area start -->
     <div class="header-top" id="header-top">
@@ -39,6 +39,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             <li>
                                                 <?php if (isset ( $_SESSION['customer'] )): ?>
                                                     <a href="?mod=home&act=logout" id="btn-logout">Đăng Xuất</a>
+                                                    <a href="?mod=dangky&act=edit_customer">Tài khoản của tôi</a>
                                                 <?php else: ?>
                                                     <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
                                                     <a href="?mod=dangky&act=view">Đăng ký</a>
@@ -92,7 +93,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#" title="Thanh toán">
+                                        <a href="javascript: pay_click()" title="Thanh toán">
                                             <i class="fa fa-share"></i>
                                             <span class="hidden-xs hidden-sm hidden-md">Thanh toán</span>
                                         </a>

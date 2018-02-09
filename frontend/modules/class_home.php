@@ -26,9 +26,11 @@ class Home extends class_get_info {
                 }
             }
         }
-        
+
         $smarty->assign('listProduct',$listProduct);
         $temp=$smarty->fetch('home.tpl');
+
+
         return $temp;
     }
 

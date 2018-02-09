@@ -22,7 +22,7 @@
                                             </a>
                                         </div>
                                         <div class="tab-p-info">
-                                            <a href="product_detail">{$product.p_name}</a>
+                                            <a href="?mod=product&act=detail&id={$product.product_id}">{$product.p_name}</a>
                                             <div class="price_product">
                                                 <span class="price-new">{$product.p_price|number_format} VNĐ</span>
                                             </div>

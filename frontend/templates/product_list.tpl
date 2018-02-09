@@ -18,13 +18,13 @@
                         <div class="inline-text">Sắp xếp:</div>
                         <div class="simple-drop-down">
                             <select id="input-sort" onchange="changeFilter()">
-                                <option value="ORDER BY is_hot_product DESC, p_price DESC" selected="selected">Mặc định</option>
-                                <option value="ORDER BY p_name ASC">Tên (A - Z)</option>
-                                <option value="ORDER BY p_name DESC">Tên (Z - A)</option>
-                                <option value="ORDER BY p_price ASC">Giá (Thấp &gt; Cao)</option>
-                                <option value="ORDER BY p_price DESC">Giá (Cao &gt; Thấp)</option>
-                                <option value="ORDER BY num_star DESC">Đánh giá (Cao nhất)</option>
-                                <option value="ORDER BY num_star ASC">Đánh giá (Thấp nhất)</option>
+                                <option value="default" selected="selected">Mặc định</option>
+                                <option value="p_name1">Tên (A - Z)</option>
+                                <option value="p_name2">Tên (Z - A)</option>
+                                <option value="p_price1">Giá (Thấp &gt; Cao)</option>
+                                <option value="p_price2">Giá (Cao &gt; Thấp)</option>
+                                <option value="num_star1">Đánh giá (Cao nhất)</option>
+                                <option value="num_star2">Đánh giá (Thấp nhất)</option>
                             </select>
                         </div>
                     </div>
@@ -36,11 +36,11 @@
                         <div class="inline-text">Hiển thị:</div>
                         <div class="simple-drop-down" style="width: 75px;">
                             <select id="input-limit" onchange="changeFilter()">
-                                <option value="LIMIT 15" selected="selected">15</option>
-                                <option value="LIMIT 25">25</option>
-                                <option value="LIMIT 50">50</option>
-                                <option value="LIMIT 75">75</option>
-                                <option value="LIMIT 100">100</option>
+                                <option value="15" selected="selected">15</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
                             </select>
                         </div>
                         <div class="inline-text">Trang</div>
