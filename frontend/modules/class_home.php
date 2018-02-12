@@ -60,6 +60,34 @@ class Home extends class_get_info {
         echo json_encode($result);
         exit();
     }
+    public function login_fb(){
+        $name=$_SESSION['user_fb']['name'];
+        $email=$_SESSION['user_fb']['email'];
+        $sql_check="SELECT * FROM customer WHERE email='$email'";
+        if (mysql_num_rows(mysql_query($sql_check))==0){//Tài khoản chưa sẵn có => Đăng ký
+            $sql_insert="INSERT INTO customer(username,email,fullname,status) VALUES ('$email','$email','$name',1)";
+            mysql_query($sql_insert);
+
+            //Lấy customer_id để add vào $_SESSION['customer']
+            $sql_get_customer_id="SELECT customer_id FROM customer WHERE email='$email'";
+            $customer_id_arr=mysql_fetch_assoc(mysql_query($sql_get_customer_id));
+            $customer_id=$customer_id_arr['customer_id'];
+
+            $_SESSION['customer']=$customer_id;
+            unset($_SESSION['user_fb']);
+            header("location: ?mod=home&act=view");
+        }
+        else{
+            $sql_get_customer_id="SELECT customer_id FROM customer WHERE email='$email'";
+            $customer_id_arr=mysql_fetch_assoc(mysql_query($sql_get_customer_id));
+            $customer_id=$customer_id_arr['customer_id'];
+
+            $_SESSION['customer']=$customer_id;
+            unset($_SESSION['user_fb']);
+            header("location: ?mod=home&act=view");
+        }
+        exit();
+    }
     public function logout(){
         unset($_SESSION['customer']);
         header("location:?mod=home&act=view");

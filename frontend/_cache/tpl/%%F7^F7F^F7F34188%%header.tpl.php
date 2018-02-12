@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-06 10:09:38
+<?php /* Smarty version 2.6.13, created on 2018-02-12 11:22:48
          compiled from header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 64, false),)), $this); ?>
@@ -350,6 +350,16 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                 <input type="password" name="password" placeholder="Mật khẩu" onblur="check_empty_password()" id="password_login" onclick="clear_err('#password_login')">
                 <input type="button" class="login loginmodal-submit" onclick="login()" value="Đăng nhập">
             </form>
+            <a href="<?php echo $this->_tpl_vars['loginURL']; ?>
+">
+                <div class="login_fb">
+                    <div class="login_fb_img">
+                        <img src="catalog\view\images\icon-fb.png">
+                    </div>
+                    <div class="login_fb_text">Đăng nhập bằng Facebook</div>
+                </div>
+            </a>
+            <div style="clear: both"></div>
             <div class="login-help">
                 Chưa có tài khoản?&nbsp;&nbsp;&nbsp;<a href="?mod=dangky&act=view">Đăng ký</a>
             </div>

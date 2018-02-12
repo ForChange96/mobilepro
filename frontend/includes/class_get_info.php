@@ -100,5 +100,13 @@
             }
             return false;
         }
+
+        function get_login_FB_URL(){
+            include_once "fbLogin/config.php";
+            $redirectURL = "http://localhost:81/mobilepro/frontend/includes/fbLogin/fb-callback.php";
+            $permissions = ["email"];
+            $loginURL = $helper->getLoginUrl($redirectURL,$permissions);
+            return $loginURL;
+        }
     }
 ?>

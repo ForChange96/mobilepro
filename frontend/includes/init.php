@@ -46,6 +46,7 @@ $vars['num_cart']=$info->get_num_cart();
 $vars['total']=$info->get_total();
 $vars['listCategory']=$info->get_category();
 $vars['product_name']=$info->get_product_name();
+$vars['loginURL']=$info->get_login_FB_URL();
 if (isset($_SESSION['customer']))
     $vars['user_online']=$info->get_customer_name($_SESSION['customer']);
 
