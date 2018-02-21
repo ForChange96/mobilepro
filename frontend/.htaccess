@@ -6,12 +6,14 @@ RewriteRule ^lien-he$ index.php?mod=lienhe&act=view
 RewriteRule ^gio-hang$ index.php?mod=cart&act=view
 RewriteRule ^thanh-toan$ index.php?mod=cart&act=pay
 RewriteRule ^dang-ky$ index.php?mod=dangky&act=view
+RewriteRule ^tai-khoan-cua-toi$ index.php?mod=dangky&act=edit_customer
 RewriteRule ^tim-kiem$ index.php?mod=product&act=search_product
 RewriteRule ^chi-tiet-san-pham-(.*)=(.*)$ index.php?mod=product&act=detail&id=$1
 RewriteRule ^danh-muc-(.*)=(.*)$ index.php?mod=product&act=show_by_category&id=$1
 RewriteRule ^ajax-list-product$ index.php?mod=product&act=show_by_category_ajax
 RewriteRule ^ajax-list-category$ index.php?mod=product&act=list_category_ajax
 RewriteRule ^login$ index.php?mod=home&act=login
+RewriteRule ^logout$ index.php?mod=home&act=logout
 RewriteRule ^check_username$ index.php?mod=dangky&act=check_username
 RewriteRule ^check_email_signup$ index.php?mod=dangky&act=check_email
 RewriteRule ^signup$ index.php?mod=dangky&act=signup
@@ -35,3 +37,5 @@ RewriteRule ^check_old_pass$ index.php?mod=dangky&act=check_old_pass
 RewriteRule ^do_edit_customer$ index.php?mod=dangky&act=do_edit
 RewriteRule ^unset_prompt$ index.php?mod=home&act=unset_prompt
 RewriteRule ^ajax_amount$ index.php?mod=cart&act=ajax_amount
+RewriteRule ^do-vote$ index.php?mod=product&act=do_vote
+RewriteRule ^ajax_star$ index.php?mod=product&act=ajax_star

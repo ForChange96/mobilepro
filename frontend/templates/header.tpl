@@ -32,8 +32,8 @@
                                         <ul class="dropdown-menu dropdown-menu-right account_header">
                                             <li>
                                                 {if isset($smarty.session.customer)}
-                                                    <a href="?mod=home&act=logout" id="btn-logout">Đăng Xuất</a>
-                                                    <a href="?mod=dangky&act=edit_customer">Tài khoản của tôi</a>
+                                                    <a href="logout" id="btn-logout">Đăng Xuất</a>
+                                                    <a href="tai-khoan-cua-toi">Tài khoản của tôi</a>
                                                 {else}
                                                     <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
                                                     <a href="dang-ky">Đăng ký</a>
@@ -376,7 +376,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="unset_prompt()">Để sau</button>
-                    <a href="?mod=dangky&act=edit_customer" class="btn btn-success" onclick="unset_prompt()">Cập nhật ngay</a>
+                    <a href="tai-khoan-cua-toi" class="btn btn-success" onclick="unset_prompt()">Cập nhật ngay</a>
                 </div>
             </div>
         </div>

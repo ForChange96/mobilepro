@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-21 02:49:49
+<?php /* Smarty version 2.6.13, created on 2018-02-21 08:52:28
          compiled from head.tpl */ ?>
 
 <head>
@@ -43,6 +43,7 @@
           media="screen"/>
     <link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.tabs.css" type="text/css" rel="stylesheet"
           media="screen"/>
+
         <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.tools.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.revolution.min.js" type="text/javascript"></script>

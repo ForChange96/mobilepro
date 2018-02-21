@@ -105,6 +105,9 @@
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
 .alignright {float:right;margin-left:15px;margin-bottom: 15px}
 .aligncenter {display:block;margin:0 auto 15px}
+.pointer{
+  cursor: pointer;
+}
 a:focus {outline:0px solid}
 img {height:auto}
 .fix {overflow:hidden}
@@ -9183,5 +9186,6 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
+
 }
 

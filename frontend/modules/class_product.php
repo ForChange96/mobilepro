@@ -105,12 +105,18 @@
             global $smarty;
             $product_id=isset($_GET['id'])?trim($_GET['id']):"";
             $isFavorite=0;
+            $num_star_voted=0;
             if (isset($_SESSION['customer'])){
                 $isFavorite=parent::checkFavorite($_SESSION['customer'],$product_id);
+                //Lấy số sao mà khách hàng này đã từng vote
+                $num_star_voted=$this->get_num_star_voted($_SESSION['customer'],$product_id);
             }
             $smarty->assign('isFavorite',$isFavorite);
+            $smarty->assign('num_star_voted',$num_star_voted);
             $smarty->assign('list_img',$this->get_img_500_700($product_id));
             $smarty->assign('product',$this->get_product_detail($product_id));
+            $smarty->assign('check_order_for_vote',$this->check_order_for_vote($product_id));
+
             $result = $smarty->fetch('chi-tiet-san-pham.tpl');
             return $result;
         }
@@ -333,6 +339,60 @@
         }
 
 
+        public function do_vote(){
+            $num_star=$_POST['num_star'];
+            $product_id=$_POST['product_id'];
+            $customer_id=$_SESSION['customer'];
+            $status=$_POST['status'];//Nếu status=-1 (Chưa tồn tại đánh giá) thì cho câu lệnh sql là insert, ngược lại sql=update
+
+            $isOk=0;
+            $err="";
+            if ($status==-1){
+                $sql="INSERT INTO vote_product(customer_id,product_id,num_star) VALUES ($customer_id,$product_id,$num_star)";
+            }
+            else{
+                $sql="UPDATE vote_product SET num_star=$num_star WHERE customer_id=$customer_id AND product_id=$product_id";
+            }
+            if (!mysql_query($sql)){
+                $err="Không thể thêm đánh giá";
+            }
+            else{
+                //Tính lại số sao trung bình cho sản phẩm
+                $sum=0;
+                $count=0;
+                $sql_get_all_vote="SELECT num_star FROM vote_product WHERE product_id=$product_id";
+                $table_vote=mysql_query($sql_get_all_vote);
+                if (mysql_num_rows($table_vote)!=0){
+                    while ($row=mysql_fetch_assoc($table_vote)){
+                        $sum+=$row['num_star'];
+                        $count++;
+                    }
+                }
+                $avg=round($sum/$count);
+                //update số sao mới vào bảng product
+                $sql_update="UPDATE product SET num_star=$avg WHERE product_id=$product_id";
+                if (!mysql_query($sql_update)){
+                    $err="Lỗi cập nhật số sao trung bình";
+                }
+                else{
+                    $isOk=1;
+                }
+            }
+            $result=array("ok"=>$isOk,"err"=>$err);
+            echo json_encode($result);
+            exit();
+        }
+        public function ajax_star(){
+            $product_id=$_POST['product_id'];
+            $num_star_voted=$_POST['num_star_voted'];
+
+            global $smarty;
+            $smarty->assign("product_id",$product_id);
+            $smarty->assign("num_star_voted",$num_star_voted);
+            echo $smarty->fetch('ajax_star_after_vote.tpl');
+            exit();
+        }
+
 
 
 
@@ -379,6 +439,25 @@
             $sql="SELECT category_name FROM category WHERE category_id=$category_id";
             $category=mysql_fetch_assoc(mysql_query($sql));
             return $category['category_name'];
+        }
+        function get_num_star_voted($customer_id,$product_id){
+            $sql="SELECT num_star FROM vote_product WHERE customer_id=$customer_id AND product_id=$product_id";
+            if (mysql_num_rows(mysql_query($sql))==0)
+                return -1;
+            $num_star_arr=mysql_fetch_assoc(mysql_query($sql));
+            $num_star=$num_star_arr['num_star']+0;
+            return $num_star;
+        }
+        function check_order_for_vote($product_id){//Check trong bảng order, đã mua hàng thì mới được vote
+            if (!isset($_SESSION['customer'])){
+                return 0;//Chưa đăng nhập => ko đc vote
+            }
+            $customer_id=$_SESSION['customer'];
+            $sql_check="SELECT * FROM tbl_order INNER JOIN order_detail ON tbl_order.order_id=order_detail.order_id WHERE customer_id=$customer_id AND product_id=$product_id";
+            if (mysql_num_rows(mysql_query($sql_check))==0){
+                return 0;
+            }
+            return 1;
         }
     }
 ?>

@@ -20,6 +20,9 @@ $(document).ready(function () {
     $("#cb_change_password").click(function () {
         $("#frm_change_password").toggle(500);
     });
+    $("#btn_vote").click(function () {
+        $("#div_vote").toggle(500);
+    });
     $("#input-limit-search").on("change",function () {
         limit=$("#input-limit-search").val();
         $("#limit").val(limit);
@@ -323,7 +326,33 @@ function add_cart_with_number(product_id) {
         }
     })
 }
-
+function do_vote(product_id,num_star,num_star_voted) {
+    var strData="product_id="+product_id+"&num_star="+num_star+"&status="+num_star_voted;//Nếu num_star_voted=-1 (Chưa tồn tại đánh giá) thì cho câu lệnh sql là insert, ngược lại sql=update
+    $.ajax({
+        data: strData,
+        type: "POST",
+        url: "do-vote",
+        dataType: "json",
+        success: function (data) {
+            if (parseInt(data.ok)==1){
+                //reload lại số sao
+                var strData2="product_id="+product_id+"&num_star_voted="+num_star;
+                $.ajax({
+                    data: strData2,
+                    type: "POST",
+                    url: "ajax_star",
+                    dataType: "html",
+                    success: function (data) {
+                        $("#vote").html(data);
+                    }
+                })
+            }
+            else{
+                alert(data.err);
+            }
+        }
+    })
+}
  function remove_from_cart(product_id) {
      var strData="id="+product_id;
      $.ajax({

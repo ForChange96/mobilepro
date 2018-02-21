@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:59
+<?php /* Smarty version 2.6.13, created on 2018-02-21 09:03:39
          compiled from header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 64, false),)), $this); ?>
@@ -38,8 +38,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                         <ul class="dropdown-menu dropdown-menu-right account_header">
                                             <li>
                                                 <?php if (isset ( $_SESSION['customer'] )): ?>
-                                                    <a href="?mod=home&act=logout" id="btn-logout">Đăng Xuất</a>
-                                                    <a href="?mod=dangky&act=edit_customer">Tài khoản của tôi</a>
+                                                    <a href="logout" id="btn-logout">Đăng Xuất</a>
+                                                    <a href="tai-khoan-cua-toi">Tài khoản của tôi</a>
                                                 <?php else: ?>
                                                     <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
                                                     <a href="dang-ky">Đăng ký</a>
@@ -410,7 +410,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="unset_prompt()">Để sau</button>
-                    <a href="?mod=dangky&act=edit_customer" class="btn btn-success" onclick="unset_prompt()">Cập nhật ngay</a>
+                    <a href="tai-khoan-cua-toi" class="btn btn-success" onclick="unset_prompt()">Cập nhật ngay</a>
                 </div>
             </div>
         </div>

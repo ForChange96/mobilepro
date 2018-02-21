@@ -1,11 +1,11 @@
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MobilePro - shop smartphone uy tín</title>
     <meta name="description" content="Phụ kiện điện thoại"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {*<base href="localhost:81/mobilepro/frontend/">*}
     <link href="catalog/view/images/icon-page-title.png" rel="icon"/>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -43,6 +43,7 @@
           media="screen"/>
     <link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.tabs.css" type="text/css" rel="stylesheet"
           media="screen"/>
+
     {*<link rel="stylesheet" href="catalog/view/web-fonts-with-css/css/fontawesome-all.min.css">*}
     <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
     <script src="catalog/jquery.themepunch.tools.min.js" type="text/javascript"></script>

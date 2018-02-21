@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:14:05
+<?php /* Smarty version 2.6.13, created on 2018-02-21 06:06:18
          compiled from chi-tiet-san-pham.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'chi-tiet-san-pham.tpl', 59, false),)), $this); ?>
@@ -163,14 +163,66 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                 <?php endif; ?>
                             </span>
                         </div>
-                        <div style="width: 200px; float: left;line-height: 28px; margin-left: 10px;">
+                        <?php if ($this->_tpl_vars['check_order_for_vote'] == 1): ?>
+                        <div style="width: 200px; float: left;line-height: 28px; margin-left: 10px;" id="btn_vote">
                             <a href="javascript: void (0)" style="color: #eb6243">
                                 <span class="glyphicon glyphicon-edit"></span>&nbsp;
                                 Đánh giá sản phẩm
                             </a>
                         </div>
+                        <?php endif; ?>
                         <div style="clear: both"></div>
-                                                <hr>
+                        <div style="display: none" id="div_vote">
+                            <div class="vote_star" id="vote">
+                                Click để vote số sao:&nbsp;
+                                <span class="fa fa-stack pointer" onclick="do_vote(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+,1,<?php echo $this->_tpl_vars['num_star_voted']; ?>
+)">
+                                    <?php if ($this->_tpl_vars['num_star_voted'] < 1): ?>
+                                                                                <i class="fa fa-star-o fa-stack-1x"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    <?php endif; ?>
+                                </span>
+                                <span class="fa fa-stack pointer" onclick="do_vote(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+,2,<?php echo $this->_tpl_vars['num_star_voted']; ?>
+)">
+                                    <?php if ($this->_tpl_vars['num_star_voted'] < 2): ?>
+                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    <?php endif; ?>
+                                </span>
+                                <span class="fa fa-stack pointer" onclick="do_vote(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+,3,<?php echo $this->_tpl_vars['num_star_voted']; ?>
+)">
+                                    <?php if ($this->_tpl_vars['num_star_voted'] < 3): ?>
+                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    <?php endif; ?>
+                                </span>
+                                <span class="fa fa-stack pointer" onclick="do_vote(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+,4,<?php echo $this->_tpl_vars['num_star_voted']; ?>
+)">
+                                    <?php if ($this->_tpl_vars['num_star_voted'] < 4): ?>
+                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    <?php endif; ?>
+                                </span>
+                                <span class="fa fa-stack pointer" onclick="do_vote(<?php echo $this->_tpl_vars['product']['product_id']; ?>
+,5,<?php echo $this->_tpl_vars['num_star_voted']; ?>
+)">
+                                    <?php if ($this->_tpl_vars['num_star_voted'] < 5): ?>
+                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    <?php endif; ?>
+                                </span>
+                            </div>
+                                                    </div>
+                        <hr>
                         <!-- AddThis Button BEGIN -->
                         <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
                         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
