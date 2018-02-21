@@ -1,5 +1,5 @@
 <?php
-    Class Dangky extends Validation{
+    Class Dangky extends class_get_info {
         public function view(){
             global $smarty;
             $temp=$smarty->fetch("dang-ky.tpl");
@@ -12,7 +12,7 @@
             if (mysql_num_rows(mysql_query($sql))==0){
                 $isOk=1;
             }
-            if (parent::checkMail($email)==false){
+            if (Validation::checkMail($email)==false){
                 $isOk=2;
             }
             $result=array("ok"=>$isOk);
@@ -126,9 +126,39 @@
             exit();
         }
         function confirm_account(){
-            $customer_id_md5=trim($_GET['id']);
+            $email_md5=trim($_GET['account']);
+            $sql="update customer set status=1 where md5(email)='$email_md5'";
+            if (mysql_query($sql)){
+                //Get customer_id để add vào session
+                $sql_get="SELECT customer_id FROM customer WHERE md5(email)='$email_md5'";
+                $customer_id=mysql_fetch_assoc(mysql_query($sql_get));
+                $_SESSION['customer']=$customer_id['customer_id'];
 
-            $sql="update customer set status=1 where md5(customer_id)=$customer_id_md5";
+                header("location: trang-chu");
+            }
+            else{
+                echo "<script>alert('Xảy ra lỗi!')</script>";
+            }
+        }
+        function send_mail_confirm(){
+            global $smarty;
+            $email=trim($_POST['email']);
+            $email_md5=md5($email);
+            $smarty->assign('link_confirm',"http://localhost:81/mobilepro/frontend/index.php?mod=dangky&act=confirm_account&account=$email_md5");
+            $temp=$smarty->fetch('email_confirm.tpl');
+
+            $to      = $email;
+            $subject = "Xác nhân tài khoản MobilePro";
+            $message = $temp;
+
+            $headers[] = 'MIME-Version: 1.0';
+            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+            $headers[] = 'From: transon996@gmail.com';
+            $headers[] = 'Reply-To: transon996@gmail.com';
+            $headers[] = 'X-Mailer: PHP/' . phpversion();
+
+            mail($to, $subject, $message, implode("\r\n", $headers));
+            exit();
         }
     }
 

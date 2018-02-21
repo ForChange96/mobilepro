@@ -1,9 +1,9 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-06 10:12:15
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:14:05
          compiled from breadcum_main.tpl */ ?>
 <div class="breadcum_main">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="?mod=home&act=view">TRANG CHỦ</a></li>
+            <li><a href="trang-chu">TRANG CHỦ</a></li>
             <?php if ($this->_tpl_vars['mod'] == 'huongdan'): ?>
                 <li><a href="?mod=<?php echo $this->_tpl_vars['mod']; ?>
 &act=view">HƯỚNG DẪN</a></li>

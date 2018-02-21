@@ -4,12 +4,12 @@
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="t-all-product-info">
                     <div class="t-product-img">
-                        <a href="?mod=product&act=detail&id={$product.product_id}">
+                        <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">
                             <img src="{$product.img_link_300}" alt="{$product.p_name}" title="{$product.p_name}" class="img-responsive" />
                         </a>
                     </div>
                     <div class="tab-p-info">
-                        <a href="?mod=product&act=detail&id={$product.product_id}">{$product.p_name}</a>
+                        <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">{$product.p_name}</a>
                         <div class="description">{$product.p_description}</div>
                         <div class="price_product">
                             <span class="price-new">{$product.p_price|number_format} VNĐ</span>
@@ -58,7 +58,7 @@
                         <div class="al-btns">
                             <button type="button" onclick="add_cart({$product.product_id})" class="button btn-cart"><span><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</span></button>
                             <ul class="add-to-links">
-                                <li><a href="?mod=product&act=detail&id={$product.product_id}" class="link-wishlist" data-toggle="tooltip" title=" Xem chi tiết"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}" class="link-wishlist" data-toggle="tooltip" title=" Xem chi tiết"><i class="fa fa-eye"></i></a></li>
                                 <li>
                                     <button class="link-wishlist" type="button" data-toggle="tooltip" title="Thêm so sánh" onclick="">
                                         <i class="fa fa-retweet"></i>

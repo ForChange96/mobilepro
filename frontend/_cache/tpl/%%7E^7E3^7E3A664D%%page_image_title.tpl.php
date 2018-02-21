@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-06 10:13:27
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:14:05
          compiled from page_image_title.tpl */ ?>
 <div class="page_image_title">
     <h3>

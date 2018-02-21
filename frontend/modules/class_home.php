@@ -22,6 +22,7 @@ class Home extends class_get_info {
             if (mysql_num_rows($tableProduct)!=0){
                 while($row=mysql_fetch_assoc($tableProduct)){
                     $row['img_link_350']=$this->getImg($row['product_id']);
+                    $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                     $listProduct[]=$row;
                 }
             }
@@ -68,6 +69,8 @@ class Home extends class_get_info {
             $sql_insert="INSERT INTO customer(username,email,fullname,status) VALUES ('$email','$email','$name',1)";
             mysql_query($sql_insert);
 
+            //Tạo session để nhắc nhở cập nhật địa chỉ vs SĐT
+            $_SESSION['prompt']=1;
             //Lấy customer_id để add vào $_SESSION['customer']
             $sql_get_customer_id="SELECT customer_id FROM customer WHERE email='$email'";
             $customer_id_arr=mysql_fetch_assoc(mysql_query($sql_get_customer_id));
@@ -75,7 +78,7 @@ class Home extends class_get_info {
 
             $_SESSION['customer']=$customer_id;
             unset($_SESSION['user_fb']);
-            header("location: ?mod=home&act=view");
+            header("location: trang-chu");
         }
         else{
             $sql_get_customer_id="SELECT customer_id FROM customer WHERE email='$email'";
@@ -84,13 +87,17 @@ class Home extends class_get_info {
 
             $_SESSION['customer']=$customer_id;
             unset($_SESSION['user_fb']);
-            header("location: ?mod=home&act=view");
+            header("location: trang-chu");
         }
+        exit();
+    }
+    function unset_prompt(){//$_SESSION['prompt'] là biến để nhắc nhở cập nhật địa chỉ & SĐT
+        unset($_SESSION['prompt']);
         exit();
     }
     public function logout(){
         unset($_SESSION['customer']);
-        header("location:?mod=home&act=view");
+        header("location:trang-chu");
     }
 }
 ?>

@@ -102,10 +102,11 @@
         }
         function send_mail_order(){
             global $smarty;
-            $smarty->assign('customer',parent::get_customer_online());
+            $customer_online=parent::get_customer_online();
+            $smarty->assign('customer',$customer_online);
             $temp=$smarty->fetch('email_order.tpl');
 
-            $to      = 'theladoi995@gmail.com';
+            $to      = $customer_online['email'];
             $subject = 'Đơn hàng đang giao';
             $message = $temp;
 

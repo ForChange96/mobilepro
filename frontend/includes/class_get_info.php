@@ -19,6 +19,7 @@
         function get_product_for_favorite($product_id){
             $sql="select product_id, p_name, p_price from product WHERE product_id=$product_id";
             $product=mysql_fetch_assoc(mysql_query($sql));
+            $product['p_name_remove_unicode']=remove_unicode($product['p_name']);
             //Lấy ảnh trong bảng images (Chỉ lấy 1 ảnh)
             $sql_get_img="select img_link_300 from images WHERE product_id=$product_id";
             $img=mysql_fetch_assoc(mysql_query($sql_get_img));
@@ -62,6 +63,7 @@
             $list_category=array();
             if(mysql_num_rows($table_category)!=0){
                 while($row=mysql_fetch_assoc($table_category)){
+                    $row['category_name_remove_unicode']=remove_unicode($row['category_name']);
                     $list_category[]=$row;
                 }
             }
@@ -101,7 +103,7 @@
             return false;
         }
 
-        function get_login_FB_URL(){
+        public function get_login_FB_URL(){
             include_once "fbLogin/config.php";
             $redirectURL = "http://localhost:81/mobilepro/frontend/includes/fbLogin/fb-callback.php";
             $permissions = ["email"];

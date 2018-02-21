@@ -97,13 +97,73 @@
                         </div>
                     </div>
                     <div class="rating">
-                        <p>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                        </p>
+                        <div style="width: 100px; float: left">
+                            <span class="fa fa-stack">
+                                {if $product.num_star>=1}
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                {else}
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                {/if}
+                            </span>
+                            <span class="fa fa-stack">
+                                {if $product.num_star>=2}
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                {else}
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                {/if}
+                            </span>
+                            <span class="fa fa-stack">
+                                {if $product.num_star>=3}
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                {else}
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                {/if}
+                            </span>
+                            <span class="fa fa-stack">
+                                {if $product.num_star>=4}
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                {else}
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                {/if}
+                            </span>
+                            <span class="fa fa-stack">
+                                {if $product.num_star>=5}
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                {else}
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                {/if}
+                            </span>
+                        </div>
+                        <div style="width: 200px; float: left;line-height: 28px; margin-left: 10px;">
+                            <a href="javascript: void (0)" style="color: #eb6243">
+                                <span class="glyphicon glyphicon-edit"></span>&nbsp;
+                                Đánh giá sản phẩm
+                            </a>
+                        </div>
+                        <div style="clear: both"></div>
+                        {*<div class="vote_product">
+                            <div class="vote_star">
+                                Click để vote số sao:&nbsp;
+                                <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                </span>
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                </span>
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                </span>
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                </span>
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                </span>
+                            </div>
+                            <div class="vote_comment">
+                                <input type="text" id="vote_content">
+                            </div>
+                        </div>*}
                         <hr>
                         <!-- AddThis Button BEGIN -->
                         <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>

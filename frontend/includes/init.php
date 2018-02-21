@@ -15,6 +15,7 @@ include "PagingUtils.php";
 include "class_validation.php";
 include "smarty/Smarty.class.php";
 include "class_get_info.php";
+include "remove_unicode.php";
 
 $database=new Database();
 $database->connect();
@@ -46,7 +47,7 @@ $vars['num_cart']=$info->get_num_cart();
 $vars['total']=$info->get_total();
 $vars['listCategory']=$info->get_category();
 $vars['product_name']=$info->get_product_name();
-$vars['loginURL']=$info->get_login_FB_URL();
+$_SESSION['loginURL']=$info->get_login_FB_URL();
 if (isset($_SESSION['customer']))
     $vars['user_online']=$info->get_customer_name($_SESSION['customer']);
 

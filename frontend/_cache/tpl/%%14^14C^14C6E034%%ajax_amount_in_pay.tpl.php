@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-05 04:33:10
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:21:54
          compiled from ajax_amount_in_pay.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_amount_in_pay.tpl', 3, false),)), $this); ?>

@@ -14,7 +14,7 @@
 	}
 
 	if (! isset($accessToken)) {
-	  header("location: http://localhost:81/mobilepro/frontend/index.php?mod=home&act=view");
+	  header("location: http://localhost:81/mobilepro/frontend/index.phptrang-chu");
 	  exit();
 	}
 

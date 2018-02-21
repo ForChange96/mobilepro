@@ -128,6 +128,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
                         $listProduct[]=$row;
                     }
@@ -137,6 +138,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
                     }
                 }
@@ -149,9 +151,9 @@
         }
         public function show_by_category_ajax(){
             global $smarty;
-            $category_id=isset($_GET['id'])?$_GET['id']:1;
+            $category_id=isset($_POST['id'])?$_POST['id']:1;
 
-            $orderBy=isset($_GET['order_by'])?trim($_GET['order_by']):"";
+            $orderBy=isset($_POST['order_by'])?trim($_POST['order_by']):"";
             $order_by="";
             switch ($orderBy){
                 case "default":
@@ -177,7 +179,7 @@
                     break;
             }
 
-            $limit=isset($_GET['limit'])?trim($_GET['limit']):"15";
+            $limit=isset($_POST['limit'])?trim($_POST['limit']):"15";
             $limit="LIMIT ".$limit;
 
             $where="where status=1 and category_id=$category_id";
@@ -190,6 +192,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
                         $listProduct[]=$row;
                     }
@@ -199,6 +202,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
                     }
                 }
@@ -240,6 +244,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
                         $listProduct[]=$row;
                     }
@@ -249,6 +254,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
                     }
                 }
@@ -300,6 +306,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
                         $listProduct[]=$row;
                     }
@@ -309,6 +316,7 @@
                 if (mysql_num_rows($tableProduct)!=0){
                     while($row=mysql_fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
+                        $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
                     }
                 }
@@ -336,6 +344,7 @@
         function get_product($product_id){
             $sql="SELECT p_name, p_price, manufacturer_id FROM product WHERE product_id=$product_id";
             $product=mysql_fetch_assoc(mysql_query($sql));
+            $product['p_name_remove_unicode']=remove_unicode($product['p_name']);
             return $product;
         }
         function get_img_300($product_id){

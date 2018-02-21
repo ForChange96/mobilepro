@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-06 03:33:41
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:21:46
          compiled from ajax_cart_in_home.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_cart_in_home.tpl', 16, false),)), $this); ?>
@@ -57,8 +57,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                     </tbody>
                 </table>
                 <p class="text-right">
-                    <a href="?mod=cart&act=view"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
-                    <a href="?mod=cart&act=pay"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
+                    <a href="gio-hang"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
+                    <a href="thanh-toan"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
                 </p>
             </div>
         </li>

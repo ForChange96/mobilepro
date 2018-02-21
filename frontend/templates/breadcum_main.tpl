@@ -1,7 +1,7 @@
 <div class="breadcum_main">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="?mod=home&act=view">TRANG CHỦ</a></li>
+            <li><a href="trang-chu">TRANG CHỦ</a></li>
             {if $mod=="huongdan"}
                 <li><a href="?mod={$mod}&act=view">HƯỚNG DẪN</a></li>
             {elseif $mod=="lienhe"}

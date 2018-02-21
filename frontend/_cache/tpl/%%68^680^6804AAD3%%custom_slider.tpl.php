@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-25 09:52:19
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:59
          compiled from custom_slider.tpl */ ?>
 <div class="custom-top" id="custom_slider">
     <div class="container">

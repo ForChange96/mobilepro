@@ -4,7 +4,7 @@
             <div class="position-display"></div>
             <div style="line-height:16px;margin-bottom: 20px;">
                 <span class="glyphicon glyphicon-info-sign" style="color: #5dbaff; font-size: 16px"></span>&nbsp;&nbsp;
-                Nếu bạn muốn thay đổi tên đăng nhập hoặc địa chỉ email, hãy tạo một tài khoản mới <a href="?mod=dangky&act=view">Tại Đây</a>.
+                Nếu bạn muốn thay đổi tên đăng nhập hoặc địa chỉ email, hãy tạo một tài khoản mới <a href="dang-ky">Tại Đây</a>.
             </div>
             <h3 style="text-align: center; color: grey">Sửa thông tin tài khoản</h3>
             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal" id="frm_edit_customer">

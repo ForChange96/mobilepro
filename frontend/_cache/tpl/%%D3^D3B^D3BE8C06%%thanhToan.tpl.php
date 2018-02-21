@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-06 09:30:20
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:21:49
          compiled from thanhToan.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'thanhToan.tpl', 366, false),)), $this); ?>
@@ -346,14 +346,16 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 ?>
                                                         <tr>
                                                             <td class="qc-image text-center">
-                                                                <a  href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+                                                                <a  href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product_id']; ?>
+=<?php echo $this->_tpl_vars['p_name_remove_unicode']; ?>
 ">
                                                                     <img src="<?php echo $this->_tpl_vars['product']['img_link_300']; ?>
 " width="50"/>
                                                                 </a>
                                                             </td>
                                                             <td class="qc-name text-center">
-                                                                <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+                                                                <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product_id']; ?>
+=<?php echo $this->_tpl_vars['p_name_remove_unicode']; ?>
 " >
                                                                     <?php echo $this->_tpl_vars['product']['p_name']; ?>
 

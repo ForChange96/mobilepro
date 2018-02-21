@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-12 11:22:48
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:59
          compiled from header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 64, false),)), $this); ?>
@@ -42,7 +42,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                     <a href="?mod=dangky&act=edit_customer">Tài khoản của tôi</a>
                                                 <?php else: ?>
                                                     <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
-                                                    <a href="?mod=dangky&act=view">Đăng ký</a>
+                                                    <a href="dang-ky">Đăng ký</a>
                                                 <?php endif; ?>
                                             </li>
                                         </ul>
@@ -63,7 +63,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 ?>
                                                             <tr>
                                                                 <td class="text-center" style="border-bottom: 0">
-                                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                                                                    <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+=<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
 ">
                                                                         <img src="<?php echo $this->_tpl_vars['product']['img_link_300']; ?>
 " alt="<?php echo $this->_tpl_vars['product']['p_name']; ?>
@@ -72,7 +73,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                                     </a>
                                                                 </td>
                                                                 <td class="text-left" style="padding-top: 25px;">
-                                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                                                                    <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+=<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
 "><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a>
                                                                 </td>
@@ -103,7 +105,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             <i class="fa fa-search"></i>
                                         </a>
                                         <div id="search" class="search-area">
-                                            <form action="?mod=product&act=search_product" method="post">
+                                            <form action="tim-kiem" method="post">
                                                 <input type="text" name="txt_search" placeholder="Tìm kiếm sản phẩm"/>
                                                 <span class="button">
                                                     <button type="submit" class="btn btn-default btn-lg">
@@ -162,11 +164,11 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                                  class="navbar-collapse collapse">
                                                                 <ul class="nav navbar-nav">
                                                                     <li>
-                                                                        <a href="?mod=home&act=view">Trang chủ</a>
+                                                                        <a href="trang-chu">Trang chủ</a>
                                                                     </li>
 
                                                                     <li>
-                                                                        <a href="?mod=gioithieu&act=view">Giới thiệu</a>
+                                                                        <a href="gioi-thieu">Giới thiệu</a>
                                                                     </li>
                                                                     <li class="dropdown">
                                                                         <a href="#" data-toggle="dropdown"
@@ -180,21 +182,22 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
     foreach ($_from as $this->_tpl_vars['category']):
 ?>
                                                                                 <li>
-                                                                                    <a href="?mod=product&act=show_by_category&id=<?php echo $this->_tpl_vars['category']['category_id']; ?>
+                                                                                    <a href="danh-muc-<?php echo $this->_tpl_vars['category']['category_id']; ?>
+=<?php echo $this->_tpl_vars['category']['category_name_remove_unicode']; ?>
 "><?php echo $this->_tpl_vars['category']['category_name']; ?>
 </a>
                                                                                 </li>
                                                                             <?php endforeach; endif; unset($_from); ?>
                                                                             <li>
-                                                                                <a href="?mod=product&act=search_product">Tìm kiếm</a>
+                                                                                <a href="tim-kiem">Tìm kiếm</a>
                                                                             </li>
                                                                         </ul>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="?mod=huongdan&act=view">Hướng Dẫn</a>
+                                                                        <a href="huong-dan">Hướng Dẫn</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="?mod=lienhe&act=view">Liên Hệ</a>
+                                                                        <a href="lien-he">Liên Hệ</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -208,10 +211,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                                     <nav>
                                                                         <ul>
                                                                             <li>
-                                                                                <a href="?mod=home&act=view">Trang chủ</a>
+                                                                                <a href="trang-chu">Trang chủ</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?mod=gioithieu&act=view">Giới thiệu</a>
+                                                                                <a href="gioi-thieu">Giới thiệu</a>
                                                                             </li>
                                                                             <li class="dropdown open">
                                                                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">Sản Phẩm <b class="caret"></b></a>
@@ -220,21 +223,22 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
     foreach ($_from as $this->_tpl_vars['category']):
 ?>
                                                                                         <li>
-                                                                                            <a href="?mod=product&act=show_by_category&id=<?php echo $this->_tpl_vars['category']['category_id']; ?>
+                                                                                            <a href="danh-muc-<?php echo $this->_tpl_vars['category']['category_id']; ?>
+=<?php echo $this->_tpl_vars['category']['category_name_remove_unicode']; ?>
 "><?php echo $this->_tpl_vars['category']['category_name']; ?>
 </a>
                                                                                         </li>
                                                                                     <?php endforeach; endif; unset($_from); ?>
                                                                                     <li>
-                                                                                        <a href="?mod=product&act=search_product">Tìm kiếm</a>
+                                                                                        <a href="tim-kiem">Tìm kiếm</a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?mod=huongdan&act=view">Hướng Dẫn</a>
+                                                                                <a href="gioi-thieu">Hướng Dẫn</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?mod=lienhe&act=view">Liên Hệ</a>
+                                                                                <a href="lien-he">Liên Hệ</a>
                                                                             </li>
                                                                         </ul>
                                                                     </nav>
@@ -271,7 +275,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 ?>
                                             <tr>
                                                 <td class="text-center">
-                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+                                                    <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product_id']; ?>
+=<?php echo $this->_tpl_vars['p_name_remove_unicode']; ?>
 ">
                                                         <img src="<?php echo $this->_tpl_vars['product']['img_link_300']; ?>
 " alt="<?php echo $this->_tpl_vars['product']['p_name']; ?>
@@ -280,7 +285,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                     </a>
                                                 </td>
                                                 <td class="text-left" style="padding-top: 30px;">
-                                                    <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+                                                    <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product_id']; ?>
+=<?php echo $this->_tpl_vars['p_name_remove_unicode']; ?>
 "><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a>
                                                 </td>
@@ -319,8 +325,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             </tbody>
                                         </table>
                                         <p class="text-right">
-                                            <a href="?mod=cart&act=view"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
-                                            <a href="?mod=cart&act=pay"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
+                                            <a href="gio-hang"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="thanh-toan"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
                                         </p>
                                     </div>
                                 </li>
@@ -346,11 +352,11 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                 <i id="check_login"></i>
             </div>
             <form id="form_login" action="" method="post">
-                <input type="text" name="username" placeholder="Tên đăng nhập hoặc email" onblur="check_empty_username()" id="username_login" onclick="clear_err('#username_login')">
-                <input type="password" name="password" placeholder="Mật khẩu" onblur="check_empty_password()" id="password_login" onclick="clear_err('#password_login')">
+                <input type="text" name="username" placeholder="Tên đăng nhập hoặc email" onchange="check_empty_username()" id="username_login" onclick="clear_err('#username_login')">
+                <input type="password" name="password" placeholder="Mật khẩu" onchange="check_empty_password()" id="password_login" onclick="clear_err('#password_login')">
                 <input type="button" class="login loginmodal-submit" onclick="login()" value="Đăng nhập">
             </form>
-            <a href="<?php echo $this->_tpl_vars['loginURL']; ?>
+            <a href="<?php echo $_SESSION['loginURL']; ?>
 ">
                 <div class="login_fb">
                     <div class="login_fb_img">
@@ -361,7 +367,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
             </a>
             <div style="clear: both"></div>
             <div class="login-help">
-                Chưa có tài khoản?&nbsp;&nbsp;&nbsp;<a href="?mod=dangky&act=view">Đăng ký</a>
+                Chưa có tài khoản?&nbsp;&nbsp;&nbsp;<a href="dang-ky">Đăng ký</a>
             </div>
         </div>
     </div>
@@ -382,6 +388,37 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
+
+<?php if (isset ( $_SESSION['prompt'] )): ?>
+    <div id="prompt_update_address" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" onclick="unset_prompt()" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: #666666;">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        &nbsp;&nbsp;Thông báo
+                    </h4>
+                </div>
+                <div class="modal-body" style="font-size: 14px;color: #333333">
+                    <p>Facebook không cung cấp địa chỉ và SĐT cho chúng tôi. Vui lòng cập nhật để có trải nghiệm mua hàng tốt nhất!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="unset_prompt()">Để sau</button>
+                    <a href="?mod=dangky&act=edit_customer" class="btn btn-success" onclick="unset_prompt()">Cập nhật ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo '
+        <script>
+            $("#prompt_update_address").modal();
+        </script>
+    '; ?>
+
+<?php endif; ?>

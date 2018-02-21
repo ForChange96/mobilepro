@@ -36,7 +36,7 @@
                                                     <a href="?mod=dangky&act=edit_customer">Tài khoản của tôi</a>
                                                 {else}
                                                     <a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
-                                                    <a href="?mod=dangky&act=view">Đăng ký</a>
+                                                    <a href="dang-ky">Đăng ký</a>
                                                 {/if}
                                             </li>
                                         </ul>
@@ -54,12 +54,12 @@
                                                         {foreach from=$listFavorite key=k item=product}
                                                             <tr>
                                                                 <td class="text-center" style="border-bottom: 0">
-                                                                    <a href="?mod=product&act=detail&id={$product.product_id}">
+                                                                    <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">
                                                                         <img src="{$product.img_link_300}" alt="{$product.p_name}" title="{$product.p_name}" width="100" style="border-radius: 10px">
                                                                     </a>
                                                                 </td>
                                                                 <td class="text-left" style="padding-top: 25px;">
-                                                                    <a href="?mod=product&act=detail&id={$product.product_id}">{$product.p_name}</a>
+                                                                    <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">{$product.p_name}</a>
                                                                 </td>
                                                                 <td class="text-right" style="padding-top: 25px;">{$product.p_price|number_format}</td>
                                                                 <td class="text-center" style="padding-top: 25px; border: 0">
@@ -86,7 +86,7 @@
                                             <i class="fa fa-search"></i>
                                         </a>
                                         <div id="search" class="search-area">
-                                            <form action="?mod=product&act=search_product" method="post">
+                                            <form action="tim-kiem" method="post">
                                                 <input type="text" name="txt_search" placeholder="Tìm kiếm sản phẩm"/>
                                                 <span class="button">
                                                     <button type="submit" class="btn btn-default btn-lg">
@@ -145,11 +145,11 @@
                                                                  class="navbar-collapse collapse">
                                                                 <ul class="nav navbar-nav">
                                                                     <li>
-                                                                        <a href="?mod=home&act=view">Trang chủ</a>
+                                                                        <a href="trang-chu">Trang chủ</a>
                                                                     </li>
 
                                                                     <li>
-                                                                        <a href="?mod=gioithieu&act=view">Giới thiệu</a>
+                                                                        <a href="gioi-thieu">Giới thiệu</a>
                                                                     </li>
                                                                     <li class="dropdown">
                                                                         <a href="#" data-toggle="dropdown"
@@ -161,19 +161,19 @@
                                                                             role="menu" aria-labelledby="dropdownMenu" style="margin-top: -15px !important;">
                                                                             {foreach from=$listCategory item=category}
                                                                                 <li>
-                                                                                    <a href="?mod=product&act=show_by_category&id={$category.category_id}">{$category.category_name}</a>
+                                                                                    <a href="danh-muc-{$category.category_id}={$category.category_name_remove_unicode}">{$category.category_name}</a>
                                                                                 </li>
                                                                             {/foreach}
                                                                             <li>
-                                                                                <a href="?mod=product&act=search_product">Tìm kiếm</a>
+                                                                                <a href="tim-kiem">Tìm kiếm</a>
                                                                             </li>
                                                                         </ul>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="?mod=huongdan&act=view">Hướng Dẫn</a>
+                                                                        <a href="huong-dan">Hướng Dẫn</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="?mod=lienhe&act=view">Liên Hệ</a>
+                                                                        <a href="lien-he">Liên Hệ</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -187,29 +187,29 @@
                                                                     <nav>
                                                                         <ul>
                                                                             <li>
-                                                                                <a href="?mod=home&act=view">Trang chủ</a>
+                                                                                <a href="trang-chu">Trang chủ</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?mod=gioithieu&act=view">Giới thiệu</a>
+                                                                                <a href="gioi-thieu">Giới thiệu</a>
                                                                             </li>
                                                                             <li class="dropdown open">
                                                                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">Sản Phẩm <b class="caret"></b></a>
                                                                                 <ul role="menu" class="dropdown-menu multi-level" aria-labelledby="dropdownMenu">
                                                                                     {foreach from=$listCategory item=category}
                                                                                         <li>
-                                                                                            <a href="?mod=product&act=show_by_category&id={$category.category_id}">{$category.category_name}</a>
+                                                                                            <a href="danh-muc-{$category.category_id}={$category.category_name_remove_unicode}">{$category.category_name}</a>
                                                                                         </li>
                                                                                     {/foreach}
                                                                                     <li>
-                                                                                        <a href="?mod=product&act=search_product">Tìm kiếm</a>
+                                                                                        <a href="tim-kiem">Tìm kiếm</a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?mod=huongdan&act=view">Hướng Dẫn</a>
+                                                                                <a href="gioi-thieu">Hướng Dẫn</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a href="?mod=lienhe&act=view">Liên Hệ</a>
+                                                                                <a href="lien-he">Liên Hệ</a>
                                                                             </li>
                                                                         </ul>
                                                                     </nav>
@@ -252,12 +252,12 @@
                                         {foreach from=$smarty.session.cart key=product_id item=product}
                                             <tr>
                                                 <td class="text-center">
-                                                    <a href="?mod=product&act=detail&id={$product_id}">
+                                                    <a href="chi-tiet-san-pham-{$product_id}={$p_name_remove_unicode}">
                                                         <img src="{$product.img_link_300}" alt="{$product.p_name}" title="{$product.p_name}" width="100">
                                                     </a>
                                                 </td>
                                                 <td class="text-left" style="padding-top: 30px;">
-                                                    <a href="?mod=product&act=detail&id={$product_id}">{$product.p_name}</a>
+                                                    <a href="chi-tiet-san-pham-{$product_id}={$p_name_remove_unicode}">{$product.p_name}</a>
                                                 </td>
                                                 <td class="text-right" style="padding-top: 30px;">x {$product.number}</td>
                                                 <td class="text-right" style="padding-top: 30px;">{$product.p_price|number_format}</td>
@@ -288,8 +288,8 @@
                                             </tbody>
                                         </table>
                                         <p class="text-right">
-                                            <a href="?mod=cart&act=view"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
-                                            <a href="?mod=cart&act=pay"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
+                                            <a href="gio-hang"><strong><i class="fa fa-shopping-cart"></i> Xem Giỏ Hàng</strong></a>&nbsp;&nbsp;&nbsp;
+                                            <a href="thanh-toan"><strong><i class="fa fa-share"></i> Thanh Toán</strong></a>
                                         </p>
                                     </div>
                                 </li>
@@ -316,11 +316,11 @@
                 <i id="check_login"></i>
             </div>
             <form id="form_login" action="" method="post">
-                <input type="text" name="username" placeholder="Tên đăng nhập hoặc email" onblur="check_empty_username()" id="username_login" onclick="clear_err('#username_login')">
-                <input type="password" name="password" placeholder="Mật khẩu" onblur="check_empty_password()" id="password_login" onclick="clear_err('#password_login')">
+                <input type="text" name="username" placeholder="Tên đăng nhập hoặc email" onchange="check_empty_username()" id="username_login" onclick="clear_err('#username_login')">
+                <input type="password" name="password" placeholder="Mật khẩu" onchange="check_empty_password()" id="password_login" onclick="clear_err('#password_login')">
                 <input type="button" class="login loginmodal-submit" onclick="login()" value="Đăng nhập">
             </form>
-            <a href="{$loginURL}">
+            <a href="{$smarty.session.loginURL}">
                 <div class="login_fb">
                     <div class="login_fb_img">
                         <img src="catalog\view\images\icon-fb.png">
@@ -330,7 +330,7 @@
             </a>
             <div style="clear: both"></div>
             <div class="login-help">
-                Chưa có tài khoản?&nbsp;&nbsp;&nbsp;<a href="?mod=dangky&act=view">Đăng ký</a>
+                Chưa có tài khoản?&nbsp;&nbsp;&nbsp;<a href="dang-ky">Đăng ký</a>
             </div>
         </div>
     </div>
@@ -353,6 +353,37 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
+
+{* Modal nhắc cập nhật địa chỉ và SĐT *}
+{if isset($smarty.session.prompt)}
+    <div id="prompt_update_address" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" onclick="unset_prompt()" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: #666666;">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        &nbsp;&nbsp;Thông báo
+                    </h4>
+                </div>
+                <div class="modal-body" style="font-size: 14px;color: #333333">
+                    <p>Facebook không cung cấp địa chỉ và SĐT cho chúng tôi. Vui lòng cập nhật để có trải nghiệm mua hàng tốt nhất!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="unset_prompt()">Để sau</button>
+                    <a href="?mod=dangky&act=edit_customer" class="btn btn-success" onclick="unset_prompt()">Cập nhật ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {literal}
+        <script>
+            $("#prompt_update_address").modal();
+        </script>
+    {/literal}
+{/if}

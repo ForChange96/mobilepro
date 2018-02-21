@@ -339,12 +339,12 @@
                                                         {foreach from=$smarty.session.cart key=product_id item=product}
                                                         <tr>
                                                             <td class="qc-image text-center">
-                                                                <a  href="?mod=product&act=detail&id={$product_id}">
+                                                                <a  href="chi-tiet-san-pham-{$product_id}={$p_name_remove_unicode}">
                                                                     <img src="{$product.img_link_300}" width="50"/>
                                                                 </a>
                                                             </td>
                                                             <td class="qc-name text-center">
-                                                                <a href="?mod=product&act=detail&id={$product_id}" >
+                                                                <a href="chi-tiet-san-pham-{$product_id}={$p_name_remove_unicode}" >
                                                                     {$product.p_name}
                                                                 </a>
                                                             </td>

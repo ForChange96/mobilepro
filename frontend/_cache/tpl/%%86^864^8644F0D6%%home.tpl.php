@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-08 09:20:19
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:58
          compiled from home.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'home.tpl', 27, false),)), $this); ?>
@@ -20,7 +20,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                     <div class="t-all-product-info">
                                         <div class="p-sign">Mới</div>
                                         <div class="t-product-img">
-                                            <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                                            <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+=<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
 ">
                                                 <img src="<?php echo $this->_tpl_vars['product']['img_link_350']; ?>
 "
@@ -31,7 +32,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             </a>
                                         </div>
                                         <div class="tab-p-info">
-                                            <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                                            <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+=<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
 "><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a>
                                             <div class="price_product">
@@ -82,7 +84,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                 </button>
                                                 <ul class="add-to-links">
                                                     <li>
-                                                        <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                                                        <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+=<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
 "
                                                            class="link-wishlist" data-toggle="tooltip"
                                                            title=" Xem chi tiết"><i class="fa fa-eye"></i></a>
@@ -124,14 +127,14 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                     <div id="banner_page_0" class="banner_page">
                         <ul>
                             <li class="item b-stripe oll">
-                                <a href="?mod=product&act=show_by_category&id=2">
+                                <a href="danh-muc-2=dien-thoai">
                                     <img src="catalog\view\images\qc2-2-758x399.jpg"
                                          alt="quảng cáo 1" class="img-responsive"/>
                                 </a>
                                 <!--<div class="name_banner"><a href="#">quảng cáo 1</a></div>-->
                             </li>
                             <li class="item b-stripe event">
-                                <a href="?mod=product&act=show_by_category&id=1">
+                                <a href="danh-muc-1=phu-kien">
                                     <img src="catalog\view\images\qc2-1-758x399.jpg"
                                          alt="quảng cáo 2" class="img-responsive"/>
                                 </a>

@@ -15,14 +15,14 @@
                                     <div class="t-all-product-info">
                                         <div class="p-sign">Mới</div>
                                         <div class="t-product-img">
-                                            <a href="?mod=product&act=detail&id={$product.product_id}">
+                                            <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">
                                                 <img src="{$product.img_link_350}"
                                                      alt="{$product.p_name}"
                                                      title="{$product.p_name}" class="img-responsive"/>
                                             </a>
                                         </div>
                                         <div class="tab-p-info">
-                                            <a href="?mod=product&act=detail&id={$product.product_id}">{$product.p_name}</a>
+                                            <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">{$product.p_name}</a>
                                             <div class="price_product">
                                                 <span class="price-new">{$product.p_price|number_format} VNĐ</span>
                                             </div>
@@ -69,7 +69,7 @@
                                                 </button>
                                                 <ul class="add-to-links">
                                                     <li>
-                                                        <a href="?mod=product&act=detail&id={$product.product_id}"
+                                                        <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}"
                                                            class="link-wishlist" data-toggle="tooltip"
                                                            title=" Xem chi tiết"><i class="fa fa-eye"></i></a>
                                                     </li>
@@ -107,14 +107,14 @@
                     <div id="banner_page_0" class="banner_page">
                         <ul>
                             <li class="item b-stripe oll">
-                                <a href="?mod=product&act=show_by_category&id=2">
+                                <a href="danh-muc-2=dien-thoai">
                                     <img src="catalog\view\images\qc2-2-758x399.jpg"
                                          alt="quảng cáo 1" class="img-responsive"/>
                                 </a>
                                 <!--<div class="name_banner"><a href="#">quảng cáo 1</a></div>-->
                             </li>
                             <li class="item b-stripe event">
-                                <a href="?mod=product&act=show_by_category&id=1">
+                                <a href="danh-muc-1=phu-kien">
                                     <img src="catalog\view\images\qc2-1-758x399.jpg"
                                          alt="quảng cáo 2" class="img-responsive"/>
                                 </a>

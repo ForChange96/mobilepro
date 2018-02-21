@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-01 09:17:51
+<?php /* Smarty version 2.6.13, created on 2018-02-19 15:14:05
          compiled from chi-tiet-san-pham.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'chi-tiet-san-pham.tpl', 59, false),)), $this); ?>
@@ -126,14 +126,51 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                         </div>
                     </div>
                     <div class="rating">
-                        <p>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                        </p>
-                        <hr>
+                        <div style="width: 100px; float: left">
+                            <span class="fa fa-stack">
+                                <?php if ($this->_tpl_vars['product']['num_star'] >= 1): ?>
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                <?php else: ?>
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                <?php endif; ?>
+                            </span>
+                            <span class="fa fa-stack">
+                                <?php if ($this->_tpl_vars['product']['num_star'] >= 2): ?>
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                <?php else: ?>
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                <?php endif; ?>
+                            </span>
+                            <span class="fa fa-stack">
+                                <?php if ($this->_tpl_vars['product']['num_star'] >= 3): ?>
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                <?php else: ?>
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                <?php endif; ?>
+                            </span>
+                            <span class="fa fa-stack">
+                                <?php if ($this->_tpl_vars['product']['num_star'] >= 4): ?>
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                <?php else: ?>
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                <?php endif; ?>
+                            </span>
+                            <span class="fa fa-stack">
+                                <?php if ($this->_tpl_vars['product']['num_star'] >= 5): ?>
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                <?php else: ?>
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                <?php endif; ?>
+                            </span>
+                        </div>
+                        <div style="width: 200px; float: left;line-height: 28px; margin-left: 10px;">
+                            <a href="javascript: void (0)" style="color: #eb6243">
+                                <span class="glyphicon glyphicon-edit"></span>&nbsp;
+                                Đánh giá sản phẩm
+                            </a>
+                        </div>
+                        <div style="clear: both"></div>
+                                                <hr>
                         <!-- AddThis Button BEGIN -->
                         <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
                         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>

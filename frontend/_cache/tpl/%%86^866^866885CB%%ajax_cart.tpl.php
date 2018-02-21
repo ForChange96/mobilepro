@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-01 16:23:39
+<?php /* Smarty version 2.6.13, created on 2018-02-21 02:50:26
          compiled from ajax_cart.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_cart.tpl', 31, false),)), $this); ?>
@@ -17,7 +17,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 ?>
         <tr>
             <td class="text-center">
-                <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+                <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product_id']; ?>
+=<?php echo $this->_tpl_vars['p_name_remove_unicode']; ?>
 ">
                     <img src="<?php echo $this->_tpl_vars['product']['img_link_300']; ?>
 " alt="<?php echo $this->_tpl_vars['product']['p_name']; ?>
@@ -26,7 +27,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                 </a>
             </td>
             <td class="text-center" style="line-height: 70px;">
-                <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product_id']; ?>
+                <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product_id']; ?>
+=<?php echo $this->_tpl_vars['p_name_remove_unicode']; ?>
 "><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a>
             </td>

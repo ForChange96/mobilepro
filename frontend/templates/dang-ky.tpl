@@ -5,6 +5,7 @@
             <div style="line-height:16px;margin-bottom: 20px;">
                 <span class="glyphicon glyphicon-info-sign" style="color: #5dbaff; font-size: 16px"></span>&nbsp;&nbsp;
                 Nếu bạn đã có tài khoản, vui lòng đăng nhập <a href="javascript: void (0)"  data-toggle="modal" data-target="#login-modal">Tại Đây</a>.
+                <div style="padding: 5px 0 0 28px">Hoặc sử dụng tài khoản <a href="{$smarty.session.loginURL}">Facebook</a> </div>
             </div>
             <h3 style="text-align: center; color: grey">Đăng ký tài khoản</h3>
             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal" id="form_signup">
@@ -71,4 +72,26 @@
     </div>
 </div>
 <div style="height: 20px;"></div>
+
+{*Modal alert signup success*}
+<div id="sign_up_success" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width: 400px;">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="text-align: center; line-height: 60px;">
+                    <span class="glyphicon glyphicon-ok-sign" style="color: green"></span>&nbsp;
+                    Đăng ký thành công
+                </h4>
+                <h5 style="text-align: center"><i style="color: #333333;">Chúng tôi đã gửi cho bạn một email, vui lòng xác nhận để kích hoạt tài khoản!</i></h5>
+                <div style="text-align: center">
+                    <a href="https://mail.google.com" target="_blank" class="btn btn-success">Đến gmail</a>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 

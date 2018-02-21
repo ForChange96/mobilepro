@@ -35,8 +35,10 @@ $(document).ready(function () {
 
     $(".icon-close-modal").click(function () {
         $("#modal_order_success").toggle();
-        window.location.href = "?mod=home&act=view";
+        window.location.href = "trang-chu";
     });
+
+
 
     /*$("#text-notification-success").html("<h4>Thêm thành công!</h4>");
     $("#notification-success").fadeIn(100).delay(1000).fadeOut(1000);*/
@@ -54,7 +56,7 @@ function search_toggle() {
 function login() {
     $.ajax({
         type: "POST",
-        url: "?mod=home&act=login",
+        url: "login",
         data: jQuery("#form_login").serialize(),
         dataType: "json",
         success: function (data) {
@@ -106,7 +108,7 @@ function check_username() {
         var strData="username="+username;
         $.ajax({
             type: "POST",
-            url: "?mod=dangky&act=check_username",
+            url: "check_username",
             data: strData,
             dataType: "json",
             success: function (data) {
@@ -132,7 +134,7 @@ function check_email() {
         var strData="email="+email;
         $.ajax({
             type: "POST",
-            url: "?mod=dangky&act=check_email",
+            url: "check_email_signup",
             data: strData,
             dataType: "json",
             success: function (data) {
@@ -186,12 +188,19 @@ function check_email() {
  function sign_up() {
      $.ajax({
          type: "POST",
-         url: "?mod=dangky&act=signup",
+         url: "signup",
          data: jQuery("#form_signup").serialize(),
          dataType: "json",
          success: function (data) {
              if(parseInt(data.ok)==1){
                  $("#sign_up_success").modal();
+                 var email=$("#input-email").val();
+                 var strEmail="email="+email;
+                 $.ajax({
+                     data: strEmail,
+                     type: "POST",
+                     url: "send_mail_confirm"
+                 });
              }
              else if (parseInt(data.ok)==2){
                  $("#input-confirm").css("border","1px solid #fb060680");
@@ -212,7 +221,7 @@ function check_email() {
     var strData="id="+product_id;
      $.ajax({
          type: "POST",
-         url: "?mod=product&act=add_wishlist",
+         url: "add_wishlist",
          data: strData,
          dataType: "json",
          success: function (data) {
@@ -235,7 +244,7 @@ function check_email() {
     var strData="id="+product_id;
      $.ajax({
          type: "POST",
-         url: "?mod=product&act=delete_wishlist",
+         url: "delete_wishlist",
          data: strData,
          dataType: "json",
          success: function (data) {
@@ -253,12 +262,12 @@ function check_email() {
     var strData="id="+product_id;
      $.ajax({
          type: "POST",
-         url: "?mod=product&act=add_cart",
+         url: "add_cart",
          data: strData,
          dataType: "json",
          success: function () {
              $.ajax({
-                 url: "?mod=product&act=reload_cart",
+                 url: "reload_cart",
                  dataType: "html",
                  success: function (data) {
                      $("#cart_content").html(data);
@@ -267,7 +276,7 @@ function check_email() {
 
              //Load num_cart and total
              $.ajax({
-                 url: "?mod=product&act=reload_num_cart_and_total",
+                 url: "reload_num_cart_and_total",
                  dataType: "json",
                  success: function (data) {
                      $("#num_cart").html(data.num_cart);
@@ -286,12 +295,12 @@ function add_cart_with_number(product_id) {
     var strData="id="+product_id+"&number="+number;
     $.ajax({
         type: "POST",
-        url: "?mod=product&act=add_cart_with_number",
+        url: "add_cart_with_number",
         data: strData,
         dataType: "json",
         success: function () {
             $.ajax({
-                url: "?mod=product&act=reload_cart",
+                url: "reload_cart",
                 dataType: "html",
                 success: function (data) {
                     $("#cart_content").html(data);
@@ -300,7 +309,7 @@ function add_cart_with_number(product_id) {
 
             //Load num_cart and total
             $.ajax({
-                url: "?mod=product&act=reload_num_cart_and_total",
+                url: "reload_num_cart_and_total",
                 dataType: "json",
                 success: function (data) {
                     $("#num_cart").html(data.num_cart);
@@ -319,12 +328,12 @@ function add_cart_with_number(product_id) {
      var strData="id="+product_id;
      $.ajax({
          type: "POST",
-         url: "?mod=product&act=remove_from_cart",
+         url: "remove_from_cart",
          data: strData,
          dataType: "json",
          success: function () {
              $.ajax({
-                 url: "?mod=product&act=reload_cart",
+                 url: "reload_cart",
                  dataType: "html",
                  success: function (data) {
                      $("#cart_content").html(data);
@@ -334,7 +343,7 @@ function add_cart_with_number(product_id) {
 
              //Load num_cart and total
              $.ajax({
-                 url: "?mod=product&act=reload_num_cart_and_total",
+                 url: "reload_num_cart_and_total",
                  dataType: "json",
                  success: function (data) {
                      $("#num_cart").html(data.num_cart);
@@ -349,11 +358,11 @@ function remove_from_cart2(product_id) {//Trang giỏ hàng. Sau remove sẽ rel
     $(".tooltip").tooltip("hide");//Ẩn title sau khi click btn xoá
     $.ajax({
         type: "POST",
-        url: "?mod=product&act=remove_from_cart2",
+        url: "remove_from_cart2",
         data: strData,
         success: function () {
             $.ajax({
-                url: "?mod=product&act=reload_cart",
+                url: "reload_cart",
                 dataType: "html",
                 success: function (data) {
                     $("#cart_content").html(data);
@@ -362,7 +371,7 @@ function remove_from_cart2(product_id) {//Trang giỏ hàng. Sau remove sẽ rel
 
             //Load num_cart and total
             $.ajax({
-                url: "?mod=product&act=reload_num_cart_and_total",
+                url: "reload_num_cart_and_total",
                 dataType: "json",
                 success: function (data) {
                     $("#num_cart").html(data.num_cart);
@@ -372,7 +381,7 @@ function remove_from_cart2(product_id) {//Trang giỏ hàng. Sau remove sẽ rel
 
             //Load list SP đang hiển thị trên trang giỏ hàng
             $.ajax({
-                url: "?mod=cart&act=ajax_cart",
+                url: "reload_cart_in_cart_page",
                 dataType: "html",
                 success: function (data) {
                     $("#list_product_from_cart").html(data);
@@ -389,7 +398,7 @@ function update_number(product_id) {
     var strData="id="+product_id+"&number="+number;
     $.ajax({
        type: "POST",
-       url: "?mod=cart&act=update_number",
+       url: "update_number_in_cart_page",
        data: strData,
        dataType: "json",
        success: function (data) {
@@ -399,7 +408,7 @@ function update_number(product_id) {
 
            //Load list SP trong Dropdown cart
            $.ajax({
-               url: "?mod=product&act=reload_cart",
+               url: "reload_cart",
                dataType: "html",
                success: function (data) {
                    $("#cart_content").html(data);
@@ -408,7 +417,7 @@ function update_number(product_id) {
 
            //Load list SP đang hiển thị trên trang giỏ hàng
            $.ajax({
-               url: "?mod=cart&act=ajax_cart",
+               url: "reload_cart_in_cart_page",
                dataType: "html",
                success: function (data) {
                    $("#list_product_from_cart").html(data);
@@ -422,12 +431,12 @@ function update_number(product_id) {
     });
 }
 
- function load_list_product(category_id) {
+ function load_list_product(category_id) {//Trang DS SP: load lại list SP khi click chọn 1 danh mục
      var strData="id="+category_id;
-     load_list_category(category_id);
+     load_list_category(category_id);//Load lại list category (bên trái) - hàm này đc viết ở dưới
      $.ajax({
-         type: "GET",
-         url: "?mod=product&act=show_by_category_ajax",
+         type: "POST",
+         url: "ajax-list-product",
          data: strData,
          dataType: "html",
          success: function (data) {
@@ -435,11 +444,11 @@ function update_number(product_id) {
          }
      })
  }
-function load_list_category(category_id) {
+function load_list_category(category_id) {//trang DS SP: load lại list category (đổi lại màu) - Hàm này đc gọi ra từ hàm trên
     var strData="id="+category_id;
     $.ajax({
         type: "POST",
-        url: "?mod=product&act=list_category_ajax",
+        url: "ajax-list-category",
         data: strData,
         dataType: "html",
         success: function (data) {
@@ -455,8 +464,8 @@ function changeFilter() {
     var category_id = $("#category_selected").val();
     var strData = "id="+category_id+"&limit="+limit+"&order_by="+order_by;
     $.ajax({
-        type: "GET",
-        url: "?mod=product&act=show_by_category_ajax",
+        type: "POST",
+        url: "ajax-list-product",
         data: strData,
         dataType: "html",
         success: function (data) {
@@ -467,7 +476,7 @@ function changeFilter() {
 function search() {
     $.ajax({
         type: "POST",
-        url: "?mod=product&act=ajax_search_product",
+        url: "ajax_search_product",
         data: jQuery("#frm_search").serialize(),
         dataType: "html",
         success: function (data) {
@@ -505,12 +514,12 @@ function number_in_pay(product_id) {
     else{
         $.ajax({
             type: "POST",
-            url: "?mod=cart&act=ajax_cart_in_pay",
+            url: "ajax_cart_in_pay",
             data: strData,
             dataType: "html",
             success: function(data){
                 $("#list_product_in_cart").html(data);
-                $("#amount").load("?mod=cart&act=ajax_amount");
+                $("#amount").load("ajax_amount");
             }
         });
     }
@@ -527,7 +536,7 @@ function use_my_information(status) {
         }
         else{
             $.ajax({
-                url: "?mod=cart&act=use_my_information",
+                url: "use_my_information",
                 dataType: "json",
                 success: function (data) {
                     $("#ship_fullname").val(data.fullname);
@@ -552,7 +561,7 @@ function confirm_order(status) {
     else{
         $.ajax({
             type: "POST",
-            url: "?mod=cart&act=confirm_order",
+            url: "confirm_order",
             data: jQuery("#frm_shipping_address").serialize(),
             dataType: "json",
             success: function (data) {
@@ -560,7 +569,7 @@ function confirm_order(status) {
                     $("#modal_order_success").modal();
                     $.ajax({
                         type: "POST",
-                        url: "?mod=cart&act=send_mail_order",
+                        url: "send_mail_order",
                         success: function () {
                         }
                     })
@@ -594,7 +603,7 @@ function confirm_order(status) {
 
 function pay_click() {
     $.ajax({
-        url: "?mod=product&act=reload_num_cart_and_total",
+        url: "reload_num_cart_and_total",
         dataType: "json",
         success: function (data) {
             if(parseInt(data.num_cart)==0){
@@ -602,7 +611,7 @@ function pay_click() {
                 $("#notification-error").fadeIn(100).delay(1000).fadeOut(1000);
             }
             else{
-                window.location.replace("?mod=cart&act=pay");
+                window.location.replace("thanh-toan");
             }
         }
     });
@@ -615,7 +624,7 @@ function check_pass_for_change(customer_id) {
     var strData="id="+customer_id+"&old_pass="+old_pass;
     $.ajax({
         type: "POST",
-        url: "?mod=dangky&act=check_old_pass",
+        url: "check_old_pass",
         data: strData,
         dataType: "json",
         success: function (data) {
@@ -631,7 +640,7 @@ function check_pass_for_change(customer_id) {
 function edit_customer() {
     $.ajax({
         type: "POST",
-        url: "?mod=dangky&act=do_edit",
+        url: "do_edit_customer",
         data: jQuery("#frm_edit_customer").serialize(),
         dataType: "json",
         success: function (data) {
@@ -656,3 +665,7 @@ function edit_customer() {
     })
 }
 //*********** Edit customer ********************
+
+function unset_prompt() {
+    $.ajax({url: "unset_prompt"});
+}
