@@ -25,8 +25,8 @@ $smarty->template_dir='templates/';
 $smarty->compile_dir='_cache/tpl';
 
 // 2. Get param từ request url
-$mod=isset($_GET['mod'])?trim($_GET['mod']):"";
-$act=isset($_GET['act'])?trim($_GET['act']):"";
+$mod=trim($_GET['mod']);
+$act=trim($_GET['act']);
 
 //3. Phân tích param để gọi module và action tương ứng
 if (empty($mod)) $mod="home";

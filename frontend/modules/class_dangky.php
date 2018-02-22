@@ -9,7 +9,7 @@
             $email=trim($_POST['email']);
             $isOk=0;
             $sql="SELECT * FROM customer WHERE email='$email'";
-            if (Database::con()->num_rows(Database::con()->query($sql))==0){
+            if (mysql_num_rows(mysql_query($sql))==0){
                 $isOk=1;
             }
             if (Validation::checkMail($email)==false){
@@ -23,7 +23,7 @@
             $username=trim($_POST['username']);
             $isOk=0;
             $sql="SELECT * FROM customer WHERE username='$username'";
-            if (Database::con()->num_rows(Database::con()->query($sql))==0){
+            if (mysql_num_rows(mysql_query($sql))==0){
                 $isOk=1;
             }
             $result=array("ok"=>$isOk);
@@ -51,7 +51,7 @@
                 $password=md5($password);
                 //INSERT TO DATABASE
                 $sql_insert="INSERT INTO customer(username,password,email,fullname,address,phone_number) VALUES ('$username','$password','$email','$fullname','$address','$phone_number')";
-                if(Database::con()->query($sql_insert)){
+                if(mysql_query($sql_insert)){
                     $isOk=1;
                 }
             }
@@ -64,7 +64,7 @@
             global $smarty;
             $customer_id=$_SESSION['customer'];
             $sql_get_customer="SELECT * FROM customer WHERE customer_id=$customer_id";
-            $customer=Database::con()->fetch_assoc(Database::con()->query($sql_get_customer));
+            $customer=mysql_fetch_assoc(mysql_query($sql_get_customer));
             $smarty->assign('customer',$customer);
             return $smarty->fetch('edit_customer.tpl');
         }
@@ -81,7 +81,7 @@
                 $confirm=md5(trim($_POST['confirm']));
 
                 $sql_check_pass="SELECT customer_id FROM customer WHERE customer_id=$customer_id AND password='$old_password'";
-                if (Database::con()->num_rows(Database::con()->query($sql_check_pass))==0){
+                if (mysql_num_rows(mysql_query($sql_check_pass))==0){
                     $isOk=2;//error password
                 }
                 else{
@@ -100,7 +100,7 @@
             }
 
             if ($sql_update!=""){
-                if (!Database::con()->query($sql_update)){
+                if (!mysql_query($sql_update)){
                     $isOk=0;//error sql command
                 }
             }
@@ -114,7 +114,7 @@
             $old_pass=md5(trim($_POST['old_pass']));
 
             $sql_check="SELECT customer_id FROM customer WHERE customer_id=$customer_id AND password='$old_pass'";
-            $check=Database::con()->num_rows(Database::con()->query($sql_check));
+            $check=mysql_num_rows(mysql_query($sql_check));
 
             $isOk=0;
             if($check==1){
@@ -128,10 +128,10 @@
         function confirm_account(){
             $email_md5=trim($_GET['account']);
             $sql="update customer set status=1 where md5(email)='$email_md5'";
-            if (Database::con()->query($sql)){
+            if (mysql_query($sql)){
                 //Get customer_id để add vào session
                 $sql_get="SELECT customer_id FROM customer WHERE md5(email)='$email_md5'";
-                $customer_id=Database::con()->fetch_assoc(Database::con()->query($sql_get));
+                $customer_id=mysql_fetch_assoc(mysql_query($sql_get));
                 $_SESSION['customer']=$customer_id['customer_id'];
 
                 header("location: trang-chu");

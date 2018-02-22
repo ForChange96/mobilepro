@@ -15,16 +15,16 @@ class User{
                 $err="Không được để trống";
             }
             else{
-                $sql="select * from user where username='".mysqli_escape_string($username)."'";
-                if(!$result=Database::con()->query($sql)){
+                $sql="select * from user where username='".mysql_escape_string($username)."'";
+                if(!$result=mysql_query($sql)){
                     $err="Lỗi cơ sở dữ liệu";
                 }
                 else{
-                    if(Database::con()->num_rows($result)==0){
+                    if(mysql_num_rows($result)==0){
                         $err="Đăng nhập không thành công";
                     }
                     else{
-                        $row=mysqli_fetch_array($result);
+                        $row=mysql_fetch_array($result);
                         if($row['password']!=md5($password)){
                             $err="Đăng nhập không thành công";
                         }
@@ -49,26 +49,26 @@ class User{
 
         $search=trim($_REQUEST['search']);
         if($search){
-            $where="where username like '%".mysqli_escape_string($search)."%' or fullname like '%".mysqli_escape_string($search)."%'";
+            $where="where username like '%".mysql_escape_string($search)."%' or fullname like '%".mysql_escape_string($search)."%'";
         }
 
         $p=new Pager;
         $limit=5;
         $start=$p->findStart($limit);
-        $count=Database::con()->num_rows(Database::con()->query("select * from user {$where}"));
+        $count=mysql_num_rows(mysql_query("select * from user {$where}"));
         $pages=$p->findPages($count,$limit);
-        $result=Database::con()->query("select * from user {$where} limit $start,$limit");
+        $result=mysql_query("select * from user {$where} limit $start,$limit");
         $user=array();
         if(isset($_POST["btnsearch"])){
             header("location:?mod=user&act=view&search={$search}");
         }
-        if(Database::con()->num_rows($result)<>0){
-            while($row=mysqli_fetch_array($result)){
+        if(mysql_num_rows($result)<>0){
+            while($row=mysql_fetch_array($result)){
                 $user[]=$row;
             }
         }
         $countrows=$count;
-        $countpage=Database::con()->num_rows($result);
+        $countpage=mysql_num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=user&act=view",$pages,5);
 
         $smarty->assign('countrows',$countrows);
@@ -97,7 +97,7 @@ class User{
             $fullname = trim($_POST['fullname']);
             $error_user=$this->_validateEdituser($_POST,$id);
             if(count($error_user)==0){
-                $sql = Database::con()->query("UPDATE user SET username = '$username', password = '$password', fullname = '$fullname' WHERE user_id = $id");
+                $sql = mysql_query("UPDATE user SET username = '$username', password = '$password', fullname = '$fullname' WHERE user_id = $id");
 
                 if (!($query = $sql)) {
                     $error = "Lỗi cơ sở dữ liệu";
@@ -110,8 +110,8 @@ class User{
                 $error = join("<br/>",$error_user);
             }
         }
-        $sql = Database::con()->query("SELECT * FROM user WHERE user_id=$id LIMIT 1");
-        $aryUser = Database::con()->fetch_assoc($sql);
+        $sql = mysql_query("SELECT * FROM user WHERE user_id=$id LIMIT 1");
+        $aryUser = mysql_fetch_assoc($sql);
         $aryUser['userId'] = $id;
 
         $smarty -> assign('aryUser', $aryUser);
@@ -126,7 +126,7 @@ class User{
     public function delete (){
         $id = $_GET['id'];
         $sql = "DELETE FROM tbl_user WHERE user_id = $id";
-        if (!($result = Database::con()->query($sql))) {
+        if (!($result = mysql_query($sql))) {
             $error = "Lỗi cơ sở dữ liệu";
         }
         else{
@@ -136,11 +136,11 @@ class User{
 
     public function _validateUser($input){
         $error = array();
-        $sql = Database::con()->query("SELECT user_id FROM user WHERE username = '{$input['username']}'");
+        $sql = mysql_query("SELECT user_id FROM user WHERE username = '{$input['username']}'");
         if(empty($input['username'])){
             $error[] = "Chưa nhập tài khoản";
         }
-        elseif(Database::con()->num_rows($sql)>0){
+        elseif(mysql_num_rows($sql)>0){
             $error[] = "Đã có tên đăng nhập trên";
         }
         elseif(Validation::checkLogin($input['username'])==false){
@@ -163,7 +163,7 @@ class User{
         $error = "";
         if(count($error_user)==0){
             $sql = "INSERT INTO user(username, password, fullname) VALUES('$username', '$password','$fullname')";
-            if (!($result = Database::con()->query($sql))) {
+            if (!($result = mysql_query($sql))) {
                 $error    = "Lỗi cơ sở dữ liệu";
             }
             else{
@@ -187,7 +187,7 @@ class User{
         $error = '';
         if(count($error_user)==0){
             $sql = "UPDATE user SET username = '$username', password = '$password', fullname = '$fullname' WHERE user_id = $id";
-            if (!($result = Database::con()->query($sql))) {
+            if (!($result = mysql_query($sql))) {
                 $error = "Lỗi cơ sở dữ liệu";
             }
             else{
@@ -210,7 +210,7 @@ class User{
         $isOk = 0;
         $error = "";
         $sql = "DELETE FROM user WHERE user_id = $id";
-        if (!($result = Database::con()->query($sql))) {
+        if (!($result = mysql_query($sql))) {
             $error = "Lỗi cơ sở dữ liệu";
         }
         else{
