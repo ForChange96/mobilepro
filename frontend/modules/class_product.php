@@ -6,7 +6,7 @@
 
             $isOk=0;
             $sql_insert_favorite="INSERT INTO favorite VALUES ($customer_id,$product_id)";
-            if(mysql_query($sql_insert_favorite)){
+            if(Database::con()->query($sql_insert_favorite)){
                 $isOk=1;
             }
             $result=array("ok"=>$isOk);
@@ -20,7 +20,7 @@
 
             $isOk=0;
             $sql_delete_favorite="DELETE FROM favorite WHERE customer_id=$customer_id AND product_id=$product_id";
-            if(mysql_query($sql_delete_favorite)){
+            if(Database::con()->query($sql_delete_favorite)){
                 $isOk=1;
             }
             $result=array("ok"=>$isOk, "customer"=>$customer_id,"product"=>$product_id);
@@ -127,12 +127,12 @@
 
             $where="where status=1 and category_id=$category_id";
             $limit=isset($_GET['limit'])?trim($_GET['limit']):15;
-            $tableProduct=mysql_query("SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} LIMIT $limit");
+            $tableProduct=Database::con()->query("SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} LIMIT $limit");
             $listProduct=array();
             if (isset($_SESSION['customer'])){
                 $customer=$_SESSION['customer'];
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
@@ -141,8 +141,8 @@
                 }
             }
             else{
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
@@ -191,12 +191,12 @@
             $where="where status=1 and category_id=$category_id";
 
             $sql_select="SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} {$order_by} {$limit}";
-            $tableProduct=mysql_query($sql_select);
+            $tableProduct=Database::con()->query($sql_select);
             $listProduct=array();
             if (isset($_SESSION['customer'])){
                 $customer=$_SESSION['customer'];
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
@@ -205,8 +205,8 @@
                 }
             }
             else{
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
@@ -234,7 +234,7 @@
             global $smarty;
             //Search tên SP
             $search=isset($_POST['txt_search'])?trim($_POST['txt_search']):"";
-            $where_search=" AND p_name like N'%".mysql_escape_string($search)."%'";
+            $where_search=" AND p_name like N'%".mysqli_escape_string($search)."%'";
             $where="where status=1{$where_search}";
 
             //Kiểu hiển thị
@@ -243,12 +243,12 @@
             $order_by="ORDER BY is_hot_product DESC, p_price DESC";
 
             $limit=isset($_POST['limit'])?trim($_POST['limit']):15;
-            $tableProduct=mysql_query("SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} {$order_by} LIMIT $limit");
+            $tableProduct=Database::con()->query("SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} {$order_by} LIMIT $limit");
             $listProduct=array();
             if (isset($_SESSION['customer'])){
                 $customer=$_SESSION['customer'];
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
@@ -257,8 +257,8 @@
                 }
             }
             else{
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
@@ -278,7 +278,7 @@
         public function ajax_search_product(){
             global $smarty;
             $search=isset($_POST['txt_search'])?trim($_POST['txt_search']):"";
-            $where_search=" AND p_name like N'%".mysql_escape_string($search)."%'";
+            $where_search=" AND p_name like N'%".mysqli_escape_string($search)."%'";
             //Search by category
             $where_category="";
             if (isset($_POST['category']) && $_POST['category']!=0)
@@ -305,12 +305,12 @@
             $where="where status=1{$where_search}{$where_category}{$where_price}";
             $limit=isset($_POST['limit'])?trim($_POST['limit']):15;
             $sql="SELECT product_id, p_name,p_old_price,p_price,num_star,p_description FROM product {$where} {$order_by} LIMIT $limit";
-            $tableProduct=mysql_query($sql);
+            $tableProduct=Database::con()->query($sql);
             $listProduct=array();
             if (isset($_SESSION['customer'])){
                 $customer=$_SESSION['customer'];
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
@@ -319,8 +319,8 @@
                 }
             }
             else{
-                if (mysql_num_rows($tableProduct)!=0){
-                    while($row=mysql_fetch_assoc($tableProduct)){
+                if (Database::con()->num_rows($tableProduct)!=0){
+                    while($row=Database::con()->fetch_assoc($tableProduct)){
                         $row['img_link_300']=$this->get_img_300($row['product_id']);
                         $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                         $listProduct[]=$row;
@@ -353,7 +353,7 @@
             else{
                 $sql="UPDATE vote_product SET num_star=$num_star WHERE customer_id=$customer_id AND product_id=$product_id";
             }
-            if (!mysql_query($sql)){
+            if (!Database::con()->query($sql)){
                 $err="Không thể thêm đánh giá";
             }
             else{
@@ -361,9 +361,9 @@
                 $sum=0;
                 $count=0;
                 $sql_get_all_vote="SELECT num_star FROM vote_product WHERE product_id=$product_id";
-                $table_vote=mysql_query($sql_get_all_vote);
-                if (mysql_num_rows($table_vote)!=0){
-                    while ($row=mysql_fetch_assoc($table_vote)){
+                $table_vote=Database::con()->query($sql_get_all_vote);
+                if (Database::con()->num_rows($table_vote)!=0){
+                    while ($row=Database::con()->fetch_assoc($table_vote)){
                         $sum+=$row['num_star'];
                         $count++;
                     }
@@ -371,7 +371,7 @@
                 $avg=round($sum/$count);
                 //update số sao mới vào bảng product
                 $sql_update="UPDATE product SET num_star=$avg WHERE product_id=$product_id";
-                if (!mysql_query($sql_update)){
+                if (!Database::con()->query($sql_update)){
                     $err="Lỗi cập nhật số sao trung bình";
                 }
                 else{
@@ -403,28 +403,28 @@
 //********************** Get info **************************************
         function get_product($product_id){
             $sql="SELECT p_name, p_price, manufacturer_id FROM product WHERE product_id=$product_id";
-            $product=mysql_fetch_assoc(mysql_query($sql));
+            $product=Database::con()->fetch_assoc(Database::con()->query($sql));
             $product['p_name_remove_unicode']=remove_unicode($product['p_name']);
             return $product;
         }
         function get_img_300($product_id){
             $sql="SELECT img_link_300 FROM images WHERE product_id=$product_id";
-            $img_100=mysql_fetch_assoc(mysql_query($sql));
+            $img_100=Database::con()->fetch_assoc(Database::con()->query($sql));
             return $img_100['img_link_300'];
         }
         function get_product_detail($product_id){
             $sql="SELECT * FROM product WHERE product_id=$product_id";
-            $product=mysql_fetch_assoc(mysql_query($sql));
+            $product=Database::con()->fetch_assoc(Database::con()->query($sql));
             $product['manufacturer']=$this->get_manufacturer($product['manufacturer_id']);
             $product['category']=$this->get_category_name($product['category_id']);
             return $product;
         }
         function get_img_500_700($product_id){
             $sql="SELECT img_link_500,img_link_700 FROM images WHERE product_id=$product_id";
-            $table_images=mysql_query($sql);
+            $table_images=Database::con()->query($sql);
             $list_img_500=array();
-            if (mysql_num_rows($table_images)!=0){
-                while ($row = mysql_fetch_assoc($table_images)){
+            if (Database::con()->num_rows($table_images)!=0){
+                while ($row = Database::con()->fetch_assoc($table_images)){
                     $list_img_500[]=$row;
                 }
             }
@@ -432,19 +432,19 @@
         }
         function get_manufacturer($manufacturer_id){
             $sql="SELECT m_name FROM manufacturer WHERE manufacturer_id=$manufacturer_id";
-            $manufacturer=mysql_fetch_assoc(mysql_query($sql));
+            $manufacturer=Database::con()->fetch_assoc(Database::con()->query($sql));
             return $manufacturer['m_name'];
         }
         function get_category_name($category_id){
             $sql="SELECT category_name FROM category WHERE category_id=$category_id";
-            $category=mysql_fetch_assoc(mysql_query($sql));
+            $category=Database::con()->fetch_assoc(Database::con()->query($sql));
             return $category['category_name'];
         }
         function get_num_star_voted($customer_id,$product_id){
             $sql="SELECT num_star FROM vote_product WHERE customer_id=$customer_id AND product_id=$product_id";
-            if (mysql_num_rows(mysql_query($sql))==0)
+            if (Database::con()->num_rows(Database::con()->query($sql))==0)
                 return -1;
-            $num_star_arr=mysql_fetch_assoc(mysql_query($sql));
+            $num_star_arr=Database::con()->fetch_assoc(Database::con()->query($sql));
             $num_star=$num_star_arr['num_star']+0;
             return $num_star;
         }
@@ -454,7 +454,7 @@
             }
             $customer_id=$_SESSION['customer'];
             $sql_check="SELECT * FROM tbl_order INNER JOIN order_detail ON tbl_order.order_id=order_detail.order_id WHERE customer_id=$customer_id AND product_id=$product_id";
-            if (mysql_num_rows(mysql_query($sql_check))==0){
+            if (Database::con()->num_rows(Database::con()->query($sql_check))==0){
                 return 0;
             }
             return 1;

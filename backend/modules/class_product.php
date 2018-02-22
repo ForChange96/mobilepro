@@ -8,27 +8,27 @@ class Product{
         $where="where status=1";
         if(isset($_REQUEST['search'])){
             $search = trim($_REQUEST['search']);
-            $where="WHERE p_name like N'%".mysql_escape_string($search)."%' AND status=1";
+            $where="WHERE p_name like N'%".mysqli_escape_string($search)."%' AND status=1";
         }
         $p=new Pager;
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from product {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from product {$where}"));
         $pages=$p->findPages($count,$limit);
-        $tableProduct=mysql_query("SELECT * FROM product {$where} LIMIT $start,$limit");
+        $tableProduct=Database::con()->query("SELECT * FROM product {$where} LIMIT $start,$limit");
         $listProduct=array();
 
         if(isset($_POST['btnsearch'])){
             header("location:?mod=product&act=view&search={$search}");
         }
-        if (mysql_num_rows($tableProduct)!=0){
-            while($row=mysql_fetch_assoc($tableProduct)){
+        if (Database::con()->num_rows($tableProduct)!=0){
+            while($row=Database::con()->fetch_assoc($tableProduct)){
                 $row['manufacturer']=$this->getManufacturer_name($row['manufacturer_id']);
                 $listProduct[]=$row;
             }
         }
         $totalResult=$count;
-        $totalRowsDisplay=mysql_num_rows($tableProduct);
+        $totalRowsDisplay=Database::con()->num_rows($tableProduct);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=product&act=view",$pages,3);
 
         $smarty->assign('totalResult',$totalResult);
@@ -45,27 +45,27 @@ class Product{
         $where="where status=0";
         if(isset($_REQUEST['search'])){
             $search = trim($_REQUEST['search']);
-            $where="WHERE p_name like N'%".mysql_escape_string($search)."%' AND status=0";
+            $where="WHERE p_name like N'%".mysqli_escape_string($search)."%' AND status=0";
         }
         $p=new Pager;
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from product {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from product {$where}"));
         $pages=$p->findPages($count,$limit);
-        $tableProduct=mysql_query("SELECT * FROM product {$where} LIMIT $start,$limit");
+        $tableProduct=Database::con()->query("SELECT * FROM product {$where} LIMIT $start,$limit");
         $listProduct=array();
 
         if(isset($_POST['btnsearch'])){
             header("location:?mod=product&act=view2&search={$search}");
         }
-        if (mysql_num_rows($tableProduct)!=0){
-            while($row=mysql_fetch_assoc($tableProduct)){
+        if (Database::con()->num_rows($tableProduct)!=0){
+            while($row=Database::con()->fetch_assoc($tableProduct)){
                 $row['manufacturer']=$this->getManufacturer_name($row['manufacturer_id']);
                 $listProduct[]=$row;
             }
         }
         $totalResult=$count;
-        $totalRowsDisplay=mysql_num_rows($tableProduct);
+        $totalRowsDisplay=Database::con()->num_rows($tableProduct);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=product&act=view2",$pages,3);
 
         $smarty->assign('totalResult',$totalResult);
@@ -79,7 +79,7 @@ class Product{
     public function delete(){
         $product_id=$_POST['id'];
         $sql_get_product="select * from product where product_id=$product_id";
-        $product=mysql_fetch_assoc(mysql_query($sql_get_product));
+        $product=Database::con()->fetch_assoc(Database::con()->query($sql_get_product));
         if($product['status']==0){
             $sql_delete="delete from product where product_id=$product_id";
         }
@@ -92,9 +92,9 @@ class Product{
         $sql_delete_images="delete from images where product_id=$product_id";//xoá link ảnh trong database
 
         //unlink ảnh
-        $table_images=mysql_query("select * from images where product_id=$product_id");
-        if(mysql_num_rows($table_images)!=0){
-            while($row = mysql_fetch_assoc($table_images)){
+        $table_images=Database::con()->query("select * from images where product_id=$product_id");
+        if(Database::con()->num_rows($table_images)!=0){
+            while($row = Database::con()->fetch_assoc($table_images)){
                 unlink($row['img_link_300']);
                 unlink($row['img_link_350']);
                 unlink($row['img_link_500']);
@@ -103,7 +103,7 @@ class Product{
 
         $err="";
         $isOk=0;
-        if (!($result1=mysql_query($sql_delete) && $result2=mysql_query($sql_delete_features) && $result3=mysql_query($sql_delete_images))){
+        if (!($result1=Database::con()->query($sql_delete) && $result2=Database::con()->query($sql_delete_features) && $result3=Database::con()->query($sql_delete_images))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -119,7 +119,7 @@ class Product{
         global $smarty;
         $product_id=trim($_GET['id']);
         $tableProduct="SELECT * FROM product WHERE product_id={$product_id}";
-        $product=mysql_fetch_assoc(mysql_query($tableProduct));
+        $product=Database::con()->fetch_assoc(Database::con()->query($tableProduct));
         $product["category_name"]=$this->getCategory_name($product['category_id']);
         $smarty->assign('product',$product);
         $smarty->assign('listCategory',$this->getAllCategory());
@@ -143,9 +143,9 @@ class Product{
     public function doAdd(){
         $category_id=trim($_POST['category']);
         $manufacturer_id=trim($_POST['manufacturer']);
-        $p_name=mysql_escape_string(trim($_POST['p_name']));
-        $p_description=mysql_escape_string(trim($_POST['p_description']));
-        $p_content=mysql_escape_string(trim($_POST['p_content']));
+        $p_name=mysqli_escape_string(trim($_POST['p_name']));
+        $p_description=mysqli_escape_string(trim($_POST['p_description']));
+        $p_content=mysqli_escape_string(trim($_POST['p_content']));
         $p_price=trim($_POST['p_price']) + 0;
         $is_hot_product=0;
         $status=0;
@@ -168,11 +168,11 @@ class Product{
         }
         $sql_insert_product="INSERT INTO product(category_id,manufacturer_id,p_name,p_description,p_content,p_price,is_hot_product,status) VALUES ($category_id,$manufacturer_id,'$p_name','$p_description','$p_content',$p_price,$is_hot_product,$status)";
         $err="";
-        if(!($result=mysql_query($sql_insert_product))){
+        if(!($result=Database::con()->query($sql_insert_product))){
             $err="Xảy ra lỗi";
         }
         else{
-            $last_insert_id=mysql_fetch_assoc(mysql_query("select LAST_INSERT_ID() as last_id"));
+            $last_insert_id=Database::con()->fetch_assoc(Database::con()->query("select LAST_INSERT_ID() as last_id"));
             $last_insert_id=$last_insert_id['last_id'];
             //******** Insert bảng features_join *************//
             $category_name=$this->getCategory_name($category_id);
@@ -183,7 +183,7 @@ class Product{
                 }
                 $features_to_insert=substr($features_to_insert,0,-1);//Xoá dấu phẩy cuối
                 $sql_insert_features="INSERT INTO features_join VALUES {$features_to_insert}"; //INSERT INTO features_join VALUES (2,LAST_INSERT_ID()),(4,LAST_INSERT_ID()),(5,LAST_INSERT_ID())
-                if(!($insert_features=mysql_query($sql_insert_features))){
+                if(!($insert_features=Database::con()->query($sql_insert_features))){
                     $err="Xảy ra lỗi!";
                 }
             }
@@ -210,7 +210,7 @@ class Product{
                         $this->resize_image_force($img_link_original,$img_link_500,500,500);//resize và lưu vào mục ảnh 500
                         $this->resize_image_force($img_link_original,$img_link_700,700,700);//resize và lưu vào mục ảnh 700
                         $sql_insert_images="INSERT INTO images(product_id,img_link_300,img_link_350,img_link_500,img_link_700,img_link_original) VALUES ($last_insert_id,'$img_link_300','$img_link_350','$img_link_500','$img_link_700','$img_link_original')";
-                        if (!($result=mysql_query($sql_insert_images))){
+                        if (!($result=Database::con()->query($sql_insert_images))){
                             $err="Lỗi insert link hình ảnh";
                         }
                     }
@@ -237,9 +237,9 @@ class Product{
         $product_id=$_POST['id'];
         $category_id=trim($_POST['category']);
         $manufacturer_id=trim($_POST['manufacturer']);
-        $p_name=mysql_escape_string(trim($_POST['p_name']));
-        $p_description=mysql_escape_string(trim($_POST['p_description']));
-        $p_content=mysql_escape_string(trim($_POST['p_content']));
+        $p_name=mysqli_escape_string(trim($_POST['p_name']));
+        $p_description=mysqli_escape_string(trim($_POST['p_description']));
+        $p_content=mysqli_escape_string(trim($_POST['p_content']));
         $p_price=trim($_POST['p_price']) + 0;//Giá nhập vào
         $p_price_default=trim($_POST['p_price_default']) + 0;//Giá hiện tại trong database để so sánh xem có sự thay đổi giá ko.
         $is_hot_product=0;
@@ -258,7 +258,7 @@ class Product{
         }
         $err="";
         $isOk=0;
-        if(!($result=mysql_query($sql_update_product))){
+        if(!($result=Database::con()->query($sql_update_product))){
             $err="Xảy ra lỗi";
         }
         else{
@@ -284,7 +284,7 @@ class Product{
         $isOk=0;
         //Xoá các bản ghi cũ trong bảng features_join
         $sql_delete_features="delete from features_join where product_id=$product_id";
-        if(!($delete=mysql_query($sql_delete_features))){
+        if(!($delete=Database::con()->query($sql_delete_features))){
             $err="Không thể xoá dữ liệu cũ";
         }
         else{
@@ -296,7 +296,7 @@ class Product{
                 }
                 $features_to_insert=substr($features_to_insert,0,-1);//Xoá dấu phẩy cuối
                 $sql_insert_features="INSERT INTO features_join VALUES {$features_to_insert}"; //INSERT INTO features_join VALUES (2,LAST_INSERT_ID()),(4,LAST_INSERT_ID()),(5,LAST_INSERT_ID())
-                if(!($insert_features=mysql_query($sql_insert_features))){
+                if(!($insert_features=Database::con()->query($sql_insert_features))){
                     $err="Xảy ra lỗi!";
                 }
                 else{
@@ -316,8 +316,8 @@ class Product{
     //***** Lấy id hình ảnh để unlink ********************************
         $link_id=$_POST['link_id'];
         $sql_get_img_link="SELECT * FROM images WHERE link_id=$link_id";
-        $table_img=mysql_query($sql_get_img_link);
-        $img=mysql_fetch_assoc($table_img);
+        $table_img=Database::con()->query($sql_get_img_link);
+        $img=Database::con()->fetch_assoc($table_img);
         $img_link_300=$img['img_link_300'];
         $img_link_350=$img['img_link_350'];
         $img_link_500=$img['img_link_500'];
@@ -342,7 +342,7 @@ class Product{
                 $this->resize_image_force($new_img_link_original,$new_img_link_500,500,500);//resize và lưu vào mục 500
                 $this->resize_image_force($new_img_link_original,$new_img_link_700,700,700);//resize và lưu vào mục 700
                 $sql_update_images="UPDATE images SET img_link_300='$new_img_link_300',img_link_350='$new_img_link_350',img_link_500='$new_img_link_500',img_link_700='$new_img_link_700',img_link_original='$new_img_link_original' WHERE link_id=$link_id";
-                if (!($result=mysql_query($sql_update_images))){
+                if (!($result=Database::con()->query($sql_update_images))){
                     $err="Lỗi update link hình ảnh";
                 }
                 else{
@@ -370,7 +370,7 @@ class Product{
         $sql_update="update product set status=1 where product_id=$id";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql_update))){
+        if (!($result=Database::con()->query($sql_update))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -399,21 +399,21 @@ class Product{
 
 
     function getManufacturer_name($manufacturer_id){
-        $sql="select * from manufacturer WHERE manufacturer_id=".mysql_escape_string($manufacturer_id);
-        $manufacturer=mysql_fetch_assoc(mysql_query($sql));
+        $sql="select * from manufacturer WHERE manufacturer_id=".mysqli_escape_string($manufacturer_id);
+        $manufacturer=Database::con()->fetch_assoc(Database::con()->query($sql));
         return $manufacturer['m_name'];
     }
     function getCategory_name($category_id){
-        $sql="select * from category WHERE category_id=".mysql_escape_string($category_id);
-        $category=mysql_fetch_assoc(mysql_query($sql));
+        $sql="select * from category WHERE category_id=".mysqli_escape_string($category_id);
+        $category=Database::con()->fetch_assoc(Database::con()->query($sql));
         return $category['category_name'];
     }
     function getListFeatures_id($product_id){
         $sql="SELECT * FROM features_join INNER JOIN features ON features.features_id=features_join.features_id WHERE product_id={$product_id}";
-        $tableFeatures=mysql_query($sql);
+        $tableFeatures=Database::con()->query($sql);
         $listFeatures=array();
-        if (mysql_num_rows($tableFeatures)<>0){
-            while($row=mysql_fetch_assoc($tableFeatures)){
+        if (Database::con()->num_rows($tableFeatures)<>0){
+            while($row=Database::con()->fetch_assoc($tableFeatures)){
                 $listFeatures[]=$row['features_id'];
             }
         }
@@ -422,9 +422,9 @@ class Product{
     function getListImages($product_id){
         $sql="SELECT * FROM images WHERE product_id={$product_id}";
         $listImages=array();
-        $tableImages=mysql_query($sql);
-        if(mysql_num_rows($tableImages)<>0){
-            while ($row=mysql_fetch_assoc($tableImages)){
+        $tableImages=Database::con()->query($sql);
+        if(Database::con()->num_rows($tableImages)<>0){
+            while ($row=Database::con()->fetch_assoc($tableImages)){
                 $listImages[]=$row;
             }
         }
@@ -432,10 +432,10 @@ class Product{
     }
     function getAllCategory(){
         $sql="SELECT * FROM category order by category_name DESC";
-        $tableCategory=mysql_query($sql);
+        $tableCategory=Database::con()->query($sql);
         $listCategory=array();
-        if(mysql_num_rows($tableCategory)<>0){
-            while ($row=mysql_fetch_assoc($tableCategory)){
+        if(Database::con()->num_rows($tableCategory)<>0){
+            while ($row=Database::con()->fetch_assoc($tableCategory)){
                 $listCategory[]=$row;
             }
         }
@@ -443,10 +443,10 @@ class Product{
     }
     function getAllManufacturer(){
         $sql="SELECT * FROM manufacturer ORDER BY m_name ASC";
-        $tableManufacturer=mysql_query($sql);
+        $tableManufacturer=Database::con()->query($sql);
         $listManufacturer=array();
-        if(mysql_num_rows($tableManufacturer)<>0){
-            while ($row=mysql_fetch_assoc($tableManufacturer)){
+        if(Database::con()->num_rows($tableManufacturer)<>0){
+            while ($row=Database::con()->fetch_assoc($tableManufacturer)){
                 $listManufacturer[]=$row;
             }
         }
@@ -454,10 +454,10 @@ class Product{
     }
     function getAllFeatures(){
         $sql="SELECT * FROM features ORDER BY f_name ASC";
-        $tableFeatures=mysql_query($sql);
+        $tableFeatures=Database::con()->query($sql);
         $listFeatures=array();
-        if(mysql_num_rows($tableFeatures)<>0){
-            while ($row=mysql_fetch_assoc($tableFeatures)){
+        if(Database::con()->num_rows($tableFeatures)<>0){
+            while ($row=Database::con()->fetch_assoc($tableFeatures)){
                 $listFeatures[]=$row;
             }
         }

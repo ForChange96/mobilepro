@@ -14,21 +14,21 @@ class Category{
         $p=new Pager();
         $limit=5;
             $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from category {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from category {$where}"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("select * from category {$where} limit $start,$limit");
+        $result=Database::con()->query("select * from category {$where} limit $start,$limit");
         $category=array();
 
         if(isset($_POST['btnsearch'])){
             header("location:?mod=category&act=view&search={$search}");
         }
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $category[]=$row;
             }
         }
         $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $countpage=Database::con()->num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=category&act=view",$pages,3);
 
         $smarty->assign('countrows',$countrows);
@@ -50,7 +50,7 @@ class Category{
         $sql="INSERT INTO category(category_name) VALUES('$category_name')";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -65,7 +65,7 @@ class Category{
         global $smarty;
         $id=$_GET['id'];
         $sql="select * from category where category_id=$id";
-        $categoryEdit=mysql_fetch_assoc(mysql_query($sql));
+        $categoryEdit=Database::con()->fetch_assoc(Database::con()->query($sql));
         $smarty->assign("categoryEdit",$categoryEdit);
         $temp=$smarty->fetch('category_edit.tpl');
         return $temp;
@@ -76,7 +76,7 @@ class Category{
         $sql="UPDATE category SET category_name='$category_name' WHERE category_id=$id";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -93,7 +93,7 @@ class Category{
         $deleteFromProduct="update product set status=0 where category_id=$id";
         $isOk=0;
         $err="";
-        if(!($result=mysql_query($deleteFromCategory)) && !($result2=mysql_query($deleteFromProduct))){
+        if(!($result=Database::con()->query($deleteFromCategory)) && !($result2=Database::con()->query($deleteFromProduct))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{

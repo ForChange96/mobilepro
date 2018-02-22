@@ -9,18 +9,18 @@ class Report{
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from report"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from report"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("select * from report limit $start,$limit");
+        $result=Database::con()->query("select * from report limit $start,$limit");
         $report=array();
 
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $report[]=$row;
             }
         }
         $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $countpage=Database::con()->num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=report&act=view",$pages,3);
 
         $smarty->assign('countrows',$countrows);
@@ -36,7 +36,7 @@ class Report{
         $deleteFromreport="delete from report where report_id=$id";
         $isOk=0;
         $err="";
-        if(!mysql_query($deleteFromreport)){
+        if(!Database::con()->query($deleteFromreport)){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{

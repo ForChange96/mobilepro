@@ -9,17 +9,17 @@ class contact{
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from contact"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from contact"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("select * from contact limit $start,$limit");
+        $result=Database::con()->query("select * from contact limit $start,$limit");
         $contact=array();
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $contact[]=$row;
             }
         }
         $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $countpage=Database::con()->num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=contact&act=view",$pages,3);
 
         $smarty->assign('countrows',$countrows);
@@ -43,7 +43,7 @@ class contact{
         $sql="INSERT INTO contact(hotline,hotline2,address,email) VALUES('$hotline','$hotline2','$address','$email')";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -58,7 +58,7 @@ class contact{
         global $smarty;
         $id=trim($_GET['id']);
         $sql="select * from contact where contact_id=$id";
-        $contactEdit=mysql_fetch_assoc(mysql_query($sql));
+        $contactEdit=Database::con()->fetch_assoc(Database::con()->query($sql));
         $smarty->assign("contactEdit",$contactEdit);
         $temp=$smarty->fetch('contact_edit.tpl');
         return $temp;
@@ -72,7 +72,7 @@ class contact{
         $sql="UPDATE contact SET hotline='$hotline',hotline2='$hotline2',address='$address',email='$email' WHERE contact_id=$id";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -88,7 +88,7 @@ class contact{
         $deleteFromcontact="delete from contact where contact_id=$id";
         $isOk=0;
         $err="";
-        if(!mysql_query($deleteFromcontact)){
+        if(!Database::con()->query($deleteFromcontact)){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{

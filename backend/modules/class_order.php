@@ -8,7 +8,7 @@ class Order{
         $where="WHERE o_status=0";
         if (isset($_POST['btn_search_name'])){
             $txt_name=trim($_POST['txt_customer_name']);
-            $where.=" AND fullname like '%".mysql_escape_string($txt_name)."%'";
+            $where.=" AND fullname like '%".mysqli_escape_string($txt_name)."%'";
             $show_tool_search="search_name";
         }
         if (isset($_POST['btn_search_date'])){
@@ -21,15 +21,15 @@ class Order{
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("SELECT * FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("SELECT * FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where}"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("SELECT customer.fullname,customer.customer_id, tbl_order.shipping_address, tbl_order.order_id,tbl_order.o_total,tbl_order.recipients,tbl_order.phone_number FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} ORDER BY tbl_order.customer_id DESC limit $start,$limit");
-        $countpage=mysql_num_rows($result); //Số bản ghi trên trang hiện tại
+        $result=Database::con()->query("SELECT customer.fullname,customer.customer_id, tbl_order.shipping_address, tbl_order.order_id,tbl_order.o_total,tbl_order.recipients,tbl_order.phone_number FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} ORDER BY tbl_order.customer_id DESC limit $start,$limit");
+        $countpage=Database::con()->num_rows($result); //Số bản ghi trên trang hiện tại
         $countrows=$count; //Tổng số bản ghi lấy đc
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=order&act=view",$pages,3); //Phân trang
         $order=array();
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $order[]=$row;
             }
         }
@@ -49,7 +49,7 @@ class Order{
         $where="WHERE o_status=1";
         if (isset($_POST['btn_search_name'])){
             $txt_name=trim($_POST['txt_customer_name']);
-            $where.=" AND fullname like '%".mysql_escape_string($txt_name)."%'";
+            $where.=" AND fullname like '%".mysqli_escape_string($txt_name)."%'";
             $show_tool_search="search_name";
         }
         if (isset($_POST['btn_search_date'])){
@@ -62,15 +62,15 @@ class Order{
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("SELECT * FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} "));
+        $count=Database::con()->num_rows(Database::con()->query("SELECT * FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} "));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("SELECT customer.fullname,customer.customer_id, tbl_order.order_id,tbl_order.o_date,tbl_order.o_total,tbl_order.o_shipper FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} ORDER BY tbl_order.customer_id DESC limit $start,$limit");
-        $countpage=mysql_num_rows($result); //Số bản ghi trên trang hiện tại
+        $result=Database::con()->query("SELECT customer.fullname,customer.customer_id, tbl_order.order_id,tbl_order.o_date,tbl_order.o_total,tbl_order.o_shipper FROM customer INNER JOIN tbl_order ON customer.customer_id=tbl_order.customer_id {$where} ORDER BY tbl_order.customer_id DESC limit $start,$limit");
+        $countpage=Database::con()->num_rows($result); //Số bản ghi trên trang hiện tại
         $countrows=$count; //Tổng số bản ghi lấy đc
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=order&act=view",$pages,3); //Phân trang
         $order=array();
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $order[]=$row;
             }
         }
@@ -86,7 +86,7 @@ class Order{
 
     function getCustomerName($customer_id){
         $sql="select fullname from customer WHERE customer_id=$customer_id";
-        $customer=mysql_fetch_assoc(mysql_query($sql));
+        $customer=Database::con()->fetch_assoc(Database::con()->query($sql));
         return $customer['fullname'];
     }
 
@@ -96,11 +96,11 @@ class Order{
 
         $order_id=trim($_GET["id"]);
         $sql_get="SELECT order_detail.order_id, order_detail.product_id,order_detail.number,order_detail.price,tbl_order.customer_id,tbl_order.o_status FROM tbl_order INNER JOIN order_detail ON tbl_order.order_id=order_detail.order_id WHERE order_detail.order_id=$order_id";
-        $table_order_detail=mysql_query($sql_get);
+        $table_order_detail=Database::con()->query($sql_get);
         $list_product=array();
         $total=0;
-        if (mysql_num_rows($table_order_detail)!=0){
-            while($row = mysql_fetch_assoc($table_order_detail)){
+        if (Database::con()->num_rows($table_order_detail)!=0){
+            while($row = Database::con()->fetch_assoc($table_order_detail)){
                 $row['product_name']=$this->getProduct_name($row['product_id']);
                 $row['total_row']=$row['number']*$row['price'];
                 $total+=$row['total_row'];
@@ -117,7 +117,7 @@ class Order{
     }
     function getProduct_name($product_id){
         $sql_get="select p_name from product WHERE product_id=$product_id";
-        $product=mysql_fetch_assoc(mysql_query($sql_get));
+        $product=Database::con()->fetch_assoc(Database::con()->query($sql_get));
         return $product['p_name'];
     }
 
@@ -125,8 +125,8 @@ class Order{
         $order_id=$_POST['order_id'];
         $shipper=trim($_POST['shipper']);
         $date=date("Y-m-d");
-        $sql="update tbl_order set o_shipper='".mysql_escape_string($shipper)."',o_status=1,o_date='$date' where order_id=$order_id";
-        if (!($result=mysql_query($sql))){
+        $sql="update tbl_order set o_shipper='".mysqli_escape_string($shipper)."',o_status=1,o_date='$date' where order_id=$order_id";
+        if (!($result=Database::con()->query($sql))){
             echo "<script>alert('Xảy ra lỗi!')</script>";
             echo "<script type=\"text/javascript\">window.history.back();</script>";
         }
@@ -140,7 +140,7 @@ class Order{
         $sql_delete="delete from tbl_order WHERE order_id=$order_id";
         $sql_delete_detail="delete from order_detail WHERE order_id=$order_id";
         $isOk=0;
-        if (mysql_query($sql_delete) && mysql_query($sql_delete_detail)){
+        if (Database::con()->query($sql_delete) && Database::con()->query($sql_delete_detail)){
             $isOk=1;
         }
         $result=array('ok'=>$isOk);

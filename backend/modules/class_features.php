@@ -19,18 +19,18 @@ class Features{
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from features {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from features {$where}"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("select * from features {$where} ORDER BY f_name ASC limit $start,$limit");
+        $result=Database::con()->query("select * from features {$where} ORDER BY f_name ASC limit $start,$limit");
         $features=array();
 
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $features[]=$row;
             }
         }
         $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $countpage=Database::con()->num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=features&act=view",$pages,3);
 
         $smarty->assign('countrows',$countrows);
@@ -52,7 +52,7 @@ class Features{
         $sql="INSERT INTO features(f_name) VALUES('$f_name')";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -67,7 +67,7 @@ class Features{
         global $smarty;
         $id=$_GET['id'];
         $sql="select * from features where features_id=$id";
-        $featuresEdit=mysql_fetch_assoc(mysql_query($sql));
+        $featuresEdit=Database::con()->fetch_assoc(Database::con()->query($sql));
         $smarty->assign("featuresEdit",$featuresEdit);
         $temp=$smarty->fetch('features_edit.tpl');
         return $temp;
@@ -78,7 +78,7 @@ class Features{
         $sql="UPDATE features SET f_name='$f_name' WHERE features_id=$id";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -95,7 +95,7 @@ class Features{
         $deleteFromFeaturesJoin="DELETE FROM features_join where features_id=$id";
         $isOk=0;
         $err="";
-        if(!($result=mysql_query($deleteFromFeatures)) && !($result2=mysql_query($deleteFromFeaturesJoin))){
+        if(!($result=Database::con()->query($deleteFromFeatures)) && !($result2=Database::con()->query($deleteFromFeaturesJoin))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{

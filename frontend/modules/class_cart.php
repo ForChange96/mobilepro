@@ -31,11 +31,11 @@
                 $o_total*=11/10;//Cộng thêm 10% thuế => phải x 110%
 
                 $sql_set_order="INSERT INTO tbl_order(customer_id,o_total,recipients,phone_number,shipping_address) VALUES ($customer_id,$o_total,'$recipients','$phone_number','$shipping_address')";
-                if (mysql_query($sql_set_order)){
+                if (Database::con()->query($sql_set_order)){
                     $isOk=1;
 
                     //Lấy id của đơn hàng vừa tạo (để insert vào bảng order_detail)
-                    $last_insert_id=mysql_fetch_assoc(mysql_query("SELECT LAST_INSERT_ID() as last_id"));
+                    $last_insert_id=Database::con()->fetch_assoc(Database::con()->query("SELECT LAST_INSERT_ID() as last_id"));
                     $last_insert_id=$last_insert_id['last_id'];
 
                     //Ghép chuỗi để insert nhiều bản ghi 1 lúc
@@ -48,7 +48,7 @@
                     //************ Hoàn thành ghép chuỗi ***************
 
                     $sql_set_order_detail="INSERT INTO order_detail(order_id,product_id,price,order_detail.number) VALUES {$strData}";
-                    if (mysql_query($sql_set_order_detail)){
+                    if (Database::con()->query($sql_set_order_detail)){
                         $isOk=2;
                         unset($_SESSION['cart']);
                         //$this->send_mail_order();
@@ -96,7 +96,7 @@
         public function use_my_information(){
             $customer_id=$_SESSION['customer'];
             $sql="select fullname, address, phone_number from customer where customer_id=$customer_id";
-            $customer=mysql_fetch_assoc(mysql_query($sql));
+            $customer=Database::con()->fetch_assoc(Database::con()->query($sql));
             echo json_encode($customer);
             exit();
         }

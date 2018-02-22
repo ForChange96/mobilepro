@@ -11,7 +11,7 @@ Class Customer{
 
         $where="";
         if ($search){
-            $where.="where email LIKE '%".mysql_escape_string($search)."%' OR fullname LIKE '%".mysql_escape_string($search)."%' OR username like '%".mysql_escape_string($search)."%'";
+            $where.="where email LIKE '%".mysqli_escape_string($search)."%' OR fullname LIKE '%".mysqli_escape_string($search)."%' OR username like '%".mysqli_escape_string($search)."%'";
         }
         if(isset($_GET['customer_id'])){
             $where.="where customer_id=".trim($_GET['customer_id']);
@@ -21,17 +21,17 @@ Class Customer{
 
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from customer {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from customer {$where}"));
         $pages=$p->findPages($count,$limit);
 
-        $result=mysql_query("select * from customer {$where} limit $start,$limit");
-        $countpage=mysql_num_rows($result);
+        $result=Database::con()->query("select * from customer {$where} limit $start,$limit");
+        $countpage=Database::con()->num_rows($result);
         $countrows=$count;
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=customer&act=view",$pages,3);
         $customer=array();
 
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $customer[]=$row;
             }
         }
@@ -60,8 +60,8 @@ Class Customer{
         Config::$page_title = "Sửa khách hàng";
         global $smarty;
         $id = $_GET['id'];
-        $sql = mysql_query("SELECT * FROM customer WHERE customer_id=$id LIMIT 1");
-        $aryCustomer = mysql_fetch_assoc($sql);
+        $sql = Database::con()->query("SELECT * FROM customer WHERE customer_id=$id LIMIT 1");
+        $aryCustomer = Database::con()->fetch_assoc($sql);
         $smarty -> assign('aryCustomer', $aryCustomer);
         $temp = $smarty -> fetch('customer_edit.tpl');
         return $temp;
@@ -73,7 +73,7 @@ Class Customer{
     public function delete (){
         $id = $_GET['id'];
         $sql = "DELETE FROM customer WHERE customer_id = $id";
-        if (!($result = mysql_query($sql))) {
+        if (!($result = Database::con()->query($sql))) {
             $error = "Lỗi cơ sở dữ liệu";
         }
         else{
@@ -101,7 +101,7 @@ Class Customer{
         $error = "";
         if(count($error_customer)==0){
             $sql = "INSERT INTO customer (username, password, email, fullname, address, phone_number,status) VALUES('$username', '$password','$email','$fullname','$address', $phone,1)";
-            if (!($result = mysql_query($sql))) {
+            if (!($result = Database::con()->query($sql))) {
                 $error    = "Lỗi cơ sở dữ liệu";
             }
             else{
@@ -132,7 +132,7 @@ Class Customer{
         $error = '';
         if(count($error_customer)==0){
             $sql = "UPDATE customer SET username = '$username', password = '$password', fullname = '$fullname', email = '$email', phone_number = $phone, address='$address' WHERE customer_id = $id";
-            if (!($result = mysql_query($sql))) {
+            if (!($result = Database::con()->query($sql))) {
                 $error = "Lỗi cơ sở dữ liệu";
             }
             else{
@@ -155,7 +155,7 @@ Class Customer{
         $isOk = 0;
         $error = "";
         $sql = "DELETE FROM customer WHERE customer_id = $id";
-        if (!($result = mysql_query($sql))) {
+        if (!($result = Database::con()->query($sql))) {
             $error = "Lỗi cơ sở dữ liệu";
         }
         else{
@@ -168,12 +168,12 @@ Class Customer{
 
     private function _validateCustomer($input){
         $error = array();
-        $sql = mysql_query("SELECT customer_id FROM customer WHERE username = '{$input['username']}'");
-        $resultem = mysql_query("SELECT customer_id FROM customer WHERE email = '{$input['email']}'");
+        $sql = Database::con()->query("SELECT customer_id FROM customer WHERE username = '{$input['username']}'");
+        $resultem = Database::con()->query("SELECT customer_id FROM customer WHERE email = '{$input['email']}'");
         if(empty($input['username'])){
             $error[] = "Chưa nhập tài khoản";
         }
-        elseif(mysql_num_rows($sql)>0){
+        elseif(Database::con()->num_rows($sql)>0){
             $error[] = "Tên đăng nhập đã có người sử dụng";
         }
         elseif(Validation::checkLogin($input['username'])==false){
@@ -191,7 +191,7 @@ Class Customer{
         else if(Validation::checkMail($input['email'])=='false'){
             $error[] = "Email không đúng định dạng";
         }
-        else if(mysql_num_rows($resultem)>0){
+        else if(Database::con()->num_rows($resultem)>0){
             $error[] = "Email đã có người sử dụng!";
         }
         if(empty($input['phone'])){
@@ -205,7 +205,7 @@ Class Customer{
 
     private function _validateEditcustomer($input,$id){
         $error = array();
-        $sql = mysql_query("SELECT customer_id FROM customer WHERE email = '{$input['email']}' AND customer_id <>{$id}");
+        $sql = Database::con()->query("SELECT customer_id FROM customer WHERE email = '{$input['email']}' AND customer_id <>{$id}");
 
         if(empty($input['fullname'])){
             $error[] = "Chưa nhập họ tên";
@@ -216,7 +216,7 @@ Class Customer{
         else if(Validation::checkMail($input['email'])=='false'){
             $error[] = "Email không đúng định dạng";
         }
-        else if(mysql_num_rows($sql)>0){
+        else if(Database::con()->num_rows($sql)>0){
             $error[] = "Email đã có người sử dụng!";
         }
         if(empty($input['phone'])){

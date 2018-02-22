@@ -8,20 +8,20 @@ class Manufacturer{
             header("location:?mod=manufactures&act=view&search={$search}");
         }
         if ($search){
-            $where="where m_name like '%".mysql_escape_string($search)."%'";
+            $where="where m_name like '%".mysqli_escape_string($search)."%'";
         }
 
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
 
-        $count=mysql_num_rows(mysql_query("select * from manufacturer {$where}"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from manufacturer {$where}"));
         $pages=$p->findPages($count,$limit);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=manufacturer&act=view",$pages,3);
         $manufacturer=array();
-        $result=mysql_query("select * from manufacturer {$where} limit $start,$limit");
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        $result=Database::con()->query("select * from manufacturer {$where} limit $start,$limit");
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $manufacturer[]=$row;
             }
         }
@@ -29,7 +29,7 @@ class Manufacturer{
         $smarty->assign('pagels',$pagels);
         $smarty->assign('txtSearch',$search);
         $smarty->assign('totalResult',$count);
-        $smarty->assign('numRowsDisplay',mysql_num_rows($result));
+        $smarty->assign('numRowsDisplay',Database::con()->num_rows($result));
         $temp=$smarty->fetch('manufacturer_list.tpl');
         return $temp;
     }
@@ -42,14 +42,14 @@ class Manufacturer{
     }
     public function doAdd(){
         $m_name=trim($_POST['manufacturer']);
-        $sql="INSERT INTO manufacturer(m_name) VALUES ('".mysql_escape_string($m_name)."')";
+        $sql="INSERT INTO manufacturer(m_name) VALUES ('".mysqli_escape_string($m_name)."')";
         $err="";
         $isOk=0;
         if ($m_name==""){
             $err="Không được để trống";
         }
         else{
-            if(!($result=mysql_query($sql))){
+            if(!($result=Database::con()->query($sql))){
                 $err="Lỗi cơ sở dữ liệu!";
             }
             else{
@@ -66,8 +66,8 @@ class Manufacturer{
         global $smarty;
 
         $id=trim($_GET['id']);
-        $tableManufacturer=mysql_query("SELECT * FROM manufacturer WHERE manufacturer_id={$id}");
-        $listManufacturer=mysql_fetch_assoc($tableManufacturer);
+        $tableManufacturer=Database::con()->query("SELECT * FROM manufacturer WHERE manufacturer_id={$id}");
+        $listManufacturer=Database::con()->fetch_assoc($tableManufacturer);
         $smarty->assign('listManufacturer',$listManufacturer);
         $temp=$smarty->fetch("manufacturer_edit.tpl");
         return $temp;
@@ -81,8 +81,8 @@ class Manufacturer{
             $err="Không được để trống";
         }
         else{
-            $sql="update manufacturer set m_name='".mysql_escape_string($m_name)."' where manufacturer_id=$id";
-            if(mysql_query($sql)){
+            $sql="update manufacturer set m_name='".mysqli_escape_string($m_name)."' where manufacturer_id=$id";
+            if(Database::con()->query($sql)){
                 $isOk=1;
             }
             else{
@@ -98,7 +98,7 @@ class Manufacturer{
         $id=$_POST['id'];
         $sql="DELETE FROM manufacturer WHERE manufacturer_id=$id";
         $isOk=0;
-        if(mysql_query($sql)){
+        if(Database::con()->query($sql)){
            $isOk=1;
         }
         $result=array('ok'=>$isOk);

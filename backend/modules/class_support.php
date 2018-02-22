@@ -9,17 +9,17 @@ class support{
         $p=new Pager();
         $limit=5;
         $start=$p->findStart($limit);
-        $count=mysql_num_rows(mysql_query("select * from support"));
+        $count=Database::con()->num_rows(Database::con()->query("select * from support"));
         $pages=$p->findPages($count,$limit);
-        $result=mysql_query("select * from support limit $start,$limit");
+        $result=Database::con()->query("select * from support limit $start,$limit");
         $support=array();
-        if(mysql_num_rows($result)<>0){
-            while ($row=mysql_fetch_assoc($result)){
+        if(Database::con()->num_rows($result)<>0){
+            while ($row=Database::con()->fetch_assoc($result)){
                 $support[]=$row;
             }
         }
         $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $countpage=Database::con()->num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=support&act=view",$pages,3);
 
         $smarty->assign('countrows',$countrows);
@@ -42,7 +42,7 @@ class support{
         $sql="INSERT INTO support(s_name,s_email,s_phone_number) VALUES('$s_name','$s_email','$s_phone_number')";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -57,7 +57,7 @@ class support{
         global $smarty;
         $id=trim($_GET['id']);
         $sql="select * from support where support_id=$id";
-        $supportEdit=mysql_fetch_assoc(mysql_query($sql));
+        $supportEdit=Database::con()->fetch_assoc(Database::con()->query($sql));
         $smarty->assign("supportEdit",$supportEdit);
         $temp=$smarty->fetch('support_edit.tpl');
         return $temp;
@@ -70,7 +70,7 @@ class support{
         $sql="UPDATE support SET s_name='$s_name',s_email='$s_email',s_phone_number='$s_phone_number' WHERE support_id=$id";
         $isOk=0;
         $err="";
-        if (!($result=mysql_query($sql))){
+        if (!($result=Database::con()->query($sql))){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
@@ -86,7 +86,7 @@ class support{
         $deleteFromsupport="delete from support where support_id=$id";
         $isOk=0;
         $err="";
-        if(!mysql_query($deleteFromsupport)){
+        if(!Database::con()->query($deleteFromsupport)){
             $err="Lỗi cơ sở dữ liệu";
         }
         else{
