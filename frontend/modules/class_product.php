@@ -28,6 +28,57 @@
             exit();
         }
 
+        function ajax_num_favorite_header(){
+            $list_favorite=parent::listFavorite();
+            $num_favorite=count($list_favorite);
+            echo $num_favorite;
+            exit();
+        }
+
+        function ajax_list_button_of_product(){
+            global $smarty;
+            $product_id=trim($_POST['id']);
+            $sql="SELECT product_id, p_name FROM product WHERE product_id=$product_id";
+            $customer=$_SESSION['customer'];
+            $product=mysql_fetch_assoc(mysql_query($sql));
+            $product['isFavorite']=parent::checkFavorite($customer,$product['product_id']);
+            $product['p_name_remove_unicode']=remove_unicode($product['p_name']);
+
+            $smarty->assign('product',$product);
+            $temp=$smarty->fetch('ajax_list_button_of_product.tpl');
+            echo $temp;
+            exit();
+        }
+
+        function ajax_list_button_on_detail(){
+            global $smarty;
+            $product_id=trim($_POST['id']);
+            $sql="SELECT product_id FROM product WHERE product_id=$product_id";
+            $product=mysql_fetch_assoc(mysql_query($sql));
+            if (isset($_SESSION['customer'])){
+                $customer=$_SESSION['customer'];
+                $product['isFavorite']=parent::checkFavorite($customer,$product_id);
+            }
+            else{
+                $product['isFavorite']=0;
+            }
+
+            $smarty->assign('product',$product);
+            $temp=$smarty->fetch('ajax_list_button_on_detail.tpl');
+            echo $temp;
+            //echo "<h1>$customer - $product_id</h1>";
+            exit();
+        }
+
+        function ajax_list_favorite_header(){
+            global $smarty;
+            $list_favorite=parent::listFavorite();
+            $smarty->assign("listFavorite",$list_favorite);
+            $result = $smarty->fetch("ajax_list_favorite_header.tpl");
+            echo $result;
+            exit();
+        }
+
         public function add_cart(){
             $product_id=$_POST['id'];
             if (!isset($_SESSION['cart'])) $_SESSION['cart']=array();

@@ -2,7 +2,7 @@
 /*Class database thực hiện các thao tác liên quan đến CSDL*/
 Class Database{
     public function connect(){
-        $connect=mysql_connect(Config::$db['host'],Config::$db['name'],Config::$db['pass']);
+        mysql_connect(Config::$db['host'],Config::$db['name'],Config::$db['pass']);
         if(@!mysql_connect(Config::$db['host'],Config::$db['name'],Config::$db['pass'])){
             exit("Không kết nối được với cơ sở dữ liệu");
         }

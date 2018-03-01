@@ -1,13 +1,13 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-21 08:52:28
+<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:13
          compiled from head.tpl */ ?>
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MobilePro - shop smartphone uy tín</title>
     <meta name="description" content="Phụ kiện điện thoại"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="catalog/view/images/icon-page-title.png" rel="icon"/>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>

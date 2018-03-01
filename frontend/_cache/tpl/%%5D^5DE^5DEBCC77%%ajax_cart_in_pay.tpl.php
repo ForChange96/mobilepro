@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:21:54
+<?php /* Smarty version 2.6.13, created on 2018-02-28 10:19:57
          compiled from ajax_cart_in_pay.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_cart_in_pay.tpl', 27, false),)), $this); ?>

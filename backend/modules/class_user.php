@@ -67,12 +67,12 @@ class User{
                 $user[]=$row;
             }
         }
-        $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $totalResult=$count;
+        $numRowsDisplay=mysql_num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=user&act=view",$pages,5);
 
-        $smarty->assign('countrows',$countrows);
-        $smarty->assign('countpage',$countpage);
+        $smarty->assign('totalResult',$totalResult);
+        $smarty->assign('numRowsDisplay',$numRowsDisplay);
         $smarty->assign('pagels',$pagels);
         $smarty->assign('user',$user);
         $smarty->assign('txt_search',$search);
@@ -206,7 +206,7 @@ class User{
      * delete User Jquery
      */
     public function deleteuser () {
-        $id = $_POST['id'];
+        $id = trim($_POST['id']);
         $isOk = 0;
         $error = "";
         $sql = "DELETE FROM user WHERE user_id = $id";

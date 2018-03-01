@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-21 06:06:18
+<?php /* Smarty version 2.6.13, created on 2018-02-28 05:33:34
          compiled from chi-tiet-san-pham.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'chi-tiet-san-pham.tpl', 59, false),)), $this); ?>
@@ -98,7 +98,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                     <input type="hidden" name="product_id" value="19" />
                                 </div>
                                 <div class="fv-comp-button">
-                                    <ul class="add-to-links">
+                                    <ul class="add-to-links" id="list_button_on_detail">
                                         <li><button type="button" data-toggle="tooltip" class="link-wishlist" title="Thêm so sánh" onclick=""><i class="fa fa-retweet"></i></button></li>
                                         <?php if ($this->_tpl_vars['isFavorite'] == 1): ?>
                                             <li style="background: #ffcba8; width: 39px;">

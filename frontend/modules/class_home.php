@@ -14,6 +14,7 @@ class Home extends class_get_info {
                 while($row=mysql_fetch_assoc($tableProduct)){
                     $row['img_link_350']=$this->getImg($row['product_id']);
                     $row['isFavorite']=parent::checkFavorite($customer,$row['product_id']);
+                    $row['p_name_remove_unicode']=remove_unicode($row['p_name']);
                     $listProduct[]=$row;
                 }
             }

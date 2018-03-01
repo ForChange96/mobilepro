@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:59
+<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:13
          compiled from notificaion.tpl */ ?>
 <div class="notification" id="notification-success">
     <div class="img-notification">

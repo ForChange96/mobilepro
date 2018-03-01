@@ -36,7 +36,7 @@
                     <input type="checkbox" value="{$product.product_id}" name="checkone" />
                 </td>
                 <td class="key">{$k+1}</td>
-                <td class="productname"><a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">{$product.p_name}</a></td>
+                <td class="productname"><a href="?mod=product&act=detail&id={$product.product_id}">{$product.p_name}</a></td>
                 <td class="manufacturer">{$product.manufacturer|escape:'html'}</td>
                 <td class="price">{$product.p_price|number_format}</td>
                 <td class="hotProduct">
@@ -47,7 +47,7 @@
                 <td class="list_cn">
                     <ul>
                         <li>
-                            <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}">
+                            <a href="?mod=product&act=detail&id={$product.product_id}">
                                 <img src="style/images/icon-16-detail.png" title="Xem chi tiết"/>
                             </a>
                         </li>

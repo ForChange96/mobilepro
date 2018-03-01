@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-17 08:32:02
+<?php /* Smarty version 2.6.13, created on 2018-02-23 08:12:23
          compiled from product_list.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'product_list.tpl', 5, false),array('modifier', 'number_format', 'product_list.tpl', 41, false),)), $this); ?>
@@ -46,7 +46,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'p
                 </td>
                 <td class="key"><?php echo $this->_tpl_vars['k']+1; ?>
 </td>
-                <td class="productname"><a href="san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                <td class="productname"><a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
 "><?php echo $this->_tpl_vars['product']['p_name']; ?>
 </a></td>
                 <td class="manufacturer"><?php echo ((is_array($_tmp=$this->_tpl_vars['product']['manufacturer'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')); ?>
@@ -61,7 +61,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'p
                 <td class="list_cn">
                     <ul>
                         <li>
-                            <a href="san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
+                            <a href="?mod=product&act=detail&id=<?php echo $this->_tpl_vars['product']['product_id']; ?>
 ">
                                 <img src="style/images/icon-16-detail.png" title="Xem chi tiết"/>
                             </a>
@@ -91,4 +91,3 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'p
     </table>
 </div><!--End #list-->
 <div class="clear"></div>
-

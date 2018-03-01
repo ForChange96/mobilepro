@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-21 09:10:12
+<?php /* Smarty version 2.6.13, created on 2018-02-27 11:15:05
          compiled from huongdan.tpl */ ?>
 <div class="container">
     <div class="row">

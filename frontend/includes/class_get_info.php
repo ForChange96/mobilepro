@@ -58,7 +58,7 @@
         }
 
         public function get_category(){
-            $sql_get_category="SELECT category_id, category_name FROM category ORDER BY category_id DESC";
+            $sql_get_category="SELECT category_id, category_name FROM category WHERE status=1 ORDER BY category_id DESC";
             $table_category=mysql_query($sql_get_category);
             $list_category=array();
             if(mysql_num_rows($table_category)!=0){

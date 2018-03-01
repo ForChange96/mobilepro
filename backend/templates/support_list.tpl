@@ -1,7 +1,7 @@
 <div id="tool_search">
     <form action="?mod=category&act=view" method="post">
         {*{if $search|escape:'html'}*}
-        <div style="float:right;">{$countrows} Kết quả, Hiển thị <b style="color: red">{$countpage}</b></div>
+        <div style="float:right;">{$totalResult} Kết quả, Hiển thị <b style="color: red">{$numRowsDisplay}</b></div>
         {*{/if}*}
     </form>
     <div class="clear"></div>

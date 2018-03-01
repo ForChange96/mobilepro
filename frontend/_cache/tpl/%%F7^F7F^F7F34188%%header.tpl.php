@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-21 09:03:39
+<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:13
          compiled from header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'header.tpl', 64, false),)), $this); ?>
@@ -53,7 +53,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                             <span class="hidden-xs hidden-sm hidden-md">Yêu thích (<span id="num_favorite"><?php echo $this->_tpl_vars['num_favorite']; ?>
 </span>)</span>
                                         </a>
-                                        <ul class="favorite_ul">
+                                        <ul class="favorite_ul" id="list_favorite">
                                             <?php if (! empty ( $this->_tpl_vars['listFavorite'] )): ?>
                                                 <li class="table-responsive">
                                                     <table style="width: 400px;">
@@ -188,9 +188,6 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 </a>
                                                                                 </li>
                                                                             <?php endforeach; endif; unset($_from); ?>
-                                                                            <li>
-                                                                                <a href="tim-kiem">Tìm kiếm</a>
-                                                                            </li>
                                                                         </ul>
                                                                     </li>
                                                                     <li>
@@ -372,25 +369,6 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
         </div>
     </div>
 </div>
-
-<div id="login_success" class="modal fade" role="dialog">
-    <div class="modal-dialog" style="width: 300px;">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" style="text-align: center; line-height: 60px;">
-                    <span class="glyphicon glyphicon-ok-sign" style="color: green"></span>&nbsp;
-                    Đăng nhập thành công
-                </h4>
-                <div style="text-align: center">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload()">ok</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <?php if (isset ( $_SESSION['prompt'] )): ?>
     <div id="prompt_update_address" class="modal fade" role="dialog">

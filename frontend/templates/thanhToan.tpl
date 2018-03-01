@@ -196,7 +196,10 @@
                                         <div class="panel-body">
                                             <div id="shipping_address" class="form-horizontal ">
                                                 <div style="margin-bottom: 10px;">
-                                                    <input type="checkbox" onchange="use_my_information({if isset($smarty.session.customer)}1{else}0{/if})" id="use_my_information"> Sử dụng thông tin của tôi
+                                                    <label style="font-weight: normal">
+                                                        <input type="checkbox" onchange="use_my_information({if isset($smarty.session.customer)}1{else}0{/if})" id="use_my_information">
+                                                        Sử dụng thông tin của tôi
+                                                    </label>
                                                 </div>
                                                 <form id="frm_shipping_address">
                                                 <div id="firstname_input"

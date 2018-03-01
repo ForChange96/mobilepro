@@ -148,11 +148,11 @@
             $temp=$smarty->fetch('email_confirm.tpl');
 
             $to      = $email;
-            $subject = "Xác nhân tài khoản MobilePro";
+            $subject = "Xác nhận tài khoản MobilePro";
             $message = $temp;
 
             $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+            $headers[] = "Content-type: text/html; charset='UTF-8'";
             $headers[] = 'From: transon996@gmail.com';
             $headers[] = 'Reply-To: transon996@gmail.com';
             $headers[] = 'X-Mailer: PHP/' . phpversion();

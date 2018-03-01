@@ -2214,7 +2214,7 @@ h2.left-crt-title {
 .t-all-product-info .add-to-links > li {
   border-left: 1px solid #f0f0f0;
   width: 33.33%;
- border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
 }
 .electronics-area .h2-arviel-title {
   margin-bottom: 30px;
@@ -2756,9 +2756,7 @@ h2.left-crt-title {
 .home-3  .tab-p-info ul.add-to-links a,.home-3  .tab-p-info .button.btn-cart {
   font-size: 11px;
 }
-.h3-products .t-all-product-info .add-to-links > li {
-  width: 33.3%;
-}
+
 .home-3 .nrb-next-prev.owl-theme .owl-controls .owl-buttons div:hover::after {
   border: 1px solid #000;
 }
@@ -4049,9 +4047,7 @@ body.home-5 {
   margin-top: 41px;
 }
 
-.big-p .t-all-product-info .add-to-links > li {
-  width: 33.33%;
-}
+
 .h7-new-product-area {
   margin-top: 50px;
   padding-bottom: 40px;
@@ -4208,9 +4204,7 @@ body.h-8 {
 .h8-product_area .h2-arviel-title h3 {
   border-bottom: 3px solid #facdad;
 }
-.h8-product_area .t-all-product-info .add-to-links > li {
-  width: 33.3%;
-}
+
 .h8-product_area .star {
   margin-top: -12px;
 }
@@ -5818,9 +5812,6 @@ body.h-15 .main-menu ul li .mega-menu a::after {
   box-shadow: 0 4px 8px #151515;
 }
 .h-15   .tab-p-info .button.btn-cart {
-  border: 0 none;
-}
-.h-15    .t-all-product-info .add-to-links > li {
   border: 0 none;
 }
 .h-15 .h2-arviel-title > h3 {

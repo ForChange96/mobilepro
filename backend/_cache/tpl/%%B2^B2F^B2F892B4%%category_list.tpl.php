@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-15 09:33:01
+<?php /* Smarty version 2.6.13, created on 2018-02-28 10:30:48
          compiled from category_list.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'category_list.tpl', 5, false),)), $this); ?>
@@ -10,8 +10,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'c
 ">
         </div>
         <input class="btn_search3" type="submit" name="btnsearch" value=""/>
-                <div style="float:right;"><?php echo $this->_tpl_vars['countrows']; ?>
- Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['countpage']; ?>
+                <div style="float:right;"><?php echo $this->_tpl_vars['totalResult']; ?>
+ Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['numRowsDisplay']; ?>
 </b></div>
             </form>
     <div class="clear"></div>
@@ -62,4 +62,3 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'c
     </table>
 </div><!--End #list-->
 <div class="clear"></div>
-

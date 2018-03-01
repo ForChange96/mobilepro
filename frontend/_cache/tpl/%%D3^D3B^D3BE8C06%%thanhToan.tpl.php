@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:21:49
+<?php /* Smarty version 2.6.13, created on 2018-02-28 03:52:45
          compiled from thanhToan.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'thanhToan.tpl', 366, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'thanhToan.tpl', 369, false),)), $this); ?>
 <div class="container">
     <div class="row">
         <div id="content" class="col-sm-12">
@@ -201,7 +201,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                         <div class="panel-body">
                                             <div id="shipping_address" class="form-horizontal ">
                                                 <div style="margin-bottom: 10px;">
-                                                    <input type="checkbox" onchange="use_my_information(<?php if (isset ( $_SESSION['customer'] )): ?>1<?php else: ?>0<?php endif; ?>)" id="use_my_information"> Sử dụng thông tin của tôi
+                                                    <label style="font-weight: normal">
+                                                        <input type="checkbox" onchange="use_my_information(<?php if (isset ( $_SESSION['customer'] )): ?>1<?php else: ?>0<?php endif; ?>)" id="use_my_information">
+                                                        Sử dụng thông tin của tôi
+                                                    </label>
                                                 </div>
                                                 <form id="frm_shipping_address">
                                                 <div id="firstname_input"
@@ -493,4 +496,4 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
         </div>
         <img src="catalog\view\images\thanks.jpg">
     </div>
-</div>
+</div>

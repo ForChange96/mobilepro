@@ -67,7 +67,7 @@
                                                 <button type="button" onclick="add_cart({$product.product_id})" class="button btn-cart">
                                                     <span><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</span>
                                                 </button>
-                                                <ul class="add-to-links">
+                                                <ul class="add-to-links" id="list_button_of_product{$product.product_id}">
                                                     <li>
                                                         <a href="chi-tiet-san-pham-{$product.product_id}={$product.p_name_remove_unicode}"
                                                            class="link-wishlist" data-toggle="tooltip"
@@ -83,18 +83,19 @@
                                                     {if isset($product.isFavorite) && $product.isFavorite==1}
                                                         <li style="background: #ffcba8" id="favorite_li">
                                                             <button type="button" data-toggle="tooltip" title="Xoá Yêu thích"
-                                                                    onclick="delete_wishlist({$product.product_id})">
+                                                                    onclick="delete_wishlist({$product.product_id});">
                                                                 <i class="fa fa-heart" style="color: red" id="favorite_icon"></i>
                                                             </button>
                                                         </li>
                                                     {else}
                                                         <li>
                                                             <button type="button" data-toggle="tooltip" title="Thêm Yêu thích"
-                                                                    onclick="{if isset($smarty.session.customer)} add_wishlist({$product.product_id}) {else} login_and_add_wishlist({$product.product_id}) {/if}">
+                                                                    onclick="{if isset($smarty.session.customer)} add_wishlist({$product.product_id}) {else} login_and_add_wishlist({$product.product_id}) {/if};">
                                                                 <i class="fa fa-heart"></i>
                                                             </button>
                                                         </li>
                                                     {/if}
+                                                    {*reload_list_button_of_product({$product.product_id});*}
                                                 </ul>
                                             </div>
                                         </div>

@@ -11,8 +11,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
             Đã giao
         </a>
     </div>
-    <div style="float:right;"><?php echo $this->_tpl_vars['countrows']; ?>
- Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['countpage']; ?>
+    <div style="float:right;"><?php echo $this->_tpl_vars['totalResult']; ?>
+ Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['numRowsDisplay']; ?>
 </b></div>
     <div class="clear"></div>
         <div style="width: 100%; height: 35px; margin-top: 10px; background: #e4e4e4;border-radius: 5px;" id="tool_search_order">
@@ -77,7 +77,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
             <td class="price">Thành tiền</td>
             <td class="list_cn">Chức năng</td>
         </tr>
-        <?php if ($this->_tpl_vars['countrows'] == 0): ?>
+        <?php if ($this->_tpl_vars['totalResult'] == 0): ?>
             <tr>
                 <td colspan="6" style="text-align: center; font-style: italic; color: #999999">Không có dữ liệu để hiển thị</td>
             </tr>
@@ -183,4 +183,4 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
 <div class="clear"></div>
 <span id="show_tool_search" style="display: none"><?php echo $this->_tpl_vars['show_tool_search']; ?>
 </span>
-
+

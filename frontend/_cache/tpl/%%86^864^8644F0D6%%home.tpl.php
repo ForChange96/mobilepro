@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:58
+<?php /* Smarty version 2.6.13, created on 2018-02-28 05:18:19
          compiled from home.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'home.tpl', 27, false),)), $this); ?>
@@ -82,7 +82,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 )" class="button btn-cart">
                                                     <span><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</span>
                                                 </button>
-                                                <ul class="add-to-links">
+                                                <ul class="add-to-links" id="list_button_of_product<?php echo $this->_tpl_vars['product']['product_id']; ?>
+">
                                                     <li>
                                                         <a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
 =<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
@@ -101,7 +102,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                         <li style="background: #ffcba8" id="favorite_li">
                                                             <button type="button" data-toggle="tooltip" title="Xoá Yêu thích"
                                                                     onclick="delete_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
-)">
+);">
                                                                 <i class="fa fa-heart" style="color: red" id="favorite_icon"></i>
                                                             </button>
                                                         </li>
@@ -110,12 +111,12 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                                             <button type="button" data-toggle="tooltip" title="Thêm Yêu thích"
                                                                     onclick="<?php if (isset ( $_SESSION['customer'] )): ?> add_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
 ) <?php else: ?> login_and_add_wishlist(<?php echo $this->_tpl_vars['product']['product_id']; ?>
-) <?php endif; ?>">
+) <?php endif; ?>;">
                                                                 <i class="fa fa-heart"></i>
                                                             </button>
                                                         </li>
                                                     <?php endif; ?>
-                                                </ul>
+                                                                                                    </ul>
                                             </div>
                                         </div>
                                     </div>

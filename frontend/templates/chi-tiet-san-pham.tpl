@@ -73,7 +73,7 @@
                                     <input type="hidden" name="product_id" value="19" />
                                 </div>
                                 <div class="fv-comp-button">
-                                    <ul class="add-to-links">
+                                    <ul class="add-to-links" id="list_button_on_detail">
                                         <li><button type="button" data-toggle="tooltip" class="link-wishlist" title="Thêm so sánh" onclick=""><i class="fa fa-retweet"></i></button></li>
                                         {if $isFavorite==1}
                                             <li style="background: #ffcba8; width: 39px;">

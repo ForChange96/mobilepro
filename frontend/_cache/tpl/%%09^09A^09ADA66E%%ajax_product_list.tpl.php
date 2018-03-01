@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:22:14
+<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:41
          compiled from ajax_product_list.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'ajax_product_list.tpl', 15, false),)), $this); ?>

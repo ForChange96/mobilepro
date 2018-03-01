@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:14:47
+<?php /* Smarty version 2.6.13, created on 2018-02-28 08:23:03
          compiled from product_list.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'product_list.tpl', 67, false),)), $this); ?>
@@ -132,7 +132,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
                                     <div class="al-btns">
                                         <button type="button" onclick="add_cart(<?php echo $this->_tpl_vars['product']['product_id']; ?>
 )" class="button btn-cart"><span><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</span></button>
-                                        <ul class="add-to-links">
+                                        <ul class="add-to-links" id="list_button_of_product<?php echo $this->_tpl_vars['product']['product_id']; ?>
+">
                                             <li><a href="chi-tiet-san-pham-<?php echo $this->_tpl_vars['product']['product_id']; ?>
 =<?php echo $this->_tpl_vars['product']['p_name_remove_unicode']; ?>
 " class="link-wishlist" data-toggle="tooltip" title=" Xem chi tiết"><i class="fa fa-eye"></i></a></li>

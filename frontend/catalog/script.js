@@ -69,8 +69,7 @@ function login() {
                     add_wishlist(product_id);
                     $.removeCookie("favorite");
                 }
-                $("#login-modal").toggle();
-                $("#login_success").modal();
+                document.location.reload();
             }
             else {
                 $("#check_login").html("Sai username hoặc password");
@@ -213,8 +212,7 @@ function check_email() {
                  $("#err_signup").html("Vui lòng nhập đủ thông tin");
              }
              else {
-                 $("#text-notification-error").html("<h4>Xảy ra lỗi!</h4>")
-                 $("#notification-error").fadeIn(100).delay(1000).fadeOut(1000);
+                 notification_error("Xảy ra lỗi!");
              }
          }
      })
@@ -229,13 +227,47 @@ function check_email() {
          dataType: "json",
          success: function (data) {
             if(parseInt(data.ok)==1){
-                location.reload();
+                reload_favorite_header();
+                reload_list_button_of_product(product_id);
+                reload_list_button_on_detail(product_id);
+                notification_success("Thêm thành công!");
             }
             else {
                 alert("Có vẻ như sản phẩm này đã nằm trong danh sách yêu thích");
             }
          }
      })
+ }
+ function reload_list_button_of_product(product_id) {
+     var ul_tag_id="#list_button_of_product"+product_id;//id của thẻ ul ứng với sản phẩm vừa click - để load lại list button của SP đó
+     var strData="id="+product_id;
+    $.ajax({
+        type: "POST",
+        url: "reload_list_button_of_product",
+        data: strData,
+        dataType: "html",
+        success: function (data) {
+            $(ul_tag_id).html(data);
+            $(".tooltip").tooltip("hide");
+        }
+    });
+ }
+ function reload_list_button_on_detail(product_id) {
+     var strData="id="+product_id;
+     $.ajax({
+         type: "POST",
+         url: "reload_list_button_on_detail",
+         data: strData,
+         dataType: "html",
+         success: function (data) {
+             $("#list_button_on_detail").html(data);
+         }
+     });
+ }
+
+ function reload_favorite_header() {
+     $("#num_favorite").load("reload_num_favorite_header");
+     $("#list_favorite").load("reload_list_favorite_header");
  }
 
  function login_and_add_wishlist(product_id) {
@@ -252,7 +284,10 @@ function check_email() {
          dataType: "json",
          success: function (data) {
              if (parseInt(data.ok)==1){
-                 location.reload();
+                 reload_favorite_header();
+                 reload_list_button_of_product(product_id);
+                 reload_list_button_on_detail(product_id);
+                 notification_success("Xoá thành công!");
              }
              else {
                  alert("Xảy ra lỗi");
@@ -288,8 +323,7 @@ function check_email() {
              });
 
              //Show notification
-             $("#text-notification-success").html("<h4>Thêm thành công!</h4>");
-             $("#notification-success").fadeIn(100).delay(1000).fadeOut(1000);
+             notification_success("Thêm thành công!");
          }
      })
  }
@@ -321,8 +355,7 @@ function add_cart_with_number(product_id) {
             });
 
             //Show notification
-            $("#text-notification-success").html("<h4>Thêm thành công!</h4>");
-            $("#notification-success").fadeIn(100).delay(1000).fadeOut(1000);
+            notification_success("Thêm thành công!");
         }
     })
 }
@@ -454,8 +487,7 @@ function update_number(product_id) {
            });
 
            //Show thông báo "cập nhật thành công"
-           $("#text-notification-success").html("<h4>Cập nhật thành công!</h4>");
-           $("#notification-success").fadeIn(100).delay(1000).fadeOut(1000);
+           notification_success("Cập nhật thành công!");
        } 
     });
 }
@@ -636,8 +668,7 @@ function pay_click() {
         dataType: "json",
         success: function (data) {
             if(parseInt(data.num_cart)==0){
-                $("#text-notification-error").html("<h4>Giỏ hàng trống!</h4>");
-                $("#notification-error").fadeIn(100).delay(1000).fadeOut(1000);
+                notification_error("Giỏ hàng trống!");
             }
             else{
                 window.location.replace("thanh-toan");
@@ -697,4 +728,12 @@ function edit_customer() {
 
 function unset_prompt() {
     $.ajax({url: "unset_prompt"});
+}
+function notification_success(text) { //Show notification success
+    $("#text-notification-success").html("<h4>" + text + "</h4>");
+    $("#notification-success").fadeIn(100).delay(1000).fadeOut(1000);
+}
+function notification_error(text) { //Show notification error
+    $("#text-notification-error").html("<h4>" + text + "</h4>");
+    $("#notification-error").fadeIn(100).delay(1000).fadeOut(1000);
 }

@@ -119,16 +119,42 @@ $(function()
             this.checked = checked_status;
         });
     });
+    
+    /************************* User ***********************************************/
     $("#user_edit").click(function(){
         $("input[name=checkone]").each(function()
         {
             if($(this).is(':checked')){
                 str = $(this).val();
-                document.location = "?mod=user&act=edit&id="+str;
+                location.href = "?mod=user&act=edit&id="+str;
             }
         });
     });
+    
+    $("#user_delete").click(function(){
+        if (!confirm("Xóa tất cả những thành viên được chọn?")) {
+            return;
+        }
+        else{
+            $("input[name=checkone]").each(function()
+            {
+                if($(this).is(':checked')){
+                    var valId = $(this).val();
+                    var strData = "id="+valId;
+                    $.ajax({
+                        type: "POST",
+                        url: "?mod=user&act=deleteuser",
+                        data: strData
+                    });
+                }
+            });
 
+            location.reload();
+        }
+    });
+    /************************* End User ***********************************************/
+
+    /************************* Customer ***********************************************/
     $("#customer_edit").click(function(){
         $("input[name=checkone]").each(function()
         {
@@ -139,63 +165,167 @@ $(function()
         });
     });
 
-    $("#user_delete").click(function(){
+    $("#customer_delete").click(function(){
+        if (!confirm("Xóa tất cả những khách hàng được chọn?")) {
+            return;
+        }
+        else{
+            $("input[name=checkone]").each(function()
+            {
+                if($(this).is(':checked')){
+                    var valId = $(this).val();
+                    var strData = "id="+valId;
+                    $.ajax({
+                        type: "POST",
+                        url: "?mod=customer&act=deleteCustomer",
+                        data: strData
+                    });
+                }
+            });
+            location.reload();
+        }
+    });
+    /************************* End Customer ***********************************************/
+
+
+    /************************* Category ***********************************************/
+    $("#category_edit").click(function(){
         $("input[name=checkone]").each(function()
         {
             if($(this).is(':checked')){
-                if (!confirm("Bạn có chắc chắn xóa thành viên này không?")) {
-                    return;
-                }
-                else{
-                    var valId = $(this).val();
-                    $.ajax({
-                        type: "POST",
-                        url: "?mod=user&act=deleteuser",
-                        data: valId,
-                        dataType: "json",
-                        success: function(Data){
-                            if (parseInt(Data.ok)==1){
-                                alert('Xóa thành công');
-                                location.reload();
-                            }else{
-                                alert('Lỗi không xóa được dữ liệu');
-                                $('.error').html(Data.error);
-                            }
-                        }
-                    });
-                }
+                str = $(this).val();
+                document.location = "?mod=category&act=edit&id="+str;
             }
         });
     });
 
-    $("#customer_delete").click(function(){
+    $("#category_delete").click(function(){
+        if (!confirm("Xóa tất cả những danh mục được chọn?")) {
+            return;
+        }
+        else{
+            $("input[name=checkone]").each(function()
+            {
+                if($(this).is(':checked')){
+                    var valId = $(this).val();
+                    var strData = "id="+valId;
+                    $.ajax({
+                        type: "POST",
+                        url: "?mod=category&act=deleteCategory",
+                        data: strData
+                    });
+                }
+            });
+            location.reload();
+        }
+    });
+    /************************* End Category ***********************************************/
+
+
+    /************************* Product ***********************************************/
+    $("#product_edit").click(function(){
         $("input[name=checkone]").each(function()
         {
             if($(this).is(':checked')){
-                if (!confirm("Bạn có chắc chắn xóa khách hàng này không?")) {
-                    return;
-                }
-                else{
-                    var valId = $(this).val();
-                    $.ajax({
-                        type: "POST",
-                        url: "?mod=customer&act=deleteCustomer",
-                        data: valId,
-                        dataType: "json",
-                        success: function(Data){
-                            if (parseInt(Data.ok)==1){
-                                alert('Xóa thành công');
-                                location.reload();
-                            }else{
-                                alert('Lỗi không xóa được dữ liệu');
-                                $('.error').html(Data.error);
-                            }
-                        }
-                    });
-                }
+                str = $(this).val();
+                document.location = "?mod=product&act=edit&id="+str;
             }
         });
     });
+
+    $("#product_delete").click(function(){
+        if (!confirm("Xóa tất cả những sản phẩm được chọn?")) {
+            return;
+        }
+        else{
+            $("input[name=checkone]").each(function()
+            {
+                if($(this).is(':checked')){
+                    var valId = $(this).val();
+                    var strData = "id="+valId;
+                    $.ajax({
+                        type: "POST",
+                        url: "?mod=product&act=deleteProduct",
+                        data: strData
+                    });
+                }
+            });
+            location.reload();
+        }
+    });
+    /************************* End Product ***********************************************/
+
+    /************************* Manufacturer ***********************************************/
+    $("#manufacturer_edit").click(function(){
+        $("input[name=checkone]").each(function()
+        {
+            if($(this).is(':checked')){
+                str = $(this).val();
+                document.location = "?mod=manufacturer&act=edit&id="+str;
+            }
+        });
+    });
+
+    $("#manufacturer_delete").click(function(){
+        if (!confirm("Xóa tất cả những hãng được chọn?")) {
+            return;
+        }
+        else{
+            var result=0;
+            $("input[name=checkone]").each(function()
+            {
+                if($(this).is(':checked')){
+                    var valId = $(this).val();
+                    var strData = "id="+valId;
+                    $.ajax({
+                        type: "POST",
+                        url: "?mod=manufacturer&act=deleteManufacturer",
+                        data: strData,
+                        dataType: "json"
+                    });
+                }
+            });
+            location.reload();
+        }
+    });
+    /************************* End Manufacturer ***********************************************/
+
+
+    /************************* Features ***********************************************/
+    $("#features_edit").click(function(){
+        $("input[name=checkone]").each(function()
+        {
+            if($(this).is(':checked')){
+                str = $(this).val();
+                document.location = "?mod=features&act=edit&id="+str;
+            }
+        });
+    });
+
+    $("#features_delete").click(function(){
+        if (!confirm("Xóa tất cả những tính năng được chọn?")) {
+            return;
+        }
+        else{
+            var result=0;
+            $("input[name=checkone]").each(function()
+            {
+                if($(this).is(':checked')){
+                    var valId = $(this).val();
+                    var strData = "id="+valId;
+                    $.ajax({
+                        type: "POST",
+                        url: "?mod=features&act=deleteFeatures",
+                        data: strData,
+                        dataType: "json"
+                    });
+                }
+            });
+            location.reload();
+        }
+    });
+    /************************* End Features ***********************************************/
+    
 });
 
 
@@ -256,7 +386,6 @@ function goBack() {
                 dataType: "json",
                 success: function(data){
                     if (parseInt(data.ok) == 1) {
-                        alert('Xóa dữ liệu thành công');
                         location.reload();
                     }
                     else
@@ -302,7 +431,6 @@ function goBack() {
             dataType: "json",
             success: function(data){
                 if(parseInt(data.ok)==1){
-                    alert('Sửa thành công');
                     document.location = "?mod=customer&act=view";
                 }else{
                     $("#alertBox").show();
@@ -327,7 +455,6 @@ function goBack() {
                 dataType: "json",
                 success: function(data){
                     if (parseInt(data.ok)==1) {
-                        alert('Xóa thành công');
                         location.reload();
                     }
                     else{
@@ -350,7 +477,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if (parseInt(data.ok)==1){
-                    alert("Thêm thành công!");
                     document.location = "?mod=category&act=view";
                 }
                 else {
@@ -370,7 +496,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if(parseInt(data.ok)==1){
-                    alert('Sửa thành công!');
                     document.location="?mod=category&act=view";
                 }
                 else{
@@ -419,7 +544,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if(parseInt(data.ok)==1){
-                    alert('Thêm thành công!');
                     document.location="?mod=manufacturer&act=view";
                 }
                 else{
@@ -437,7 +561,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if(parseInt(data.ok)==1){
-                    alert('Sửa thành công!');
                     document.location="?mod=manufacturer&act=view";
                 }
                 else{
@@ -695,7 +818,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if (parseInt(data.ok)==1){
-                    alert("Thêm thành công!");
                     document.location = "?mod=contact&act=view";
                 }
                 else {
@@ -715,7 +837,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if(parseInt(data.ok)==1){
-                    alert('Sửa thành công!');
                     document.location="?mod=contact&act=view";
                 }
                 else{
@@ -759,7 +880,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if (parseInt(data.ok)==1){
-                    alert("Thêm thành công!");
                     document.location = "?mod=support&act=view";
                 }
                 else {
@@ -779,7 +899,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if(parseInt(data.ok)==1){
-                    alert('Sửa thành công!');
                     document.location="?mod=support&act=view";
                 }
                 else{
@@ -823,7 +942,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if (parseInt(data.ok)==1){
-                    alert("Thêm thành công!");
                     document.location = "?mod=features&act=view";
                 }
                 else {
@@ -843,7 +961,6 @@ function goBack() {
             dataType: "json",
             success: function (data) {
                 if(parseInt(data.ok)==1){
-                    alert('Sửa thành công!');
                     document.location="?mod=features&act=view";
                 }
                 else{

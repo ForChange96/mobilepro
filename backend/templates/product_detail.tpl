@@ -60,7 +60,7 @@
             <td style="padding-left: 50px;">{$product.p_price|number_format}</td>
         </tr>
         <tr>
-            <td style="padding-left: 50px;width: 210px;">
+            <td style="padding-left: 48px;width: 210px;">
                 <img src="style\images\icon-star1.png">&nbsp;
                 <label>Sản phẩm nổi bật</label>
             </td>

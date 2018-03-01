@@ -12,7 +12,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'o
             <td class="price">Thành tiền</td>
             <td class="list_cn">Chức năng</td>
         </tr>
-        <?php if ($this->_tpl_vars['countrows'] == 0): ?>
+        <?php if ($this->_tpl_vars['totalResult'] == 0): ?>
             <tr>
                 <td colspan="6" style="text-align: center; font-style: italic; color: #999999">Không có dữ liệu để hiển thị</td>
             </tr>

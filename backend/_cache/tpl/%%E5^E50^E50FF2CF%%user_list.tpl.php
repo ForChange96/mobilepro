@@ -10,8 +10,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'u
 ">
             </div>
             <input class="btn_search3" type="submit" name="btnsearch" value=""/>
-                        <div style="float:right;"><?php echo $this->_tpl_vars['countrows']; ?>
- Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['countpage']; ?>
+                        <div style="float:right;"><?php echo $this->_tpl_vars['totalResult']; ?>
+ Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['numRowsDisplay']; ?>
 </b></div>
                     </form>
         <div class="clear"></div>
@@ -78,4 +78,4 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'u
         </table>
     </div><!--End #list-->
     <div class="clear"></div>
-
+

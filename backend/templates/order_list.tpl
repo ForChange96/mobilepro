@@ -7,7 +7,7 @@
             Đã giao
         </a>
     </div>
-    <div style="float:right;">{$countrows} Kết quả, Hiển thị <b style="color: red">{$countpage}</b></div>
+    <div style="float:right;">{$totalResult} Kết quả, Hiển thị <b style="color: red">{$numRowsDisplay}</b></div>
     <div class="clear"></div>
     {*Thanh công cụ tìm kiếm*}
     <div style="width: 100%; height: 35px; margin-top: 10px; background: #e4e4e4;border-radius: 5px;" id="tool_search_order">
@@ -76,7 +76,7 @@
             <td class="price">Thành tiền</td>
             <td class="list_cn">Chức năng</td>
         </tr>
-        {if $countrows==0}
+        {if $totalResult==0}
             <tr>
                 <td colspan="6" style="text-align: center; font-style: italic; color: #999999">Không có dữ liệu để hiển thị</td>
             </tr>

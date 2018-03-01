@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-19 15:13:59
+<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:13
          compiled from footer.tpl */ ?>
 <footer class="footer_content page_panel">
     <div class="footer-top" id="footer_top">
@@ -279,4 +279,3 @@
         </div>
     </div>
 </footer>
-

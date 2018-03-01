@@ -6,7 +6,7 @@
             </div>
             <input class="btn_search3" type="submit" name="btnsearch" value=""/>
             {*{if $search|escape:'html'}*}
-            <div style="float:right;">{$countrows} Kết quả, Hiển thị <b style="color: red">{$countpage}</b></div>
+            <div style="float:right;">{$totalResult} Kết quả, Hiển thị <b style="color: red">{$numRowsDisplay}</b></div>
             {*{/if}*}
         </form>
         <div class="clear"></div>

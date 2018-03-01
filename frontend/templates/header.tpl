@@ -46,7 +46,7 @@
                                             <i class="fa fa-heart"></i>
                                             <span class="hidden-xs hidden-sm hidden-md">Yêu thích (<span id="num_favorite">{$num_favorite}</span>)</span>
                                         </a>
-                                        <ul class="favorite_ul">
+                                        <ul class="favorite_ul" id="list_favorite">
                                             {if !empty($listFavorite)}
                                                 <li class="table-responsive">
                                                     <table style="width: 400px;">
@@ -164,9 +164,6 @@
                                                                                     <a href="danh-muc-{$category.category_id}={$category.category_name_remove_unicode}">{$category.category_name}</a>
                                                                                 </li>
                                                                             {/foreach}
-                                                                            <li>
-                                                                                <a href="tim-kiem">Tìm kiếm</a>
-                                                                            </li>
                                                                         </ul>
                                                                     </li>
                                                                     <li>
@@ -336,26 +333,6 @@
     </div>
 </div>
 {* End Modal login Bootstrap *}
-
-{*Modal alert signup success*}
-<div id="login_success" class="modal fade" role="dialog">
-    <div class="modal-dialog" style="width: 300px;">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" style="text-align: center; line-height: 60px;">
-                    <span class="glyphicon glyphicon-ok-sign" style="color: green"></span>&nbsp;
-                    Đăng nhập thành công
-                </h4>
-                <div style="text-align: center">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload()">ok</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 {* Modal nhắc cập nhật địa chỉ và SĐT *}
 {if isset($smarty.session.prompt)}

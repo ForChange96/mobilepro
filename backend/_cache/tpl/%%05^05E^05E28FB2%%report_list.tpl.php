@@ -2,8 +2,8 @@
          compiled from report_list.tpl */ ?>
 <div id="tool_search">
     <form action="?mod=category&act=view" method="post">
-                <div style="float:right;"><?php echo $this->_tpl_vars['countrows']; ?>
- Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['countpage']; ?>
+                <div style="float:right;"><?php echo $this->_tpl_vars['totalResult']; ?>
+ Kết quả, Hiển thị <b style="color: red"><?php echo $this->_tpl_vars['numRowsDisplay']; ?>
 </b></div>
             </form>
     <div class="clear"></div>

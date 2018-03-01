@@ -27,12 +27,12 @@ class Category{
                 $category[]=$row;
             }
         }
-        $countrows=$count;
-        $countpage=mysql_num_rows($result);
+        $totalResult=$count;
+        $numRowsDisplay=mysql_num_rows($result);
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=category&act=view",$pages,3);
 
-        $smarty->assign('countrows',$countrows);
-        $smarty->assign('countpage',$countpage);
+        $smarty->assign('totalResult',$totalResult);
+        $smarty->assign('numRowsDisplay',$numRowsDisplay);
         $smarty->assign('pagels',$pagels);
         $smarty->assign('category',$category);
         $smarty->assign('txt_search',$search);

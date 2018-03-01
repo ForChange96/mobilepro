@@ -25,8 +25,8 @@ Class Customer{
         $pages=$p->findPages($count,$limit);
 
         $result=mysql_query("select * from customer {$where} limit $start,$limit");
-        $countpage=mysql_num_rows($result);
-        $countrows=$count;
+        $numRowsDisplay=mysql_num_rows($result);
+        $totalResult=$count;
         $pagels=PagingUtils::showpage($_GET['page'],"?mod=customer&act=view",$pages,3);
         $customer=array();
 
@@ -37,8 +37,8 @@ Class Customer{
         }
 
 
-        $smarty->assign('countrows',$countrows);
-        $smarty->assign('countpage',$countpage);
+        $smarty->assign('totalResult',$totalResult);
+        $smarty->assign('numRowsDisplay',$numRowsDisplay);
         $smarty->assign('pagels',$pagels);
         $smarty->assign('customer',$customer);
         $smarty->assign('txt_search',$search);
@@ -150,12 +150,12 @@ Class Customer{
     /**
      * delete Customer Jquery
      */
-    public function deletecustomer () {
+    public function deleteCustomer () {
         $id = $_POST['id'];
         $isOk = 0;
         $error = "";
         $sql = "DELETE FROM customer WHERE customer_id = $id";
-        if (!($result = mysql_query($sql))) {
+        if (!mysql_query($sql)) {
             $error = "Lỗi cơ sở dữ liệu";
         }
         else{

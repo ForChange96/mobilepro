@@ -106,15 +106,16 @@
             $smarty->assign('customer',$customer_online);
             $temp=$smarty->fetch('email_order.tpl');
 
+            $from    = "transon996@gmail.com";
             $to      = $customer_online['email'];
             $subject = 'Đơn hàng đang giao';
             $message = $temp;
 
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-            $headers[] = 'From: transon996@gmail.com';
-            $headers[] = 'Reply-To: transon996@gmail.com';
-            $headers[] = 'X-Mailer: PHP/' . phpversion();
+            $headers[] = "MIME-Version: 1.0";
+            $headers[] = "Content-type: text/html; charset='UTF-8'";
+            $headers[] = "From: $from";
+            $headers[] = "Reply-To: $from";
+            $headers[] = "X-Mailer: PHP/" . phpversion();
 
             mail($to, $subject, $message, implode("\r\n", $headers));
         }

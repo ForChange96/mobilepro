@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-19 08:03:06
+<?php /* Smarty version 2.6.13, created on 2018-02-23 08:14:05
          compiled from product_detail.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'product_detail.tpl', 51, false),)), $this); ?>
@@ -69,7 +69,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 </td>
         </tr>
         <tr>
-            <td style="padding-left: 50px;width: 210px;">
+            <td style="padding-left: 48px;width: 210px;">
                 <img src="style\images\icon-star1.png">&nbsp;
                 <label>Sản phẩm nổi bật</label>
             </td>

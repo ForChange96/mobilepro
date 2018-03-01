@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-21 06:09:18
+<?php /* Smarty version 2.6.13, created on 2018-02-28 09:00:24
          compiled from ajax_star_after_vote.tpl */ ?>
 Click để vote số sao:&nbsp;
 <span class="fa fa-stack pointer" onclick="do_vote(<?php echo $this->_tpl_vars['product_id']; ?>
