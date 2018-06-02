@@ -40,7 +40,9 @@ class PagingUtils {
             $end = $maxpage;
         }
         $startpage = $showpage;
-
+        $list_page="";
+        $list_page1="";
+        $list_page2="";
         if (!$ajax) {
             if ($total > 1) {
                 for ($showpage; $showpage < $end + 1; $showpage ++) {

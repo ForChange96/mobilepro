@@ -43,3 +43,4 @@ RewriteRule ^reload_list_button_on_detail$ index.php?mod=product&act=ajax_list_b
 RewriteRule ^ajax_amount$ index.php?mod=cart&act=ajax_amount
 RewriteRule ^do-vote$ index.php?mod=product&act=do_vote
 RewriteRule ^ajax_star$ index.php?mod=product&act=ajax_star
+RewriteRule ^dang_ky_nhan_tin$ index.php?mod=home&act=newsletter

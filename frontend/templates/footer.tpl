@@ -169,42 +169,6 @@
                                     <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
                                         <div class="dv-item-module ">
                                             {literal}
-                                            <script>
-                                                function subscribe() {
-                                                    var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-                                                    var email = $('#txtemail').val();
-                                                    if (email != "") {
-                                                        if (!emailpattern.test(email)) {
-                                                            alert("Lỗi email");
-                                                            return false;
-                                                        }
-                                                        else {
-                                                            $.ajax({
-                                                                url: 'index.php?route=module/newsletters/news',
-                                                                type: 'post',
-                                                                data: 'email=' + $('#txtemail').val(),
-                                                                dataType: 'json',
-                                                                success: function (json) {
-                                                                    if (json.message[0] == 1)
-                                                                        $('.warning-new').html("<div><span class='alert alert-success'>" + json.message[1] + "</span></div>");
-                                                                    else
-                                                                        $('.warning-new').html("<div><span class='alert alert-danger'>" + json.message[1] + "</div></div>");
-                                                                    $('.warning-new').fadeIn('slow').delay(2000).fadeOut('slow');
-                                                                }
-
-                                                            });
-                                                            return false;
-                                                        }
-                                                    }
-                                                    else {
-                                                        alert("Vui lòng nhập Email của bạn");
-                                                        $(email).focus();
-                                                        return false;
-                                                    }
-                                                }
-                                            </script>
-                                            {/literal}
-                                            {literal}
                                             <style type="text/css">
                                                 .warning-new {
                                                     display: none;
@@ -238,8 +202,8 @@
                                                                 <input type="email" name="txtemail" id="txtemail"
                                                                        value="" placeholder="Nhập mail của bạn!"
                                                                        class="form-control input-lg newsletters-input"/>
-                                                                <button type="submit" class="btn btn-lg newsletters-btn"
-                                                                        onclick="return subscribe();">Đăng
+                                                                <button type="button" class="btn btn-lg newsletters-btn"
+                                                                        onclick="/*return subscribe();*/dang_ky_nhan_tin()">Đăng
                                                                     ký</i></button>
                                                             </div>
                                                         </div>
@@ -251,10 +215,10 @@
                                             <div>
                                                 <div class="all-social-icons">
                                                     <ul>
-                                                        <li><a href="https://goo.gl/poCzxE"><i class="fa fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                                        <li><a href="https://goo.gl/poCzxE" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="https://goo.gl/JjzX4q" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                                        <li><a href="javascript: void(0)"><i class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="javascript: void(0)"><i class="fa fa-youtube"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>

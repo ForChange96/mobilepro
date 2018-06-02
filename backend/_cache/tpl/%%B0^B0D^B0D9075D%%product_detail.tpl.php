@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-23 08:14:05
+<?php /* Smarty version 2.6.13, created on 2018-03-11 00:56:52
          compiled from product_detail.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'product_detail.tpl', 51, false),)), $this); ?>
@@ -96,7 +96,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
         </tr>
     </table>
 </div>
-<div id="form" class="product_edit">
+<div id="form" class="product_edit" style="display: none">
     <div class="line" style="margin-top: -20px"></div>
     <div id="alertBox">
         <i id="errorEditProduct">
@@ -188,10 +188,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 <div id="form" class="list_img">
     <h4 style="text-align: center; font-weight: bold">Danh sách tính năng nổi bật</h4>
     <div style="height: 18px; margin-top: -10px; width: 100%">
-        <div id="BoxFeaturesError" style="padding-left: 130px; color: red; width: 420px; margin: auto">
+        <div id="BoxFeaturesError" style="padding-left: 130px; color: red; width: 420px; margin: auto; display: none">
             <img src="style\images\icon-error.png" width="18px">&nbsp;<i id="editFeaturesError"></i>
         </div>
-        <div id="BoxFeaturesSuccess" style="padding-left: 130px; color: green; width: 420px; margin: auto">
+        <div id="BoxFeaturesSuccess" style="padding-left: 130px; color: green; width: 420px; margin: auto; display: none">
             <img src="style\images\icon-check1.png" width="16px">&nbsp;<i id="editFeaturesSuccess">Sửa thành công</i>
         </div>
     </div>
@@ -238,10 +238,10 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 <div id="form" class="list_img">
     <h4 style="text-align: center; font-weight: bold">Hình ảnh</h4>
     <div style="height: 18px; margin-top: -10px; width: 100%">
-        <div id="BoxImageError" style="padding-left: 130px; color: red; width: 420px; margin: auto">
+        <div id="BoxImageError" style="padding-left: 130px; color: red; width: 420px; margin: auto;display: none">
             <img src="style\images\icon-error.png" width="18px">&nbsp;<i id="editImageError"></i>
         </div>
-        <div id="BoxImageSuccess" style="padding-left: 130px; color: green; width: 420px; margin: auto">
+        <div id="BoxImageSuccess" style="padding-left: 130px; color: green; width: 420px; margin: auto; display: none">
             <img src="style\images\icon-check1.png" width="16px">&nbsp;<i id="editImageSuccess">Sửa thành công</i>
         </div>
     </div>

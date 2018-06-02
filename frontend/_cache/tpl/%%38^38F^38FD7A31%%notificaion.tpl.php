@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:13
+<?php /* Smarty version 2.6.13, created on 2018-03-01 08:31:10
          compiled from notificaion.tpl */ ?>
 <div class="notification" id="notification-success">
     <div class="img-notification">
@@ -14,5 +14,13 @@
     </div>
     <div class="text-notification" id="text-notification-error">
         <h4>Xảy ra lỗi!</h4>
+    </div>
+</div>
+<div class="notification" id="notification-info">
+    <div class="img-notification">
+        <img src="catalog\view\images\icon-info.png">
+    </div>
+    <div class="text-notification" id="text-notification-info">
+
     </div>
 </div>

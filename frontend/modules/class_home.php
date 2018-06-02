@@ -100,5 +100,36 @@ class Home extends class_get_info {
         unset($_SESSION['customer']);
         header("location:trang-chu");
     }
+    public function newsletter(){//Đăng ký nhận email
+        $email=isset($_POST['email'])?trim($_POST['email']):"";
+        $isOk=0;
+        $err="";
+        if ($email==""){
+            $err="Vui lòng nhập email!";
+        }
+        elseif (Validation::checkMail($email)==false){
+            $err="Email không đúng định dạng";
+        }
+        else{
+            $email=mysql_escape_string($email);
+            $sql_check="SELECT email FROM newsletters WHERE email='$email'";
+            if (mysql_num_rows(mysql_query($sql_check))==0){//Email chưa tồn tại
+                $sql_insert="INSERT INTO newsletters(email) VALUES ('$email')";
+                if (!mysql_query($sql_insert)){
+                    $err="Lỗi cơ sở dữ liệu!";
+                }
+                else{
+                    $isOk=1;//Đăng ký nhận tin thành công
+                }
+            }
+            else{//Email đã tồn tại
+                $isOk=2;
+                $err="Email đã được đăng ký trước đó!";
+            }
+        }
+        $result=array("ok"=>$isOk,"error"=>$err);
+        echo json_encode($result);
+        exit();
+    }
 }
 ?>

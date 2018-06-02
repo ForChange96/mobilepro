@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-01-15 09:32:58
+<?php /* Smarty version 2.6.13, created on 2018-03-11 00:15:03
          compiled from user_list.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'user_list.tpl', 5, false),)), $this); ?>
@@ -78,4 +78,3 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'u
         </table>
     </div><!--End #list-->
     <div class="clear"></div>
-

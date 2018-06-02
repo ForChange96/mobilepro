@@ -14,3 +14,11 @@
         <h4>Xảy ra lỗi!</h4>
     </div>
 </div>
+<div class="notification" id="notification-info">
+    <div class="img-notification">
+        <img src="catalog\view\images\icon-info.png">
+    </div>
+    <div class="text-notification" id="text-notification-info">
+
+    </div>
+</div>

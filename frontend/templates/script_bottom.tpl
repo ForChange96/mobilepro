@@ -20,3 +20,4 @@
 <!-- main js -->
 <script src="catalog/view/theme/Mb_Themes/js/main.js"></script>
 <script src="https://uhchat.net/code.php?f=b2174e"></script>
+<!-- <script type="text/javascript" src="http://vipprao.wap.sh/holiday_tet/hoa-mai-roi.js"></script> -->

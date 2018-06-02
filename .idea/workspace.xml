@@ -2,457 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a82daac-641a-46d4-b869-bebaa1611c23" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/bao-da-op-lung.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/breadcum_main.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/chi-tiet-san-pham.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/custom_slider.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/dang-nhap-dang-ky.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/footer.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/gio-hang.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/head.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/header.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/home.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/huongdan.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/index.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/lien-he.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/page_image_title.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/script_bottom.tpl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/templates/thanh-toan.tpl" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%05^05E^05E28FB2%%report_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%14^14E^14E92B75%%features_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%29^294^294755E0%%customer_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%2B^2B8^2B89EC54%%customer_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%38^385^3858DC5D%%order_list_table.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%39^39D^39DAA9D9%%user_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%43^437^4372D14E%%contact_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%45^45E^45E480CD%%index.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%5C^5C8^5C8FDD4F%%manufacturer_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%5E^5E3^5E34771F%%features_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%6A^6AB^6AB3F03C%%user_login.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%6D^6DE^6DE1C6E6%%support_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%6E^6E2^6E2DC9A2%%category_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%6F^6F5^6F5956E0%%user_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%6F^6F9^6F98ED67%%manufactures_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%80^805^805A8659%%manufacturer_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%8A^8A6^8A614016%%support_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%8A^8AF^8AF406B8%%manufacturer_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%90^906^9064A523%%order_detail.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%9F^9FA^9FA78A58%%contact_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%AD^AD7^AD7B696B%%contact_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%B0^B0D^B0D9075D%%product_detail.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%B1^B13^B1349DF0%%support_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%B2^B2F^B2F892B4%%category_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%C8^C83^C83C7063%%features_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%CE^CE3^CE327C58%%product_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%E4^E47^E47AF47E%%order_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%E5^E50^E50FF2CF%%user_list.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%E6^E68^E68D535A%%product_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%F0^F08^F08C0894%%category_add.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_cache/tpl/%%F5^F59^F5920EF6%%customer_edit.tpl.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/db/mobilepro.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/Pager.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/PagingUtils.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class_config.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class_database.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class_paging.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/class_validation.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/init.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/Config_File.class.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/Smarty.class.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/Smarty_Compiler.class.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/debug.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.assemble_plugin_filepath.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.assign_smarty_interface.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.create_dir_structure.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.display_debug_console.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.get_include_path.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.get_microtime.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.get_php_resource.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.is_secure.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.is_trusted.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.load_plugins.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.load_resource_plugin.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.process_cached_inserts.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.process_compiled_include.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.read_cache_file.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.rm_auto.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.rmdir.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.run_insert_handler.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.smarty_include_php.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.write_cache_file.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.write_compiled_include.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.write_compiled_resource.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/internals/core.write_file.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/block.t.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/block.textformat.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/compiler.assign.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.assign_debug_info.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.config_load.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.counter.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.cycle.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.debug.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.eval.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.fetch.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_checkboxes.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_image.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_options.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_radios.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_select_date.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_select_time.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.html_table.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.mailto.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.math.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.popup.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/function.popup_init.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.capitalize.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.cat.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.count_characters.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.count_paragraphs.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.count_sentences.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.count_words.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.date_format.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.debug_print_var.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.default.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.escape.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.indent.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.lower.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.nl2br.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.regex_replace.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.replace.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.spacify.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.string_format.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.strip.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.strip_tags.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.truncate.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.upper.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/modifier.wordwrap.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/outputfilter.trimwhitespace.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/shared.escape_special_chars.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/smarty/plugins/shared.make_timestamp.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_category.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_contact.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_customer.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_features.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_manufacturer.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_order.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_product.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_report.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_support.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/modules/class_user.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap-theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap-theme.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap-theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/css/styles.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/btn-search1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/btn-search2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/btn-search3-1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/btn-search3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/button_next.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/button_prev.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-16-config.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-16-detail.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-16-logout.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-cancel.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-edit.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-new.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-publish.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-save.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-32-trash.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-48-menumgr.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-back.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-back2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-check1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-content1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-error.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-hot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-new.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-price1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-price2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-sale.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-star1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-status1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-summary1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon-uncheck1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon_confirm.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/icon_restore.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/j_button2_first.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/j_button2_last.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/j_button2_next.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/j_button2_prev.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/j_header_middle.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151556761501.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151556761502.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151556761603.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151556761604.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151565538603.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151565538608.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151565538709.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151565538711.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151581778304.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151581875610.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/15158187565.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/15158187566.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/15158187567.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151624192905.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151624202306.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/151624358902.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151556761501.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151556761502.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151556761603.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151556761604.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151565538603.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151565538608.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151565538709.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151565538711.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151581778304.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151581875610.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/15158187565.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/15158187566.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/15158187567.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151624192905.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151624202306.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/original/151624358902.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151556761501.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151556761502.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151556761603.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151556761604.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151565538603.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151565538608.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151565538709.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151565538711.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151581778304.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151581875610.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/15158187565.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/15158187566.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/15158187567.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151624192905.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151624202306.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/product/thumbnail/151624358902.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/images/search-button-without-text-md.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/jquery-1.2.1.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/npm.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/init-tinymce.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/jquery.tinymce.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/langs/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/license.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/advlist/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/anchor/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/autolink/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/autoresize/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/autosave/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/bbcode/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/charmap/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/code/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/codesample/css/prism.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/codesample/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/colorpicker/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/contextmenu/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/directionality/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-cool.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-cry.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-embarassed.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-frown.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-innocent.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-kiss.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-laughing.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-sealed.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-smile.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-surprised.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-undecided.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-wink.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/img/smiley-yell.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/emoticons/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/fullpage/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/fullscreen/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/help/img/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/help/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/hr/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/image/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/imagetools/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/importcss/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/insertdatetime/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/legacyoutput/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/link/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/lists/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/media/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/nonbreaking/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/noneditable/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/pagebreak/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/paste/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/preview/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/print/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/save/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/searchreplace/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/spellchecker/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/tabfocus/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/table/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/template/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/textcolor/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/textpattern/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/toc/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/visualblocks/css/visualblocks.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/visualblocks/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/visualchars/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/plugins/wordcount/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/content.inline.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/content.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/content.mobile.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce-mobile.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce-small.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/fonts/tinymce.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/img/anchor.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/img/loader.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/img/object.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/img/trans.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/skin.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/skins/lightgray/skin.mobile.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/themes/inlite/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/themes/mobile/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/themes/modern/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/tinymce/tinymce.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/javascript/validate_user.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/init-tinymce.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/jquery.tinymce.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/langs/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/license.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/advlist/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/anchor/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/autolink/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/autoresize/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/autosave/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/bbcode/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/charmap/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/code/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/codesample/css/prism.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/codesample/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/colorpicker/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/contextmenu/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/directionality/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-cool.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-cry.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-embarassed.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-frown.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-innocent.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-kiss.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-laughing.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-sealed.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-smile.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-surprised.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-undecided.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-wink.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/img/smiley-yell.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/emoticons/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/fullpage/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/fullscreen/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/help/img/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/help/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/hr/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/image/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/imagetools/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/importcss/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/insertdatetime/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/legacyoutput/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/link/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/lists/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/media/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/nonbreaking/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/noneditable/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/pagebreak/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/paste/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/preview/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/print/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/save/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/searchreplace/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/spellchecker/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/tabfocus/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/table/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/template/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/textcolor/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/textpattern/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/toc/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/visualblocks/css/visualblocks.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/visualblocks/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/visualchars/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/plugins/wordcount/plugin.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/content.inline.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/content.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/content.mobile.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce-mobile.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce-small.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/fonts/tinymce.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/img/anchor.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/img/loader.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/img/object.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/img/trans.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/skin.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/skins/lightgray/skin.mobile.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/themes/inlite/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/themes/mobile/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/themes/modern/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style/tinymce/tinymce.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/category_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/category_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/category_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/contact_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/contact_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/contact_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/customer_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/customer_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/customer_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/features_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/features_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/features_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/header.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/index.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/manufacturer_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/manufacturer_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/manufacturer_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/order_detail.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/order_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/product_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/product_detail.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/product_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/report_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/support_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/support_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/support_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/user_add.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/user_edit.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/user_list.tpl" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/user_login.tpl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/backend/_cache/tpl/%%B0^B0D^B0D9075D%%product_detail.tpl.php" afterPath="$PROJECT_DIR$/backend/_cache/tpl/%%B0^B0D^B0D9075D%%product_detail.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/backend/_cache/tpl/%%C1^C18^C18184F5%%order_list2.tpl.php" afterPath="$PROJECT_DIR$/backend/_cache/tpl/%%C1^C18^C18184F5%%order_list2.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/backend/_cache/tpl/%%CE^CE3^CE327C58%%product_list.tpl.php" afterPath="$PROJECT_DIR$/backend/_cache/tpl/%%CE^CE3^CE327C58%%product_list.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/backend/_cache/tpl/%%E5^E50^E50FF2CF%%user_list.tpl.php" afterPath="$PROJECT_DIR$/backend/_cache/tpl/%%E5^E50^E50FF2CF%%user_list.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/backend/includes/PagingUtils.php" afterPath="$PROJECT_DIR$/backend/includes/PagingUtils.php" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/product_detail.tpl" afterPath="$PROJECT_DIR$/backend/templates/product_detail.tpl" />
+      <change beforePath="$PROJECT_DIR$/db/mobilepro.sql" afterPath="$PROJECT_DIR$/db/mobilepro.sql" />
+      <change beforePath="$PROJECT_DIR$/frontend/.htaccess" afterPath="$PROJECT_DIR$/frontend/.htaccess" />
+      <change beforePath="$PROJECT_DIR$/frontend/_cache/tpl/%%0E^0E4^0E407559%%footer.tpl.php" afterPath="$PROJECT_DIR$/frontend/_cache/tpl/%%0E^0E4^0E407559%%footer.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/frontend/_cache/tpl/%%38^38F^38FD7A31%%notificaion.tpl.php" afterPath="$PROJECT_DIR$/frontend/_cache/tpl/%%38^38F^38FD7A31%%notificaion.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/frontend/_cache/tpl/%%45^45E^45E480CD%%index.tpl.php" afterPath="$PROJECT_DIR$/frontend/_cache/tpl/%%45^45E^45E480CD%%index.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/frontend/_cache/tpl/%%92^923^923C1A9B%%script_bottom.tpl.php" afterPath="$PROJECT_DIR$/frontend/_cache/tpl/%%92^923^923C1A9B%%script_bottom.tpl.php" />
+      <change beforePath="$PROJECT_DIR$/frontend/catalog/script.js" afterPath="$PROJECT_DIR$/frontend/catalog/script.js" />
+      <change beforePath="$PROJECT_DIR$/frontend/catalog/view/theme/Mb_Themes/stylesheet/custom.css" afterPath="$PROJECT_DIR$/frontend/catalog/view/theme/Mb_Themes/stylesheet/custom.css" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/class_home.php" afterPath="$PROJECT_DIR$/frontend/modules/class_home.php" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/footer.tpl" afterPath="$PROJECT_DIR$/frontend/templates/footer.tpl" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/notificaion.tpl" afterPath="$PROJECT_DIR$/frontend/templates/notificaion.tpl" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/script_bottom.tpl" afterPath="$PROJECT_DIR$/frontend/templates/script_bottom.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -463,42 +31,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/index.php">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/catalog/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            <state relative-caret-position="3960">
+              <caret line="220" column="15" lean-forward="false" selection-start-line="220" selection-start-column="10" selection-end-line="220" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/includes/init.php">
+      <file leaf-file-name="class_home.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/modules/class_home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/templates/index.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom_slider.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/templates/custom_slider.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1177">
-              <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="282">
+              <caret line="102" column="30" lean-forward="false" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="30" />
+              <folding>
+                <marker date="1519892417162" expanded="true" signature="223:318" ph="SELECT produ... product" />
+                <marker date="1519892417162" expanded="true" signature="1476:1525" ph="select img_l... images" />
+                <marker date="1519892417162" expanded="true" signature="1871:2021" ph="SELECT * FRO... customer" />
+                <marker date="1519892417162" expanded="true" signature="2154:2234" ph="select custo... customer" />
+                <marker date="1519892417162" expanded="true" signature="2687:2730" ph="SELECT * FRO... customer" />
+                <marker date="1519892417162" expanded="true" signature="2849:2938" ph="INSERT INTO customer... " />
+                <marker date="1519892417162" expanded="true" signature="3174:3227" ph="SELECT custo... customer" />
+                <marker date="1519892417162" expanded="true" signature="3562:3615" ph="SELECT custo... customer" />
+                <marker date="1519892417162" expanded="true" signature="4613:4663" ph="SELECT email... newsletters" />
+                <marker date="1519892417162" expanded="true" signature="4776:4824" ph="INSERT INTO newsletters... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -507,20 +66,57 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>breadcum_main</find>
-      <find>foot</find>
-      <find>http://mobileprovn.chiliweb.org/</find>
-      <find>href=&quot;http://mobileprovn.chiliweb.org/</find>
-      <find>href=&quot;http</find>
-      <find>href=&quot;http://phukiengalaxy.chiliweb.org</find>
-      <find>href=&quot;/</find>
+      <find>$(&quot;#notification-success&quot;).fadeIn(100).delay(1000).fadeOut(1000);</find>
+      <find>$(&quot;#notification-error&quot;).fadeIn(100).delay(1000).fadeOut(1000);</find>
+      <find>add_wi</find>
+      <find>index.php?mod=home</find>
+      <find>&lt;ul class=&quot;add-to-links&quot;</find>
+      <find>Sử dụng</find>
+      <find>reload_list_product_in_home</find>
+      <find>tooltip</find>
+      <find>wis</find>
+      <find>reload_list_button_of_product</find>
+      <find>wishlist</find>
+      <find>.t-all-product-info .add-to-links &gt; li</find>
+      <find>ul.add-to-links button</find>
+      <find>update_number(</find>
+      <find>totalResult</find>
+      <find>countrows</find>
+      <find>countpage</find>
+      <find>$limit=5;</find>
+      <find>.description</find>
+      <find>descrip</find>
+      <find>id=&quot;notification-error</find>
+      <find>function subscribe</find>
+      <find>id=&quot;txtemail</find>
+      <find>class=&quot;warning-new</find>
+      <find>.s-p-icon&gt;a</find>
+      <find>$aryModule</find>
+      <find>.product_edit</find>
+      <find>img</find>
+      <find>src=&quot;/</find>
+      <find>add_w</find>
     </findStrings>
     <replaceStrings>
       <replace>href=&quot;</replace>
+      <replace>?mod=product&amp;act=detail&amp;id=</replace>
+      <replace>customer</replace>
+      <replace>Category</replace>
+      <replace>product</replace>
+      <replace>Manufacturer</replace>
+      <replace>features</replace>
+      <replace>totalResult</replace>
+      <replace>numRowsDisplay</replace>
+      <replace>src=&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -528,22 +124,50 @@
         <option value="$PROJECT_DIR$/frontend/index.php" />
         <option value="$PROJECT_DIR$/frontend/includes/init.php" />
         <option value="$PROJECT_DIR$/frontend/templates/head.tpl" />
-        <option value="$PROJECT_DIR$/frontend/templates/footer.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/script_bottom.tpl" />
-        <option value="$PROJECT_DIR$/frontend/templates/header.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/custom_slider.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/page_image_title.tpl" />
         <option value="$PROJECT_DIR$/backend/templates/index.tpl" />
-        <option value="$PROJECT_DIR$/frontend/templates/index.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/lien-he.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/huongdan.tpl" />
-        <option value="$PROJECT_DIR$/frontend/templates/home.tpl" />
-        <option value="$PROJECT_DIR$/frontend/templates/chi-tiet-san-pham.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/gio-hang.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/bao-da-op-lung.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/breadcum_main.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/dang-nhap-dang-ky.tpl" />
         <option value="$PROJECT_DIR$/frontend/templates/thanh-toan.tpl" />
+        <option value="$PROJECT_DIR$/frontend/includes/class_database.php" />
+        <option value="$PROJECT_DIR$/backend/templates/user_login.tpl" />
+        <option value="$PROJECT_DIR$/backend/style/css/styles.css" />
+        <option value="$PROJECT_DIR$/backend/modules/class_customer.php" />
+        <option value="$PROJECT_DIR$/frontend/includes/class_get_info.php" />
+        <option value="$PROJECT_DIR$/frontend/templates/header.tpl" />
+        <option value="$PROJECT_DIR$/frontend/templates/ajax_list_favorite_header.tpl" />
+        <option value="$PROJECT_DIR$/frontend/templates/index.tpl" />
+        <option value="$PROJECT_DIR$/frontend/modules/class_dangky.php" />
+        <option value="$PROJECT_DIR$/frontend/templates/thanhToan.tpl" />
+        <option value="$PROJECT_DIR$/frontend/modules/class_cart.php" />
+        <option value="$PROJECT_DIR$/frontend/templates/ajax_list_button_of_product.tpl" />
+        <option value="$PROJECT_DIR$/frontend/templates/home.tpl" />
+        <option value="$PROJECT_DIR$/frontend/templates/chi-tiet-san-pham.tpl" />
+        <option value="$PROJECT_DIR$/frontend/modules/class_product.php" />
+        <option value="$PROJECT_DIR$/frontend/templates/ajax_list_button_on_detail.tpl" />
+        <option value="$PROJECT_DIR$/frontend/templates/product_list.tpl" />
+        <option value="$PROJECT_DIR$/frontend/templates/product_search.tpl" />
+        <option value="$PROJECT_DIR$/frontend/catalog/view/theme/Mb_Themes/stylesheet/style.css" />
+        <option value="$PROJECT_DIR$/backend/modules/class_user.php" />
+        <option value="$PROJECT_DIR$/frontend/templates/notificaion.tpl" />
+        <option value="$PROJECT_DIR$/frontend/.htaccess" />
+        <option value="$PROJECT_DIR$/frontend/catalog/script.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/footer.tpl" />
+        <option value="$PROJECT_DIR$/frontend/catalog/view/theme/Mb_Themes/stylesheet/custom.css" />
+        <option value="$PROJECT_DIR$/frontend/modules/class_home.php" />
+        <option value="$PROJECT_DIR$/backend/templates/user_list.tpl" />
+        <option value="$PROJECT_DIR$/backend/templates/product_list.tpl" />
+        <option value="$PROJECT_DIR$/backend/modules/class_product.php" />
+        <option value="$PROJECT_DIR$/backend/includes/PagingUtils.php" />
+        <option value="$PROJECT_DIR$/backend/style/javascript/validate_user.js" />
+        <option value="$PROJECT_DIR$/backend/templates/product_detail.tpl" />
+        <option value="E:/acc/trang-chu.html" />
       </list>
     </option>
   </component>
@@ -555,8 +179,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -578,8 +202,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -596,13 +220,13 @@
               <item name="mobilepro" type="b2602c69:ProjectViewProjectNode" />
               <item name="mobilepro" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="catalog" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="mobilepro" type="b2602c69:ProjectViewProjectNode" />
               <item name="mobilepro" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -613,7 +237,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../acc" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -642,17 +266,32 @@
       <updated>1516348791914</updated>
       <workItem from="1516348797954" duration="9534000" />
       <workItem from="1516586639994" duration="540000" />
+      <workItem from="1519283482470" duration="659000" />
+      <workItem from="1519286146521" duration="2298000" />
+      <workItem from="1519369806174" duration="3810000" />
+      <workItem from="1519611181858" duration="7274000" />
+      <workItem from="1519627953233" duration="5101000" />
+      <workItem from="1519701222661" duration="5346000" />
+      <workItem from="1519782144772" duration="15324000" />
+      <workItem from="1519871228421" duration="10851000" />
+      <workItem from="1519984948777" duration="600000" />
+      <workItem from="1520723110298" duration="2127000" />
+      <workItem from="1520725861975" duration="418000" />
+      <workItem from="1520776277423" duration="183000" />
+      <workItem from="1520776976945" duration="112000" />
+      <workItem from="1523518034007" duration="1090000" />
+      <workItem from="1525361808512" duration="6000" />
+      <workItem from="1527925592224" duration="755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10074000" />
+    <option name="totallyTimeSpent" value="66028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1852123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -683,128 +322,76 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/index.php">
+    <entry file="file://$PROJECT_DIR$/frontend/templates/dang-nhap-dang-ky.tpl" />
+    <entry file="file://$PROJECT_DIR$/frontend/templates/page_image_title.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/includes/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/thanh-toan.tpl" />
     <entry file="file://$PROJECT_DIR$/frontend/templates/custom_slider.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="18">
+          <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/_cache/tpl/%%6A^6A8^6A8615D2%%edit_customer.tpl.php" />
+    <entry file="file://$PROJECT_DIR$/frontend/includes/class_database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/catalog/view/javascript/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="125" column="41" lean-forward="true" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="15095" column="34" lean-forward="false" selection-start-line="15095" selection-start-column="34" selection-end-line="15095" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/includes/init.php">
+    <entry file="file://$PROJECT_DIR$/backend/templates/user_login.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/head.tpl">
+    <entry file="file://$PROJECT_DIR$/backend/style/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="61" column="7" lean-forward="false" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        <state relative-caret-position="396">
+          <caret line="166" column="15" lean-forward="false" selection-start-line="166" selection-start-column="15" selection-end-line="166" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/templates/index.tpl">
+    <entry file="file://$PROJECT_DIR$/backend/templates/category_list.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="95" column="4" lean-forward="false" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/chi-tiet-san-pham.tpl">
+    <entry file="file://$PROJECT_DIR$/backend/modules/class_customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3085">
-          <caret line="495" column="17" lean-forward="false" selection-start-line="495" selection-start-column="17" selection-end-line="495" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/lien-he.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/script_bottom.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/gio-hang.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="203" column="22" lean-forward="false" selection-start-line="203" selection-start-column="22" selection-end-line="203" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/footer.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="261" column="9" lean-forward="false" selection-start-line="261" selection-start-column="9" selection-end-line="261" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/home.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="489" column="78" lean-forward="false" selection-start-line="489" selection-start-column="78" selection-end-line="489" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/huongdan.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="92" column="6" lean-forward="false" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/bao-da-op-lung.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="279" column="58" lean-forward="false" selection-start-line="279" selection-start-column="58" selection-end-line="279" selection-end-column="58" />
+        <state relative-caret-position="18">
+          <caret line="159" column="9" lean-forward="false" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -815,40 +402,297 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/index.tpl">
+    <entry file="file://$PROJECT_DIR$/frontend/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/thanhToan.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="199" column="184" lean-forward="false" selection-start-line="199" selection-start-column="184" selection-end-line="199" selection-end-column="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/ajax_list_favorite_header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/ajax_list_button_of_product.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/includes/class_get_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="60" column="93" lean-forward="false" selection-start-line="60" selection-start-column="93" selection-end-line="60" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/ajax_list_button_on_detail.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/chi-tiet-san-pham.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="75" column="86" lean-forward="false" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/home.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="69" column="121" lean-forward="false" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/catalog/view/theme/Mb_Themes/stylesheet/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="2215" column="14" lean-forward="false" selection-start-line="2215" selection-start-column="14" selection-end-line="2215" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/product_search.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="133" column="86" lean-forward="true" selection-start-line="133" selection-start-column="86" selection-end-line="133" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/style/tinymce/plugins/template/plugin.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6557" lean-forward="false" selection-start-line="0" selection-start-column="6557" selection-end-line="0" selection-end-column="6557" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/script_bottom.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4219">
+          <caret line="48" column="81" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/notificaion.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="61" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/modules/class_cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/catalog/view/theme/Mb_Themes/stylesheet/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="0" column="21379" lean-forward="false" selection-start-line="0" selection-start-column="21379" selection-end-line="0" selection-end-column="21379" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/footer.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="152" column="62" lean-forward="true" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/head.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="38" column="85" lean-forward="false" selection-start-line="38" selection-start-column="85" selection-end-line="38" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/modules/class_dangky.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="150" column="31" lean-forward="false" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/product_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="74" column="69" lean-forward="false" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/templates/user_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="59" column="34" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/class_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="61" column="39" lean-forward="false" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/templates/product_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/includes/Pager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/templates/product_detail.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3762">
+          <caret line="209" column="117" lean-forward="false" selection-start-line="209" selection-start-column="117" selection-end-line="209" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/includes/PagingUtils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/templates/index.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="69" column="107" lean-forward="false" selection-start-line="69" selection-start-column="107" selection-end-line="69" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/style/javascript/validate_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/class_product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="31" column="75" lean-forward="false" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/acc/trang-chu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="384" column="68" lean-forward="false" selection-start-line="384" selection-start-column="68" selection-end-line="384" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/catalog/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3960">
+          <caret line="220" column="15" lean-forward="false" selection-start-line="220" selection-start-column="10" selection-end-line="220" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/dang-nhap-dang-ky.tpl">
+    <entry file="file://$PROJECT_DIR$/frontend/modules/class_product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        <state relative-caret-position="288">
+          <caret line="286" column="78" lean-forward="true" selection-start-line="286" selection-start-column="78" selection-end-line="286" selection-end-column="78" />
+          <folding>
+            <marker date="1519793632042" expanded="true" signature="231:285" ph="INSERT INTO favorite... " />
+            <marker date="1519793632042" expanded="true" signature="685:752" ph="DELETE FROM favorite... " />
+            <marker date="1519793632042" expanded="true" signature="1361:1417" ph="SELECT produ... product" />
+            <marker date="1519793632042" expanded="true" signature="2020:2068" ph="SELECT produ... product" />
+            <marker date="1519793632042" expanded="true" signature="7243:7340" ph="SELECT produ... product" />
+            <marker date="1519793632042" expanded="true" signature="9900:10003" ph="SELECT produ... product" />
+            <marker date="1519793632042" expanded="true" signature="12253:12362" ph="SELECT produ... product" />
+            <marker date="1519793632042" expanded="true" signature="15207:15316" ph="SELECT produ... product" />
+            <marker date="1519793632042" expanded="true" signature="17146:17247" ph="INSERT INTO vote_product... " />
+            <marker date="1519793632042" expanded="true" signature="17304:17393" ph="UPDATE vote_product... " />
+            <marker date="1519793632042" expanded="true" signature="17681:17732" ph="SELECT num_s... vote_product" />
+            <marker date="1519793632042" expanded="true" signature="18169:18219" ph="UPDATE product... " />
+            <marker date="1519793632042" expanded="true" signature="19079:19149" ph="SELECT p_nam... product" />
+            <marker date="1519793632042" expanded="true" signature="19404:19453" ph="SELECT img_l... images" />
+            <marker date="1519793632042" expanded="true" signature="19649:19688" ph="SELECT * FRO... product" />
+            <marker date="1519793632042" expanded="true" signature="20040:20102" ph="SELECT img_l... images" />
+            <marker date="1519793632042" expanded="true" signature="20501:20555" ph="SELECT m_nam... manufacturer" />
+            <marker date="1519793632042" expanded="true" signature="20760:20813" ph="SELECT categ... category" />
+            <marker date="1519793632042" expanded="true" signature="21026:21106" ph="SELECT num_s... vote_product" />
+            <marker date="1519793632042" expanded="true" signature="21653:21791" ph="SELECT * FRO... tbl_order" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/page_image_title.tpl">
+    <entry file="file://$PROJECT_DIR$/frontend/modules/class_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/thanh-toan.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/custom_slider.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1177">
-          <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding />
+        <state relative-caret-position="282">
+          <caret line="102" column="30" lean-forward="false" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="30" />
+          <folding>
+            <marker date="1519892417162" expanded="true" signature="223:318" ph="SELECT produ... product" />
+            <marker date="1519892417162" expanded="true" signature="1476:1525" ph="select img_l... images" />
+            <marker date="1519892417162" expanded="true" signature="1871:2021" ph="SELECT * FRO... customer" />
+            <marker date="1519892417162" expanded="true" signature="2154:2234" ph="select custo... customer" />
+            <marker date="1519892417162" expanded="true" signature="2687:2730" ph="SELECT * FRO... customer" />
+            <marker date="1519892417162" expanded="true" signature="2849:2938" ph="INSERT INTO customer... " />
+            <marker date="1519892417162" expanded="true" signature="3174:3227" ph="SELECT custo... customer" />
+            <marker date="1519892417162" expanded="true" signature="3562:3615" ph="SELECT custo... customer" />
+            <marker date="1519892417162" expanded="true" signature="4613:4663" ph="SELECT email... newsletters" />
+            <marker date="1519892417162" expanded="true" signature="4776:4824" ph="INSERT INTO newsletters... " />
+          </folding>
         </state>
       </provider>
     </entry>

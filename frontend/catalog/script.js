@@ -46,7 +46,7 @@ $(document).ready(function () {
     /*$("#text-notification-success").html("<h4>Thêm thành công!</h4>");
     $("#notification-success").fadeIn(100).delay(1000).fadeOut(1000);*/
 
-
+    //notification_info("Bạn đã đăng ký trước đó");
     //*************************
         /*$('[data-toggle="tooltip"]').tooltip({
             trigger : 'hover'
@@ -726,6 +726,31 @@ function edit_customer() {
 }
 //*********** Edit customer ********************
 
+//*********** Đăng ký nhận tin (phần footer) ********************
+function dang_ky_nhan_tin() {
+    var email=$("#txtemail").val();
+    var strData="email="+email;
+    $.ajax({
+        url: "dang_ky_nhan_tin",
+        data: strData,
+        type: "POST",
+        dataType: "json",
+        success: function(data){
+            if (parseInt(data.ok)==1){
+                notification_success("Đăng ký thành công!");
+            }
+            else if (parseInt(data.ok)==2){
+                notification_info(data.error);
+            }
+            else {
+                notification_error(data.error);
+            }
+        }
+    })
+}
+//**************** End Đăng ký nhận tin *************************
+
+
 function unset_prompt() {
     $.ajax({url: "unset_prompt"});
 }
@@ -736,4 +761,8 @@ function notification_success(text) { //Show notification success
 function notification_error(text) { //Show notification error
     $("#text-notification-error").html("<h4>" + text + "</h4>");
     $("#notification-error").fadeIn(100).delay(1000).fadeOut(1000);
+}
+function notification_info(text) { //Show notification error
+    $("#text-notification-info").html("<h4>" + text + "</h4>");
+    $("#notification-info").fadeIn(100).delay(1000).fadeOut(1000);
 }

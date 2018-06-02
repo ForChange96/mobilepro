@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2018-02-27 11:14:13
+<?php /* Smarty version 2.6.13, created on 2018-03-27 04:39:10
          compiled from script_bottom.tpl */ ?>
 
 <!-- owl.carousel.min js -->
@@ -21,3 +21,4 @@
 <!-- main js -->
 <script src="catalog/view/theme/Mb_Themes/js/main.js"></script>
 <script src="https://uhchat.net/code.php?f=b2174e"></script>
+<!-- <script type="text/javascript" src="http://vipprao.wap.sh/holiday_tet/hoa-mai-roi.js"></script> -->
